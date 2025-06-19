@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import Subscribe from '../components/Subscribe'
 
 const Home = () => {
   const scrollRef = useRef(null)
@@ -16,7 +17,7 @@ const Home = () => {
         ) {
           scrollContainer.scrollTop = 0
         }
-      }, 30) 
+      }, 30)
     }
 
     return () => clearInterval(scrollInterval)
@@ -61,9 +62,9 @@ const Home = () => {
             <div
               className="rounded-xl flex flex-col items-center justify-center p-4 relative mt-4 sm:mt-6"
               style={{
-                backgroundColor: 'var(--color-color)', 
+                backgroundColor: 'var(--color-color)',
                 width: '100%',
-                maxWidth: '251px', 
+                maxWidth: '251px',
                 height: '250px',
               }}
             >
@@ -93,7 +94,7 @@ const Home = () => {
             {/* Shopping Bags Image */}
             <div
               className="mt-4 sm:mt-6"
-              style={{ width: '100%', maxWidth: '251px', height: '250px' }} 
+              style={{ width: '100%', maxWidth: '251px', height: '250px' }}
             >
               <img
                 src="/img/home3.png"
@@ -267,7 +268,6 @@ const Home = () => {
 
         {/* Trending Posts Section */}
         <section className="bg-[#FDF1F3] py-8 sm:py-10">
-          {' '}
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px8">
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
@@ -281,9 +281,9 @@ const Home = () => {
             </div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Left Big Card */}
-              <div className="bg-background-light-gray rounded-xl p-4 sm:p-6 flex flex-col justify-between relative h-full col-span-1 md:col-span-2">
+              <div className="bg-background-light-gray rounded-xl p-4 sm:p-6 flex flex-col justify-between relative h-full col-span-1">
                 <span className="text-xs bg-white text-pink-500 px-2 sm:px-3 py-1 rounded-full mb-3 w-fit">
                   Trendy posts
                 </span>
@@ -304,36 +304,36 @@ const Home = () => {
               {/* Right Cards */}
               <div className="grid grid-cols-2 gap-4 md:col-span-1">
                 {/* Top Left Card */}
-                <div className="bg-orange-100 rounded-xl p-3 sm:p-4 flex justify-between items-center h-[120px] sm:h-[130px]">
-                  <p className="text-xs sm:text-sm font-semibold w-2/3">
+                <div className="bg-orange-100 rounded-xl p-3 sm:p-4 flex justify-between items-start h-full">
+                  <p className="text-sm sm:text-base font-semibold w-2/3">
                     Latest in Retail & Shopping
                   </p>
                   <img
                     src="/img/bag.png"
                     alt="Retail"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain self-end"
                   />
                 </div>
 
                 {/* Top Right Card */}
-                <div className="bg-blue-100 rounded-xl p-3 sm:p-4 flex justify-between items-center h-[120px] sm:h-[130px]">
-                  <p className="text-xs sm:text-sm font-semibold w-2/3">
+                <div className="bg-blue-100 rounded-xl p-3 sm:p-4 flex justify-between items-start h-full">
+                  <p className="text-sm sm:text-base font-semibold w-2/3">
                     Recent Insights & Trends
                   </p>
                   <img
                     src="/img/watch.png"
                     alt="Watch"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain self-end"
                   />
                 </div>
 
                 {/* Bottom Full-Width Card */}
-                <div className="bg-yellow-100 rounded-xl p-3 sm:p-4 flex justify-between items-center col-span-2 h-[120px] sm:h-[130px]">
+                <div className="bg-yellow-100 rounded-xl p-3 sm:p-4 flex justify-between items-start col-span-2 h-full">
                   <div>
-                    <p className="text-xs sm:text-sm font-semibold">
+                    <p className="text-sm sm:text-base font-semibold">
                       Top Ethical & Sustainable Fashion Brands to Watch
                     </p>
-                    <p className="text-xs text-gray-600 mt-1">
+                    <p className="text-sm text-gray-600 mt-1">
                       Is designer clothing worth the investment, or can
                       budget-friendly brands...
                     </p>
@@ -358,7 +358,7 @@ const Home = () => {
                 <img
                   src="/img/img6.png"
                   alt="Top Discounts"
-                  className="w-full h-auto object-contain max-h-[200px] sm:max-h-[400px]"
+                  className="w-full h-auto object-cover object-top max-h-[200px] sm:max-h-[400px]"
                 />
               </div>
 
@@ -381,29 +381,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-
-        {/* Stay Updated Section */}
-        <section className="bg-background-light-gray border border-background-light-gray rounded-lg p-4 sm:p-6 mx-auto my-8 shadow-sm w-full max-w-4xl">
-          <h2 className="text-gray-800 mb-4 sm:mb-6 text-center">
-            Stay Updated!
-          </h2>
-          <p className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6 text-center">
-            Subscribe to get the latest trends and exclusive deals!
-          </p>
-          <div className="flex justify-center">
-            <input
-              type="email"
-              placeholder="Enter your email..."
-              className="w-full max-w-[250px] sm:max-w-xs px-3 sm:px-4 py-2 border border-white rounded-l-md focus:outline-none focus:ring-2 focus:ring-background-black text-sm"
-            />
-            <button
-              type="button"
-              className="bg-background-black text-white px-4 sm:px-6 py-2 rounded-r-md hover:bg-gray-800 transition text-sm"
-            >
-              Subscribe
-            </button>
-          </div>
-        </section>
+        <Subscribe />
       </main>
     </div>
   )
