@@ -3,11 +3,11 @@ import { FiSearch } from 'react-icons/fi'
 import TrendingCard from '../components/TrendingCard'
 
 const mockData = Array.from({ length: 30 }, (_, i) => ({
-  id: i,
-  image: `/img/blog${(i % 8) + 1}.jpg`, // Loop through 8 sample images
+  id: i + 1,
+  image: `/img/blog${(i % 6) + 1}.png`, 
   title: `Trending Blog Title ${i + 1}`,
   date: 'March 25, 2025',
-  author: 'Emily Carter',
+  author: ['Emily Carter', 'John Doe', 'Alice Smith'][i % 3],
   desc: 'The quality of clothing is improving day by day.',
 }))
 
@@ -26,11 +26,11 @@ const Trending = () => {
   const [search, setSearch] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
 
-  const totalPages = Math.ceil(mockData.length / ITEMS_PER_PAGE)
-
   const filteredData = mockData.filter((item) =>
-    item.title.toLowerCase().includes(search.toLowerCase())
+    item.author.toLowerCase().includes(search.toLowerCase())
   )
+
+  const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE)
 
   const paginatedData = filteredData.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
@@ -38,96 +38,86 @@ const Trending = () => {
   )
 
   return (
-    <div className="bg-background-color text-white py-10 min-h-screen px-4 md:px-20">
-      {/* Heading Section */}
-      <div className="bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-black rounded-xl p-10 text-center mb-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Trending Post</h2>
-        <p className="max-w-3xl mx-auto">
+    <div className="bg-background-color text-white py-10 px-4 sm:px-6 md:px-10 lg:px-20">
+      {/* Gradient Heading Section */}
+      <div className="bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-background-black rounded-xl mx-auto mb-10 w-full max-w-[1200px] h-[307px] flex flex-col justify-center items-center text-center p-6 sm:p-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4">
+          Trending Post
+        </h2>
+        <p className="text-sm sm:text-base max-w-3xl mx-auto px-2">
           Unlock the latest trends, insider tips, and exclusive deals. We bring
           you expert insights, honest reviews, and the smartest shopping
           strategies.
         </p>
       </div>
 
-      {/* Category Buttons and Search */}
-      <div className="bg-background-color py-8 px-4 md:px-16">
-        <div className="flex flex-wrap gap-4 items-center">
-          {categories.map((cat, index) => (
-            <button
-              key={index}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full border text-sm transition-all ${
-                selectedCategory === cat
-                  ? 'bg-black text-white border-black'
-                  : 'bg-white text-black border-gray-300 hover:bg-gray-100'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+      {/* Category & Search */}
+      <div className="flex flex-wrap gap-4 items-center justify-start mb-8">
+        {categories.map((cat, index) => (
+          <button
+            key={index}
+            onClick={() => setSelectedCategory(cat)}
+            className={`px-4 py-2 rounded-full border text-sm transition-all ${
+              selectedCategory === cat
+                ? 'bg-background-black text-white border-background-black'
+                : 'bg-white text-background-black border-gray-300 hover:bg-gray-100'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
 
-          <div className="flex items-center border rounded-full px-4 py-2 w-full sm:w-auto bg-white text-black border-gray-300">
-            <input
-              type="text"
-              placeholder="Search here..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="bg-transparent outline-none w-full"
-            />
-            <FiSearch className="text-gray-500 ml-2" />
-          </div>
+        {/* Search */}
+        <div className="flex items-center border rounded-full px-4 py-2 bg-white text-background-black border-gray-300 ml-auto w-full sm:w-auto">
+          <input
+            type="text"
+            placeholder="Search by author..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="bg-transparent outline-none w-full"
+          />
+          <FiSearch className="text-gray-500 ml-2" />
         </div>
       </div>
 
-      {/* Blog Cards Grid */}
-      <div className="bg-background-color px-4 md:px-16 py-10 min-h-screen">
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 justify-items-center">
-          {paginatedData.map((item) => (
-            <TrendingCard key={item.id} {...item} />
-          ))}
-        </div>
+      {/* Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 justify-items-center">
+        {paginatedData.map((item) => (
+          <TrendingCard key={item.id} {...item} />
+        ))}
+      </div>
 
-        {/* Pagination Controls */}
-        <div className="flex justify-center mt-8 space-x-2 text-sm">
+      {/* Pagination */}
+      <div className="flex justify-center mt-10 space-x-2 text-sm flex-wrap">
+        {/* Previous */}
+        <button
+          onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+          disabled={currentPage === 1}
+          className="border border-background-black text-background-black px-3 py-1 rounded disabled:opacity-50"
+        >
+          &laquo;
+        </button>
+
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
           <button
-            onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-            className="px-2 py-1 border rounded disabled:opacity-50"
-            disabled={currentPage === 1}
-          >
-            &laquo;
-          </button>
-
-          {Array.from({ length: totalPages }, (_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentPage(i + 1)}
-              className={`px-3 py-1 border rounded ${
-                currentPage === i + 1 ? 'bg-pink-200 text-black' : ''
-              }`}
-            >
-              {i + 1}
-            </button>
-          )).slice(0, 3)}
-
-          <span className="px-2 py-1">...</span>
-
-          <button
-            onClick={() => setCurrentPage(totalPages)}
-            className={`px-3 py-1 border rounded ${
-              currentPage === totalPages ? 'bg-pink-200 text-black' : ''
+            key={page}
+            onClick={() => setCurrentPage(page)}
+            className={`border border-background-black px-3 py-1 rounded ${
+              currentPage === page ? 'bg-background-black text-white' : 'text-background-black'
             }`}
           >
-            {totalPages}
+            {page}
           </button>
+        ))}
 
-          <button
-            onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
-            className="px-2 py-1 border rounded disabled:opacity-50"
-            disabled={currentPage === totalPages}
-          >
-            &raquo;
-          </button>
-        </div>
+        {/* Next */}
+        <button
+          onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+          disabled={currentPage === totalPages}
+          className="border border-background-black text-background-black px-3 py-1 rounded disabled:opacity-50"
+        >
+          &raquo;
+        </button>
       </div>
     </div>
   )

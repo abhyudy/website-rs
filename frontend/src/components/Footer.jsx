@@ -34,17 +34,31 @@ const Footer = () => {
             </h5>{' '}
             <ul className="text-sm sm:text-base space-y-2 text-gray-300">
               <li>
-                <a href="#" className="hover:text-gray-100 transition-colors">
+                <a href="/" className="hover:text-gray-100 transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-100 transition-colors">
+                <a
+                  href="/about"
+                  className="hover:text-gray-100 transition-colors"
+                >
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-100 transition-colors">
+                <a
+                  href="/trends"
+                  className="hover:text-gray-100 transition-colors"
+                >
+                  Trends
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/contact"
+                  className="hover:text-gray-100 transition-colors"
+                >
                   Contact Us
                 </a>
               </li>
