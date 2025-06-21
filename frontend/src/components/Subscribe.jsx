@@ -3,10 +3,10 @@ import React from 'react'
 const Subscribe = () => {
   return (
     <section className="bg-background-light-gray border border-background-light-gray rounded-lg p-4 sm:p-6 mx-auto my-8 shadow-sm w-full max-w-4xl">
-      <h2 className="text-gray-800 mb-4 sm:mb-6 text-center text-xl font-semibold">
+      <h1 className="text-background-black mb-4 sm:mb-6 text-center text-5xl custom-times  font-semibold">
         Stay Updated!
-      </h2>
-      <p className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6 text-center">
+      </h1>
+      <p className="text-xs sm:text-sm text-background-black mb-4 sm:mb-6 text-center">
         Subscribe to get the latest trends and exclusive deals!
       </p>
       <form className="flex justify-center">

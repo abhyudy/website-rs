@@ -34,16 +34,19 @@ const Home = () => {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
             {/* Left: Text */}
             <div className="lg:w-1/2 text-center lg:text-left">
-              <h2 className="text-gray-900 mb-4 leading-tight">
+              <h1 className="text-5xl font-bold custom-times text-gray-900 mb-4 leading-tight">
                 Style Meets Savings: <br /> Discover, Shop & Stay Ahead!
-              </h2>
+              </h1>
               <p className="text-base sm:text-lg text-gray-600 mb-6">
                 Unlock the latest trends, exclusive deals, and expert shopping
                 insights – all in one place. Elevate your shopping game today!
               </p>
-              <button className="bg-background-black text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-gray-800 transition text-sm sm:text-base">
+              <a
+                href="/trendsDetail"
+                className="bg-background-black text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-gray-800 transition text-sm sm:text-base"
+              >
                 Read More
-              </button>
+              </a>
             </div>
 
             {/* Right: Image */}
@@ -134,9 +137,9 @@ const Home = () => {
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           {/* Heading */}
           <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8">
-            <h2 className="font-extrabold leading-tight text-background-black text-center sm:text-left">
+            <h1 className=" text-5xl custom-times font-bold  text-background-black text-center sm:text-left">
               Most Popular At <br /> The Moment
-            </h2>
+            </h1>
             <a
               href="#"
               className="text-sm sm:text-base font-semibold underline text-background-black mt-4 sm:mt-0"
@@ -191,16 +194,16 @@ const Home = () => {
         <section className="bg-background-black max-w-6xl h-auto min-h-[300px] mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-16 flex flex-col lg:flex-row gap-6 rounded-xl overflow-hidden">
           {/* Left Block */}
           <div className="text-white p-6 sm:p-10 flex flex-col justify-between lg:w-1/2">
-            <h2 className="mb-4 leading-tight">
+            <h1 className="text-6xl font-bold custom-times">
               Stay Ahead of <br /> the Trends!
-            </h2>
-            <p className="mb-6 text-xs sm:text-sm">
+            </h1>
+            <p className="mb-14 text-xs sm:text-sm">
               Get the latest insights on must-have products, <br />
               exclusive deals, and expert shopping tips.
             </p>
             <a
               href="#"
-              className="bg-white text-background-black px-4 sm:px-6 py-2 rounded-full font-medium self-start mt-6"
+              className="bg-white text-background-black px-4 sm:px-6 py-2 rounded-full font-medium self-start mt-8"
             >
               See All
             </a>
@@ -271,7 +274,7 @@ const Home = () => {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px8">
             {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
-              <h2 className="text-center sm:text-left">Trending Posts</h2>
+              <h1 className=" text-6xl font-bold custom-times text-center sm:text-left">Trending Posts</h1>
               <a
                 href="#"
                 className="text-sm font-semibold underline text-background-black mt-4 sm:mt-0"
@@ -367,10 +370,10 @@ const Home = () => {
                 <p className="text-xs sm:text-sm text-[#D96B69] font-semibold mb-2">
                   Top Deals & Discounts
                 </p>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 leading-snug">
+                <h1 className="text-5xl custom-times sm:text-2xl md:text-3xl font-bold mb-4 leading-snug">
                   Ultimate Guide to Finding the <br /> Best Online Discounts
-                </h2>
-                <p className="text-xs sm:text-sm text-gray-700 mb-6">
+                </h1>
+                <p className="text-xs sm:text-sm text-background-gray mb-6">
                   Never pay full price again! Learn how to find hidden deals,
                   discount codes, and cashback offers while shopping online.
                 </p>

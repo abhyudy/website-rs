@@ -3,18 +3,7 @@ import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <div className="relative bg-black text-white">
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-0">
-        <svg
-          className="w-full h-24 sm:h-32 md:h-40"
-          viewBox="0 0 1440 150"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,150 C480,0 960,0 1440,150 L1440,0 L0,0 Z" fill="black" />
-        </svg>
-      </div>
-
+    <div className="relative bg-background-black text-white">
       {/* Footer Content */}
       <footer className="pt-20 pb-10 px-4 sm:px-6 md:px-10 lg:px-16 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-10 lg:gap-16 flex-wrap">

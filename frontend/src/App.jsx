@@ -6,6 +6,7 @@ import About from './pages/About'
 import Footer from './components/footer'
 import Trending from './pages/Trending'
 import Contact from './pages/Contact'
+import TrendsDetail from './components/TrendsDetails'
 
 // Layout component to include the Header on all pages
 const Layout = () => {
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/trends" element={<Trending />} />
+          <Route path="/trendsDetail" element={<TrendsDetail />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
