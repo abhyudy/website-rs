@@ -16,10 +16,10 @@ const Contact = () => {
 
       {/* Main Contact Box */}
       <div className="flex justify-center -mt-[10%] z-10 relative mb-10">
-        <div className="flex w-[979px] h-[747px] bg-white rounded-xl shadow-lg overflow-hidden relative">
+        <div className="flex w-[979px] h-[650px] bg-white rounded-xl shadow-lg overflow-hidden relative">
           {/* Left: Contact Form */}
-          <div className="w-[460px] p-8">
-            <h2 className="text-2xl font-bold mb-2">Get in Touch</h2>
+          <div className="w-[460px] p-10 mt-10">
+            <h2 className="text-3xl font-bold mb-2">Get in Touch</h2>
             <p className="text-sm text-gray-700 mb-6 max-w-md">
               Have a query or suggestion? Fill out the form below, and we’ll get
               back to you as soon as possible.
@@ -27,7 +27,9 @@ const Contact = () => {
 
             <form className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-sm mb-1">Name</label>
+                <label htmlFor="name" className="block text-sm mb-1">
+                  Name
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -35,7 +37,9 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm mb-1">Email</label>
+                <label htmlFor="email" className="block text-sm mb-1">
+                  Email
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -43,7 +47,9 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm mb-1">Phone</label>
+                <label htmlFor="phone" className="block text-sm mb-1">
+                  Phone
+                </label>
                 <input
                   type="tel"
                   id="phone"
@@ -51,7 +57,9 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm mb-1">Message</label>
+                <label htmlFor="message" className="block text-sm mb-1">
+                  Message
+                </label>
                 <textarea
                   id="message"
                   rows="3"
@@ -69,10 +77,9 @@ const Contact = () => {
           </div>
 
           {/* Right: Info Section */}
-          <div className="relative bg-black text-white w-[480px] h-[320px] mt-16 mr-10 rounded-xl p-8 ml-auto">
+          <div className="relative bg-black text-white w-[480px] h-[320px] mt-30 mr-10 z-10 rounded-xl p-8 ml-auto">
             {/* Sticky Note Effect */}
-            <div className="absolute -top-4 -left-4 w-5 h-5 bg-yellow-200 rotate-45 z-10" />
-            <div className="absolute -top-2 -left-2 w-4 h-4 bg-black z-20" />
+            <div className="absolute -top-2 -left-2 w-6 h-6 bg-[#FFFCA7]  z-20" />
 
             <h2 className="text-xl font-semibold mb-6">Info</h2>
 
@@ -95,9 +102,8 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
-          {/* Pink Background Strip on Right Edge */}
-          <div className="absolute top-0 right-0 h-full w-6 bg-[#FEC5C5] z-[-1] rounded-r-xl" />
+        {/* Pink Background Strip on Right Edge */}
+        <div className="absolute top-0 right-0 h-full w-24 bg-[#FEC5C5] z-5 rounded-r-xl" />
         </div>
       </div>
     </div>
