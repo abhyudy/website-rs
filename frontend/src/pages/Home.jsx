@@ -24,13 +24,10 @@ const Home = () => {
   }, [])
 
   return (
-    <div
-      className="min-h-screen"
-      style={{ backgroundColor: 'var(--color-background-color)' }}
-    >
+    <div className="min-h-screen bg-background-color">
       <main>
         {/* Hero Section */}
-        <section className="bg-background-color py-8 sm:py-12 lg:py-16">
+        <section className=" py-8 sm:py-12 lg:py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
             {/* Left: Text */}
             <div className="lg:w-1/2 text-center lg:text-left">
@@ -108,10 +105,10 @@ const Home = () => {
 
             {/* Categories */}
             <div className="w-full lg:w-1/2 sm:mt-6">
-              <h3 className="text-gray-800 mb-4">
+              <h1 className="text-background-black text-4xl font-bold custom-times mb-4">
                 Categories
                 <hr className="h-px mb-6 mt-2 border-0 bg-gradient-to-r from-gray-200 via-gray-600 to-gray-200" />
-              </h3>
+              </h1>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 <button className="px-3 py-1 sm:px-4 sm:py-2 border border-pink-500 text-pink-600 rounded-full hover:bg-pink-50 transition text-sm sm:text-base">
                   Luxury & Designer
@@ -173,7 +170,7 @@ const Home = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className={`relative rounded-xl overflow-hidden shadow-lg h-[300px] sm:h-[346px] w-full ${item.offset}`}
+                className={`relative rounded-xl overflow-hidden shadow-lg h-[300px] sm:h-[346px] w-full transform transition duration-300 hover:brightness-110 hover:scale-105 cursor-pointer ${item.offset}`}
               >
                 <img
                   src={item.img}
@@ -191,7 +188,7 @@ const Home = () => {
         </section>
 
         {/* Stay Ahead Section */}
-        <section className="bg-background-black max-w-6xl h-auto min-h-[300px] mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-16 flex flex-col lg:flex-row gap-6 rounded-xl overflow-hidden">
+        <section className="bg-background-black max-w-6xl h-auto min-h-[300px] mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-16 flex flex-col lg:flex-row gap-4 rounded-xl overflow-hidden">
           {/* Left Block */}
           <div className="text-white p-6 sm:p-10 flex flex-col justify-between lg:w-1/2">
             <h1 className="text-6xl font-bold custom-times">
@@ -209,59 +206,52 @@ const Home = () => {
             </a>
           </div>
 
-          {/* Right Scrolling Cards */}
+          {/* Right Block */}
           <div
             ref={scrollRef}
-            className="relative w-full lg:w-[475px] h-[300px] sm:h-[400px] overflow-hidden no-scrollbar" // Added no-scrollbar
+            className="relative w-full lg:w-[475px] h-[300px] sm:h-[400px] overflow-hidden no-scrollbar"
           >
             <div className="absolute top-0 animate-scroll space-y-4 w-full">
               {[
                 {
-                  title: 'Shopping Mistakes You Should Avoid at All Costs',
-                  img: '/img/img1.png',
-                },
-                {
                   title: 'Top 10 Fashion Trends for 2025',
-                  img: '/img/img6.png',
+                  description:
+                    'Discover the must-have fashion styles dominating 2025, from bold colors to sustainable..........',
+                  bgColor: '#FFB9B9',
                 },
                 {
-                  title: 'Fashion Tips from Stylists',
-                  img: '/img/img7.png',
+                  title: 'Wardrobe Must-Haves for Every Season',
+                  description:
+                    'Find the ultimate wardrobe basics and timeless fashion investments every closet needs..........',
+                  bgColor: '#DDABAA',
                 },
                 {
-                  title: 'Shopping Mistakes You Should Avoid at All Costs',
-                  img: '/img/img1.png',
-                },
-                {
-                  title: 'Top 10 Fashion Trends for 2025',
-                  img: '/img/img6.png',
-                },
-                {
-                  title: 'Fashion Tips from Stylists',
-                  img: '/img/img7.png',
+                  title: 'Eco-Friendly Fashion That Looks Great',
+                  description:
+                    'Explore how eco-conscious fashion is shaping the future of shopping and production..........',
+                  bgColor: '#F9D5E5',
                 },
               ].map((card, idx) => (
                 <div
                   key={idx}
-                  className="bg-pink-200 p-4 rounded-2xl flex justify-between items-center relative w-full h-[200px] sm:h-[254px]"
+                  className="p-6 rounded-2xl relative w-full h-[200px] sm:h-[254px] flex flex-col justify-between text-white"
+                  style={{ backgroundColor: card.bgColor }}
                 >
-                  {/* Text Content */}
-                  <div className="text-white font-semibold text-xs sm:text-sm max-w-[60%] leading-tight">
+                  {/* Title */}
+                  <h4 className="text-xl sm:text-2xl font-bold leading-snug">
                     {card.title}
-                  </div>
+                  </h4>
 
-                  {/* Image and Icon */}
-                  <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden">
-                    <img
-                      src={card.img}
-                      alt={card.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute bottom-1 right-1 w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full flex items-center justify-center shadow">
-                      <span className="text-xs sm:text-sm text-background-black">
-                        →
-                      </span>
-                    </div>
+                  {/* Description */}
+                  <p className="text-sm mb-12 sm:text-base opacity-90">
+                    {card.description}
+                  </p>
+
+                  {/* Arrow Button */}
+                  <div className="absolute bottom-4 right-4 w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow-md">
+                    <span className="text-base sm:text-lg text-background-black">
+                      ↗
+                    </span>
                   </div>
                 </div>
               ))}
@@ -270,13 +260,15 @@ const Home = () => {
         </section>
 
         {/* Trending Posts Section */}
-        <section className="bg-[#FDF1F3] py-8 sm:py-10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px8">
+        <section className="py-8 sm:py-10">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header */}
-            <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
-              <h1 className=" text-6xl font-bold custom-times text-center sm:text-left">Trending Posts</h1>
+            <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
+              <h1 className="text-6xl font-bold custom-times text-center sm:text-left">
+                Trending Posts
+              </h1>
               <a
-                href="#"
+                href="/trends"
                 className="text-sm font-semibold underline text-background-black mt-4 sm:mt-0"
               >
                 SEE ALL
@@ -284,68 +276,89 @@ const Home = () => {
             </div>
 
             {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Left Big Card */}
-              <div className="bg-background-light-gray rounded-xl p-4 sm:p-6 flex flex-col justify-between relative h-full col-span-1">
-                <span className="text-xs bg-white text-pink-500 px-2 sm:px-3 py-1 rounded-full mb-3 w-fit">
-                  Trendy posts
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Left Card (Fixed Height) */}
+              <div
+                className="bg-[#EAEAEA] rounded-xl p-6 flex flex-col justify-start relative overflow-hidden w-full"
+                style={{ height: '482px' }}
+              >
+                <span className="text-xs text-pink-500 bg-white border border-pink-200 px-4 py-1 rounded-full mb-4 w-fit font-medium">
+                  TrendyLooks
                 </span>
-                <h3 className="text-base sm:text-lg font-semibold mb-1">
+                <h3 className="text-xl font-bold text-background-black leading-snug mb-3 max-w-[60%]">
                   Luxury vs. Affordable Fashion: Is It Worth the Price?
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-700 mb-4">
+                <p className="text-sm text-gray-600 leading-relaxed mb-6 max-w-[60%]">
                   Is designer clothing worth the investment, or can
-                  budget-friendly brands....
+                  budget-friendly brands…..
                 </p>
                 <img
                   src="/img/girlpost.png"
                   alt="Luxury vs Affordable"
-                  className="w-full max-w-[150px] sm:max-w-[200px] self-end mt-auto"
+                  className="absolute bottom-0 left-24 h-[370px] object-contain"
                 />
               </div>
 
-              {/* Right Cards */}
-              <div className="grid grid-cols-2 gap-4 md:col-span-1">
-                {/* Top Left Card */}
-                <div className="bg-orange-100 rounded-xl p-3 sm:p-4 flex justify-between items-start h-full">
-                  <p className="text-sm sm:text-base font-semibold w-2/3">
-                    Latest in Retail & Shopping
-                  </p>
-                  <img
-                    src="/img/bag.png"
-                    alt="Retail"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain self-end"
-                  />
+              {/* Right Cards (Also Total Height = 482px) */}
+              <div
+                className="flex flex-col justify-between w-full"
+                style={{ height: '482px' }}
+              >
+                {/* Top Row: Two Cards side by side, each 50% height */}
+                <div className="flex gap-4 h-[48%]">
+                  {/* Top Left Card */}
+                  <div className="bg-orange-100 rounded-xl px-5 py-6 flex justify-between items-start w-1/2">
+                    <p className="text-sm font-semibold text-background-black w-2/3">
+                      Latest in Retail & Shopping
+                    </p>
+                    <div className="flex items-end h-full">
+                      <img
+                        src="/img/bag.png"
+                        alt="Retail"
+                        className="relative h-[200px]  object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Top Right Card */}
+                  <div className="bg-blue-100 rounded-xl px-5 py-6 flex justify-between items-start w-1/2">
+                    <p className="text-sm font-semibold text-background-black w-2/3">
+                      Recent Insights & Trends
+                    </p>
+                    <div className="flex items-end h-full">
+                      <img
+                        src="/img/watch.png"
+                        alt="Watch"
+                        className="relative h-[200px]  object-contain"
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                {/* Top Right Card */}
-                <div className="bg-blue-100 rounded-xl p-3 sm:p-4 flex justify-between items-start h-full">
-                  <p className="text-sm sm:text-base font-semibold w-2/3">
-                    Recent Insights & Trends
-                  </p>
-                  <img
-                    src="/img/watch.png"
-                    alt="Watch"
-                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain self-end"
-                  />
-                </div>
-
-                {/* Bottom Full-Width Card */}
-                <div className="bg-yellow-100 rounded-xl p-3 sm:p-4 flex justify-between items-start col-span-2 h-full">
-                  <div>
-                    <p className="text-sm sm:text-base font-semibold">
+                {/* Bottom Card (Remaining 50% height) */}
+                <div
+                  className="rounded-xl px-5 py-6 flex justify-between items-start"
+                  style={{
+                    height: '48%',
+                    backgroundColor: '#FFE58F',
+                  }}
+                >
+                  <div className="max-w-[60%]">
+                    <p className="text-lg font-semibold text-background-black leading-snug mb-2">
                       Top Ethical & Sustainable Fashion Brands to Watch
                     </p>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="text-sm text-gray-700">
                       Is designer clothing worth the investment, or can
                       budget-friendly brands...
                     </p>
                   </div>
-                  <img
-                    src="/img/bag2.png"
-                    alt="Sustainable"
-                    className="w-20 h-20 sm:w-24 sm:h-24 object-contain"
-                  />
+                  <div className="flex items-end h-full">
+                    <img
+                      src="/img/bag2.png"
+                      alt="Sustainable"
+                      className="relative h-[200px]  object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -384,6 +397,7 @@ const Home = () => {
             </div>
           </div>
         </section>
+
         <Subscribe />
       </main>
     </div>
