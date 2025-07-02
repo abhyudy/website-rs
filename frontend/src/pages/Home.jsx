@@ -397,7 +397,6 @@ const Home = () => {
             </div>
           </div>
         </section>
-
         <Subscribe />
       </main>
     </div>
