@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/img/logo1.png' // Make sure this path is correct
 
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
 
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen)
-    
+
     if (!isSearchOpen && isNavOpen) {
       setIsNavOpen(false)
     }
@@ -31,30 +32,30 @@ const Header = () => {
 
         {/* Navigation Links - Hidden on small screens, shown on medium and up */}
         <nav className="hidden md:flex space-x-12">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-gray-700 hover:text-pink-500 font-semibold"
           >
             Home
-          </a>
-          <a
-            href="/about"
+          </Link>
+          <Link
+            to="/about"
             className="text-gray-700 hover:text-pink-500 font-semibold"
           >
             About Us
-          </a>
-          <a
-            href="/trends"
+          </Link>
+          <Link
+            to="/trends"
             className="text-gray-700 hover:text-pink-500 font-semibold"
           >
             Trends
-          </a>
-          <a
-            href="/contact"
+          </Link>
+          <Link
+            to="/contact"
             className="text-gray-700 hover:text-pink-500 font-semibold"
           >
             Contact Us
-          </a>
+          </Link>
         </nav>
 
         {/* Search Icon and Mobile Menu Toggle */}

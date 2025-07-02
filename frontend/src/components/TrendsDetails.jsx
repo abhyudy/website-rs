@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { FaFacebookF, FaPinterestP, FaXTwitter } from 'react-icons/fa6'
+import Faq from './FaqSection'
+import FaqSection from './FaqSection'
 
 const TrendsDetail = () => {
   const tableOfContent = [
@@ -181,12 +183,15 @@ const TrendsDetail = () => {
             </p>
           </section>
 
+          {/* FAQ  */}
+          <FaqSection />
+
           {/* Navigation Buttons */}
           <div className="flex justify-between mb-10">
-            <button className="bg-background-black text-white px-4 py-2 rounded hover:bg-pink-600">
+            <button className="bg-background-black text-white px-4 py-2 rounded hover:[background-color:#E37561] cursor-pointer">
               Previous
             </button>
-            <button className="bg-background-black text-white px-4 py-2 rounded hover:bg-pink-600">
+            <button className="bg-background-black text-white px-4 py-2 rounded hover:[background-color:#E37561] cursor-pointer">
               Next
             </button>
           </div>
