@@ -23,8 +23,9 @@
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
+  
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .slide img {
@@ -37,9 +38,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: auto;
   height: 100%;
-  background: linear-gradient(to right, #fff 0%, transparent 50%, #fff 100%);
+  /* background: linear-gradient(to right, #fff 0%, transparent 50%, #fff 100%); */
   pointer-events: none;
   z-index: 5;
 }

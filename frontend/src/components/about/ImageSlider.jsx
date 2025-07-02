@@ -4,11 +4,27 @@ import "./ImageSlider.css";
 
 // You can place any image in any order here (not sequential!)
 const photoData = [
-  "/img/11.jpg", "/img/12.jpg", "/img/13.jpg", "/img/14.jpg", "/img/15.jpg",
-  "/img/16.jpg", "/img/17.jpg", "/img/19.jpg", "/img/20.jpg",
-  "/img/21.jpg", "/img/22.jpg", "/img/23.jpg", "/img/24.jpg", "/img/25.jpg",
-  "/img/26.jpg", "/img/27.jpg", "/img/28.jpg", "/img/29.jpg", "/img/30.jpg",
-  "/img/31.jpg", "/img/32.jpg",
+  "/img/11.jpg",
+  "/img/12.jpg",
+  "/img/13.jpg",
+  "/img/14.jpg",
+  "/img/15.jpg",
+  "/img/16.jpg",
+  "/img/17.jpg",
+  "/img/19.jpg",
+  "/img/20.jpg",
+  "/img/21.jpg",
+  "/img/22.jpg",
+  "/img/23.jpg",
+  "/img/24.jpg",
+  "/img/25.jpg",
+  "/img/26.jpg",
+  "/img/27.jpg",
+  "/img/28.jpg",
+  "/img/29.jpg",
+  "/img/30.jpg",
+  "/img/31.jpg",
+  "/img/32.jpg",
 ];
 
 const categories = [
@@ -21,6 +37,7 @@ const categories = [
 
 const lerp = (start, end, t) => start + t * (end - start);
 const getScale = (distance, total) => Math.pow(1 - distance / total, 2);
+
 const getLeft = (i, current, width, wrapperWidth, total) => {
   const diff = i - current;
   const slideDistance = diff * width * 0.5;
@@ -36,35 +53,51 @@ export default function ImageSlider() {
   const [slideWidth, setSlideWidth] = useState(300);
   const [wrapperWidth, setWrapperWidth] = useState(800);
   const totalSlides = photoData.length;
+  const [isHovered, setIsHovered] = useState(false);
 
-  const neighbors = 4; // how many slides to show on either side
+  const neighbors = 4;
 
-const moveSlide = (target) => {
-  const len = photoData.length;
-  const center = ((target % len) + len) % len;
+  const moveSlide = (target) => {
+    slidesRef.current.forEach((slide) => {
+      const virtualIndex = parseInt(slide.dataset.virtualIndex);
+      const dist = virtualIndex - target;
+      const absDist = Math.abs(dist);
 
-  slidesRef.current.forEach((slide, i) => {
-    const distCW = (i - center + len) % len;
-    const distCCW = (center - i + len) % len;
-    const dist = Math.min(distCW, distCCW);
+      if (absDist > neighbors) {
+        slide.style.opacity = "0";
+        return;
+      }
 
-    const signedOffset = distCW <= distCCW ? distCW : -distCCW;
-    
+      slide.style.opacity = "1";
 
-    const left = getLeft(i, center, slideWidth, wrapperWidth);
-    const scale = getScale(dist, neighbors + 1);
+      const left = getLeft(virtualIndex, target, slideWidth, wrapperWidth);
+      const scale = getScale(absDist, neighbors + 1);
 
-    slide.style.transform = `scale(${scale})`;
-    slide.style.left = `${left}px`;
-    slide.style.zIndex = neighbors + 1 - dist;
-  });
+      slide.style.transform = `scale(${scale})`;
+      slide.style.left = `${left}px`;
+      slide.style.zIndex = neighbors + 1 - absDist;
+    });
 
-  setCurrentSlide(center);
-};
+    setCurrentSlide(target);
+  };
 
+  const next = () => {
+    if (currentSlide > 400) {
+      setCurrentSlide(0);
+      moveSlide(0);
+    } else {
+      moveSlide(currentSlide + 1);
+    }
+  };
 
-  const next = () => moveSlide(currentSlide + 1);
-  const prev = () => moveSlide(currentSlide - 1);
+  const prev = () => {
+    if (currentSlide < -400) {
+      setCurrentSlide(0);
+      moveSlide(0);
+    } else {
+      moveSlide(currentSlide - 1);
+    }
+  };
 
   useEffect(() => {
     const updateSize = () => {
@@ -81,8 +114,14 @@ const moveSlide = (target) => {
   }, [currentSlide]);
 
   useEffect(() => {
-    moveSlide(currentSlide);
-  }, []);
+    if (isHovered) return;
+
+    const interval = setInterval(() => {
+      next();
+    }, 3000); // Change time as needed
+
+    return () => clearInterval(interval);
+  }, [currentSlide, isHovered]);
 
   return (
     <div className="slider-container p-10">
@@ -142,18 +181,33 @@ const moveSlide = (target) => {
       </div>
 
       {/* Carousel */}
-      <div className="slide-wrapper" ref={wrapperRef}>
+      <div
+        className="slide-wrapper"
+        ref={wrapperRef}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <div className="overlay" />
-        {photoData.map((imgSrc, index) => (
-          <div
-            className="slide"
-            key={index}
-            ref={(el) => (slidesRef.current[index] = el)}
-            data-caption={`Image ${index + 1}`}
-          >
-            <img src={imgSrc} alt={`Image ${index + 1}`} loading="lazy" />
-          </div>
-        ))}
+        {[...Array(1000)].map((_, i) => {
+          const virtualIndex = i - 500; // Center around 0
+          const actualIndex =
+            ((virtualIndex % totalSlides) + totalSlides) % totalSlides;
+          return (
+            <div
+              className="slide"
+              key={i}
+              ref={(el) => (slidesRef.current[i] = el)}
+              data-virtual-index={virtualIndex}
+              data-caption={`Image ${actualIndex + 1}`}
+            >
+              <img
+                src={photoData[actualIndex]}
+                alt={`Image ${actualIndex + 1}`}
+                loading="lazy"
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

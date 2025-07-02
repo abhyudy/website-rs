@@ -2,9 +2,9 @@ import React from 'react'
 
 const Subscribe = () => {
   return (
-    <div className="bg-background-color">
+    <div className="bg-background-color py-8">
       <section
-        className="bg-background-light-gray border border-background-light-gray rounded-lg p-4 sm:p-6 shadow-sm flex flex-col items-center justify-center mx-auto my-8"
+        className="bg-background-light-gray border border-background-light-gray rounded-lg p-4 sm:p-6 shadow-sm flex flex-col items-center justify-center mx-auto"
         style={{ width: '1132px', height: '268px' }}
       >
         <h1 className="text-background-black mb-3 sm:mb-4 text-center text-4xl sm:text-5xl custom-times font-semibold">
