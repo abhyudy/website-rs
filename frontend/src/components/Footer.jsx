@@ -1,20 +1,21 @@
-import React from 'react'
-import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa'
+import React from "react";
+import { FaInstagram, FaFacebookF, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-background-color">
+    <div className="container mx-auto bg-background-black">
       <div className="relative bg-background-black text-white">
-        <div className="w-full overflow-hidden leading-none">
+        <div className="relative">
+          <div className="absolute top-0 left-0 w-full h-[99px] bg-background-color z-0" />
+
           <svg
             viewBox="0 0 1440 100"
-            className="w-full h-[100px]"
+            className="w-full h-[100px] relative z-10 rotate-180"
             preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M0,100 C480,0 960,0 1440,100 L1440,0 L0,0 Z"
-              fill="#FFF3F3"
+              d="M0,100 C360,0 1080,0 1440,100 L1440,0 L0,0 Z"
+              fill="black"
             />
           </svg>
         </div>
@@ -37,7 +38,7 @@ const Footer = () => {
             <div className="w-1/2 md:w-auto mb-4 md:mb-0">
               <h5 className="font-semibold mb-3 text-base sm:text-lg">
                 Quick Links
-              </h5>{' '}
+              </h5>{" "}
               <ul className="text-sm sm:text-base space-y-2 text-gray-300">
                 <li>
                   <a href="/" className="hover:text-gray-100 transition-colors">
@@ -119,7 +120,7 @@ const Footer = () => {
         </footer>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

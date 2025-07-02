@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const AboutBox = () => {
   return (
@@ -17,7 +17,7 @@ const AboutBox = () => {
         <div className="aspect-square bg-white p-10 flex flex-col justify-between text-center rounded-4xl">
           <div className="flex items-start flex-col text-semibold">
             <h2 className="text-5xl font-semibold text-gray-800">
-              Why We Are{' '}
+              Why We Are{" "}
             </h2>
             <h2 className="text-5xl  font-semibold text-gray-800">the Best?</h2>
           </div>
@@ -57,7 +57,7 @@ const AboutBox = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AboutBox
+export default AboutBox;
