@@ -1,9 +1,9 @@
-import React from "react";
-import { FaInstagram, FaFacebookF, FaTwitter } from "react-icons/fa";
+import React from 'react'
+import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <div className="container mx-auto bg-background-black">
+    <div className="w-full mx-auto bg-background-black">
       <div className="relative bg-background-black text-white">
         <div className="relative">
           <div className="absolute top-0 left-0 w-full h-[99px] bg-background-color z-0" />
@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Content */}
-        <footer className="pt-20 pb-10 px-4 sm:px-6 md:px-10 lg:px-16 relative z-10">
+        <footer className="container mx-auto pt-20 pb-10 px-4 sm:px-6 md:px-10 lg:px-16 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-10 lg:gap-16 flex-wrap">
             {/* Logo & Description */}
             <div className="w-full md:w-auto md:max-w-xs mb-8 md:mb-0">
@@ -38,7 +38,7 @@ const Footer = () => {
             <div className="w-1/2 md:w-auto mb-4 md:mb-0">
               <h5 className="font-semibold mb-3 text-base sm:text-lg">
                 Quick Links
-              </h5>{" "}
+              </h5>{' '}
               <ul className="text-sm sm:text-base space-y-2 text-gray-300">
                 <li>
                   <a href="/" className="hover:text-gray-100 transition-colors">
@@ -120,7 +120,7 @@ const Footer = () => {
         </footer>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

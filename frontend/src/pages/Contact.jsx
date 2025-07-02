@@ -15,7 +15,7 @@ const Contact = () => {
       </div>
 
       {/* Main Contact Box */}
-      <div className="flex justify-center -mt-[10%] z-10 relative mb-10">
+      <div className="flex justify-center -mt-[10%] z-10 relative pb-10">
         <div className="flex w-[979px] h-[650px] bg-white rounded-xl shadow-lg overflow-hidden relative">
           {/* Left: Contact Form */}
           <div className="w-[460px] p-10 mt-10">
