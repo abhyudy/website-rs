@@ -41,15 +41,15 @@ const FaqSection = () => {
     <div>
       <section className="py-2">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="pb-2 ">
-            <h6 className="text-3xl font-bold text-left ">FAQs</h6>
+          <div className="pb-2">
+            <h6 className="text-3xl font-bold text-left">FAQs</h6>
           </div>
 
-          <div className="accordion-group ">
+          <div className="accordion-group">
             {faqs.map((faq) => (
               <div
                 key={faq.id}
-                className={`accordion py-8 px-6 border-b border-solid border-gray-200 transition-all duration-500 rounded-2xl hover:[background-color:#FEC5C5B2] ${
+                className={`accordion py-4 px-6 border-b border-solid border-gray-200 transition-all duration-500 rounded-2xl hover:[background-color:#FEC5C5B2] ${
                   openAccordion === faq.id ? '[background-color:#FEC5C5B2]' : ''
                 }`}
                 id={faq.id}
@@ -62,9 +62,10 @@ const FaqSection = () => {
                   }`}
                   style={{ color: '#E37561' }}
                   aria-controls={`${faq.id}-content`}
+                  aria-expanded={openAccordion === faq.id}
                   onClick={() => toggleAccordion(faq.id)}
                 >
-                  <h5>{faq.question}</h5>
+                  <h5 className="text-base sm:text-lg">{faq.question}</h5>
                   <svg
                     className={`transition duration-500 group-hover:[color:#E37561] ${
                       openAccordion === faq.id
@@ -78,13 +79,22 @@ const FaqSection = () => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
+                    <circle
+                      cx="11"
+                      cy="11"
+                      r="10"
+                      fill="white"
+                      stroke="white"
+                      strokeWidth="1"
+                    />
                     <path
-                      d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25"
-                      stroke="currentColor"
+                      d="M6 9L11 14L16 9Z"
+                      fill="#E37561"
+                      stroke="#E37561"
                       strokeWidth="1.6"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                    ></path>
+                    />
                   </svg>
                 </button>
                 <div
