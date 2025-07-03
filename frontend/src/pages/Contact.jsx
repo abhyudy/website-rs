@@ -86,15 +86,15 @@ const Contact = () => {
             <div className="space-y-6 text-sm">
               <div className="flex items-center gap-3">
                 <FiMapPin className="text-white" />
-                <span>123 Shopping Street, Retail City, RC 56789</span>
+                <span>B-148, Kankarbagh Main Road, Patna, Bihar-800020</span>
               </div>
               <div className="flex items-center gap-3">
                 <FiMail className="text-white" />
-                <span>support@yourblog.com</span>
+                <span>info@retailtypes.com </span>
               </div>
               <div className="flex items-center gap-3">
                 <FiPhone className="text-white" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 9430622181</span>
               </div>
               <div className="flex items-center gap-3">
                 <FiClock className="text-white" />
