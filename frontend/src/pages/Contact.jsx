@@ -15,10 +15,10 @@ const Contact = () => {
       </div>
 
       {/* Main Contact Box */}
-      <div className="flex justify-center -mt-[10%] z-10 relative mb-10">
-        <div className="flex w-[979px] h-[650px] bg-white rounded-xl shadow-lg overflow-hidden relative">
+      <div className="flex justify-center mt-[-50px] sm:mt-[-70px] lg:mt-[-10%] z-10 relative pb-10">
+        <div className="flex flex-col lg:flex-row w-full max-w-[979px] bg-white rounded-xl shadow-lg overflow-hidden relative">
           {/* Left: Contact Form */}
-          <div className="w-[460px] p-10 mt-10">
+          <div className="w-full lg:w-[460px] p-6 sm:p-10">
             <h2 className="text-3xl font-bold mb-2">Get in Touch</h2>
             <p className="text-sm text-gray-700 mb-6 max-w-md">
               Have a query or suggestion? Fill out the form below, and we’ll get
@@ -77,24 +77,24 @@ const Contact = () => {
           </div>
 
           {/* Right: Info Section */}
-          <div className="relative bg-black text-white w-[480px] h-[320px] mt-30 mr-10 z-10 rounded-xl p-8 ml-auto">
+          <div className="relative bg-black text-white w-full lg:w-[480px] h-auto lg:h-[320px] mt-6 lg:mt-10 lg:mr-10 z-10 rounded-xl p-6 sm:p-8">
             {/* Sticky Note Effect */}
-            <div className="absolute -top-2 -left-2 w-6 h-6 bg-[#FFFCA7]  z-20" />
+            <div className="absolute -top-2 -left-2 w-6 h-6 bg-[#FFFCA7] z-20" />
 
             <h2 className="text-xl font-semibold mb-6">Info</h2>
 
             <div className="space-y-6 text-sm">
               <div className="flex items-center gap-3">
                 <FiMapPin className="text-white" />
-                <span>123 Shopping Street, Retail City, RC 56789</span>
+                <span>B-148, Kankarbagh Main Road, Patna, Bihar-800020</span>
               </div>
               <div className="flex items-center gap-3">
                 <FiMail className="text-white" />
-                <span>support@yourblog.com</span>
+                <span>info@retailtypes.com </span>
               </div>
               <div className="flex items-center gap-3">
                 <FiPhone className="text-white" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 9430622181</span>
               </div>
               <div className="flex items-center gap-3">
                 <FiClock className="text-white" />
@@ -102,8 +102,9 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        {/* Pink Background Strip on Right Edge */}
-        <div className="absolute top-0 right-0 h-full w-24 bg-[#FEC5C5] z-5 rounded-r-xl" />
+
+          {/* Pink Background Strip on Right Edge (visible only on desktop) */}
+          <div className="hidden lg:block absolute top-0 right-0 h-full w-24 bg-[#FEC5C5] z-0 rounded-r-xl" />
         </div>
       </div>
     </div>

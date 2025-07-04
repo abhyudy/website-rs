@@ -1,10 +1,11 @@
-import React from "react";
-import { FaInstagram, FaFacebookF, FaTwitter } from "react-icons/fa";
+import React from 'react'
+import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
     <div className="w-full mx-auto bg-background-black">
       <div className="relative bg-background-black text-white">
+        {/* Upward curve */}
         <div className="relative">
           <div className="absolute top-0 left-0 w-full h-[99px] bg-background-color z-0" />
 
@@ -22,23 +23,23 @@ const Footer = () => {
 
         {/* Footer Content */}
         <footer className="container mx-auto pt-20 pb-10 px-4 sm:px-6 md:px-10 lg:px-16 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-10 lg:gap-16 flex-wrap">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-8 md:gap-10 lg:gap-16 flex-wrap">
             {/* Logo & Description */}
-            <div className="w-full md:w-auto md:max-w-xs mb-8 md:mb-0">
+            <div className="w-full md:w-auto md:max-w-xs">
               <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">
                 R&S
               </h2>
-              {/* Responsive font size */}
               <p className="text-sm sm:text-base text-gray-300">
                 Your go-to source for shopping trends, exclusive deals, and
                 expert tips. Stay ahead in the retail world!
               </p>
             </div>
+
             {/* Quick Links */}
-            <div className="w-1/2 md:w-auto mb-4 md:mb-0">
+            <div className="w-full sm:w-1/2 md:w-auto">
               <h5 className="font-semibold mb-3 text-base sm:text-lg">
                 Quick Links
-              </h5>{" "}
+              </h5>
               <ul className="text-sm sm:text-base space-y-2 text-gray-300">
                 <li>
                   <a href="/" className="hover:text-gray-100 transition-colors">
@@ -71,8 +72,9 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+
             {/* Contact Info */}
-            <div className="w-1/2 md:w-auto mb-4 md:mb-0">
+            <div className="w-full sm:w-1/2 md:w-auto">
               <h5 className="font-semibold mb-3 text-base sm:text-lg">
                 Contact Us
               </h5>
@@ -82,12 +84,13 @@ const Footer = () => {
                 <li>📧 support@yourblog.com</li>
               </ul>
             </div>
+
             {/* Social Icons */}
             <div className="w-full md:w-auto">
               <h5 className="font-semibold mb-3 text-base sm:text-lg">
                 Follow Us
               </h5>
-              <div className="flex space-x-4 text-xl sm:text-2xl text-white">
+              <div className="flex justify-center md:justify-start space-x-4 text-xl sm:text-2xl text-white">
                 <a
                   href="#"
                   aria-label="Instagram"
@@ -120,7 +123,7 @@ const Footer = () => {
         </footer>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -1,75 +1,89 @@
-import React, { useState } from 'react'
-import logo from '../assets/img/logo1.png' // Make sure this path is correct
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import logoSmall from '../assets/img/logo1.png'; // Small screen logo
+import logoLarge from '../assets/img/logo2.png'; // Large screen logo
 
 const Header = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const [isNavOpen, setIsNavOpen] = useState(false) // New state for mobile navigation
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen)
-    
+    setIsSearchOpen(!isSearchOpen);
     if (!isSearchOpen && isNavOpen) {
-      setIsNavOpen(false)
+      setIsNavOpen(false);
     }
-  }
+  };
 
   const toggleNav = () => {
-    setIsNavOpen(!isNavOpen)
-    // Optional: Close search if mobile nav is opened
+    setIsNavOpen(!isNavOpen);
     if (!isNavOpen && isSearchOpen) {
-      setIsSearchOpen(false)
+      setIsSearchOpen(false);
     }
-  }
+  };
 
   return (
     <>
-      <header className="bg-background-color py-4 px-4 sm:px-6 lg:px-16 flex items-center justify-between relative">
+      <header className="bg-background-color py-3 px-4 sm:px-6 lg:px-16 flex items-center justify-between relative">
         {/* Logo Section */}
         <div className="flex items-center">
-          <img className="h-10" src={logo} alt="R&S" />
+          {/* Small Screen Logo */}
+          <img
+            className="h-6 md:hidden object-contain"
+            src={logoSmall}
+            alt="R&S Small Logo"
+          />
+          {/* Large Screen Logo */}
+          <img
+            className="hidden md:block h-10 object-contain"
+            src={logoLarge}
+            alt="R&S Large Logo"
+          />
         </div>
 
         {/* Navigation Links - Hidden on small screens, shown on medium and up */}
         <nav className="hidden md:flex space-x-12">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-gray-700 hover:text-pink-500 font-semibold"
           >
             Home
-          </a>
-          <a
-            href="/about"
+          </Link>
+          <Link
+            to="/about"
             className="text-gray-700 hover:text-pink-500 font-semibold"
           >
             About Us
-          </a>
-          <a
-            href="/trends"
+          </Link>
+          <Link
+            to="/trends"
             className="text-gray-700 hover:text-pink-500 font-semibold"
           >
             Trends
-          </a>
-          <a
-            href="/contact"
+          </Link>
+          <Link
+            to="/contact"
             className="text-gray-700 hover:text-pink-500 font-semibold"
           >
             Contact Us
-          </a>
+          </Link>
         </nav>
 
-        {/* Search Icon and Mobile Menu Toggle */}
-        <div className="flex items-center space-x-4">
-          {/* Search Input - Visibility controlled by 'style' attribute */}
+        {/* Search Icon and Hamburger Menu */}
+        <div className="flex items-center space-x-3">
+          {/* Search Input - Inline for large screens, hidden when closed */}
           <input
-            style={{ visibility: isSearchOpen ? 'visible' : 'hidden' }}
             type="text"
             placeholder="Search for..."
-            className="mr-2 px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+            className={`hidden md:block px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-gray-700 w-32 lg:w-48 mr-2 ${
+              isSearchOpen ? 'block' : 'hidden'
+            }`}
+            aria-label="Search for content"
           />
 
-          <div onClick={toggleSearch} className="cursor-pointer">
+          {/* Search Icon - Visible on all screens */}
+          <div onClick={toggleSearch} className="cursor-pointer" aria-label="Toggle search">
             <svg
-              className="w-6 h-6 text-gray-700"
+              className="w-5 h-5 md:w-6 md:h-6 text-gray-700"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -84,17 +98,20 @@ const Header = () => {
             </svg>
           </div>
 
-          {/* Hamburger Icon - Visible on small screens, hidden on medium and up */}
-          <div onClick={toggleNav} className="md:hidden cursor-pointer">
+          {/* Hamburger Icon - Visible on small screens only */}
+          <div
+            onClick={toggleNav}
+            className="md:hidden cursor-pointer"
+            aria-label={isNavOpen ? 'Close menu' : 'Open literaturesOpen menu'}
+          >
             <svg
-              className="w-6 h-6 text-gray-700"
+              className="w-5 h-5 text-gray-700"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
               {isNavOpen ? (
-                // Close icon (X)
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -102,7 +119,6 @@ const Header = () => {
                   d="M6 18L18 6M6 6l12 12"
                 ></path>
               ) : (
-                // Hamburger icon
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -115,44 +131,83 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Navigation Menu - Appears when isNavOpen is true */}
+      {/* Small Screen: Full-Screen Search Overlay */}
+      {isSearchOpen && (
+        <div className="md:hidden fixed inset-0 bg-background-color flex flex-col items-center justify-center z-50 p-4">
+          <div className="w-full max-w-md">
+            <div className="flex items-center border rounded-md bg-white border-gray-300 px-3 py-2">
+              <input
+                type="text"
+                placeholder="Search for..."
+                className="w-full bg-transparent outline-none text-gray-700"
+                aria-label="Search for content"
+                autoFocus
+              />
+              <svg
+                className="w-5 h-5 text-gray-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <button
+            onClick={toggleSearch}
+            className="mt-4 text-pink-500 hover:text-pink-600 font-semibold"
+            aria-label="Close search"
+          >
+            Close
+          </button>
+        </div>
+      )}
+
+      {/* Mobile Navigation Menu - Small screens only */}
       {isNavOpen && (
         <div className="md:hidden bg-background-color py-4 px-4 sm:px-6">
           <nav className="flex flex-col space-y-4">
-            <a
-              href="/"
-              className="block text-gray-700 hover:text-pink-500 font-semibold text-lg"
-              onClick={() => setIsNavOpen(false)} // Close menu on click
+            <Link
+              to="/"
+              className="block text-gray-700 hover:text-pink-500 font-semibold text-base"
+              onClick={() => setIsNavOpen(false)}
             >
               Home
-            </a>
-            <a
-              href="/about"
-              className="block text-gray-700 hover:text-pink-500 font-semibold text-lg"
+            </Link>
+            <Link
+              to="/about"
+              className="block text-gray-700 hover:text-pink-500 font-semibold text-base"
               onClick={() => setIsNavOpen(false)}
             >
               About Us
-            </a>
-            <a
-              href="/trends"
-              className="block text-gray-700 hover:text-pink-500 font-semibold text-lg"
+            </Link>
+            <Link
+              to="/trends"
+              className="block text-gray-700 hover:text-pink-500 font-semibold text-base"
               onClick={() => setIsNavOpen(false)}
             >
               Trends
-            </a>
-            <a
-              href="/contact"
-              className="block text-gray-700 hover:text-pink-500 font-semibold text-lg"
+            </Link>
+            <Link
+              to="/contact"
+              className="block text-gray-700 hover:text-pink-500 font-semibold text-base"
               onClick={() => setIsNavOpen(false)}
             >
               Contact Us
-            </a>
+            </Link>
           </nav>
         </div>
       )}
+
       <hr className="h-px border-0 bg-gradient-to-r from-gray-200 via-gray-600 to-gray-200" />
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
