@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaChevronDown } from "react-icons/fa";
 import "./ImageSlider.css";
+import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 
 // You can place any image in any order here (not sequential!)
 const photoData = [
@@ -37,8 +38,7 @@ const categories = [
 
 const lerp = (start, end, t) => start + t * (end - start);
 const getScale = (distance, total) => Math.pow(1 - distance / total, 2);
-
-const getLeft = (i, current, width, wrapperWidth, total) => {
+const getLeft = (i, current, width, wrapperWidth) => {
   const diff = i - current;
   const slideDistance = diff * width * 0.5;
   const centerOffset = (wrapperWidth - width) / 2;
@@ -54,8 +54,8 @@ export default function ImageSlider() {
   const [wrapperWidth, setWrapperWidth] = useState(800);
   const totalSlides = photoData.length;
   const [isHovered, setIsHovered] = useState(false);
-
   const neighbors = 4;
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const moveSlide = (target) => {
     slidesRef.current.forEach((slide) => {
@@ -115,21 +115,53 @@ export default function ImageSlider() {
 
   useEffect(() => {
     if (isHovered) return;
-
-    const interval = setInterval(() => {
-      next();
-    }, 3000); // Change time as needed
-
+    const interval = setInterval(() => next(), 3000);
     return () => clearInterval(interval);
   }, [currentSlide, isHovered]);
 
   return (
-    <div className="slider-container p-10">
+    <div className="slider-container px-4 sm:px-6 md:px-10 py-10">
       {/* Intro */}
-      <div className=" py-5">
-        <h3 className="text-6xl custom-times font-semibold text-gray-800">
-          What We Cover
-        </h3>
+      <div className="py-5">
+        <div className="relative flex items-center justify-between mt-2">
+          <h3 className="text-3xl md:text-6xl custom-times font-semibold text-gray-800">
+            What We Cover
+          </h3>
+
+          {/* Hamburger Icon - Only on Mobile */}
+          <div className="md:hidden relative">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2 border rounded-md text-gray-700 bg-white shadow-sm hover:bg-gray-100"
+            >
+              <HiOutlineAdjustmentsHorizontal className="text-2xl" />
+            </button>
+
+            {/* Mobile Dropdown Menu */}
+            {menuOpen && (
+              <div className="absolute right-0 top-full mt-2 w-52 bg-white border border-gray-200 rounded-md shadow-lg z-50 flex flex-col">
+                {categories.map((category, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setActiveCategory(index);
+                      setMenuOpen(false);
+                    }}
+                    className={`flex justify-between items-center px-4 py-2 text-left text-sm border-b last:border-b-0 ${
+                      activeCategory === index
+                        ? "bg-gray-100 text-black"
+                        : "hover:bg-gray-100 text-black"
+                    }`}
+                  >
+                    {category}
+                    <FaChevronDown className="text-xs text-pink-300" />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
         <p className="text-black mt-4 max-w-3xl">
           We explore a wide range of shopping categories, from fashion and tech
           to beauty and home essentials. Stay ahead with the latest trends,
@@ -137,21 +169,21 @@ export default function ImageSlider() {
           for you.
         </p>
 
-        {/* Category Buttons */}
-        <div className="flex flex-wrap gap-4 mt-4">
+        {/* Category Buttons - Desktop */}
+        <div className="hidden md:flex flex-wrap gap-3 sm:gap-4 mt-4">
           {categories.map((category, index) => (
             <button
               key={index}
               onClick={() => setActiveCategory(index)}
-              className={`flex items-center gap-1 px-5 py-2 rounded-full border transition-all duration-300 ${
+              className={`flex items-center gap-1 px-4 py-2 rounded-full border transition-all duration-300 text-sm sm:text-base ${
                 activeCategory === index
                   ? "bg-gray-100 text-black border-gray-800"
                   : "bg-white text-black border-gray-400 hover:bg-gray-100"
               }`}
             >
               {category}
-              <span className="p-2 rounded-full text-pink-300 bg-gray-100 hover:bg-white">
-                <FaChevronDown className="text-md" />
+              <span className="p-1 rounded-full text-pink-300 bg-gray-100 hover:bg-white">
+                <FaChevronDown className="text-xs" />
               </span>
             </button>
           ))}
@@ -159,37 +191,37 @@ export default function ImageSlider() {
       </div>
 
       {/* Top Bar */}
-      <div className="flex justify-between items-center pt-10">
-        <h2 className="text-5xl font-bold text-gray-800">Blog</h2>
-        <div className="flex items-center space-x-6">
-          <span className="text-3xl text-black font-medium">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-10 gap-4 md:gap-0">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-800">Blog</h2>
+        <div className="flex items-center space-x-3 sm:space-x-6">
+          <span className="text-lg sm:text-2xl text-black font-medium">
             See All ({photoData.length})
           </span>
           <button
             onClick={prev}
-            className="p-3 text-gray-400 hover:text-pink-300 rounded-full bg-gray-100 border border-gray-400 hover:border-pink-200"
+            className="p-2 sm:p-3 text-gray-400 hover:text-pink-300 rounded-full bg-gray-100 border border-gray-400 hover:border-pink-200"
           >
-            <FaArrowLeft className="text-md" />
+            <FaArrowLeft className="text-sm sm:text-md" />
           </button>
           <button
             onClick={next}
-            className="p-3 text-gray-400 hover:text-pink-300 rounded-full bg-gray-100 border border-gray-400 hover:border-pink-200"
+            className="p-2 sm:p-3 text-gray-400 hover:text-pink-300 rounded-full bg-gray-100 border border-gray-400 hover:border-pink-200"
           >
-            <FaArrowRight className="text-md" />
+            <FaArrowRight className="text-sm sm:text-md" />
           </button>
         </div>
       </div>
 
       {/* Carousel */}
       <div
-        className="slide-wrapper"
+        className="slide-wrapper mt-10 sm:mt-16"
         ref={wrapperRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="overlay" />
         {[...Array(1000)].map((_, i) => {
-          const virtualIndex = i - 500; // Center around 0
+          const virtualIndex = i - 500;
           const actualIndex =
             ((virtualIndex % totalSlides) + totalSlides) % totalSlides;
           return (
