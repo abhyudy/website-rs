@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from '../assets/img/footerlog.png'
 import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
@@ -26,9 +27,12 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-8 md:gap-10 lg:gap-16 flex-wrap">
             {/* Logo & Description */}
             <div className="w-full md:w-auto md:max-w-xs">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">
-                R&S
-              </h2>
+              <img
+                src={logo}
+                alt="R&S"
+                className="w-full h-auto max-w-[137px] md:max-w-[200px] object-contain"
+                style={{ maxHeight: '75px' }}
+              />
               <p className="text-sm sm:text-base text-gray-300">
                 Your go-to source for shopping trends, exclusive deals, and
                 expert tips. Stay ahead in the retail world!

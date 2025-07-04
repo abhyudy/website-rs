@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import logoSmall from '../assets/img/logo1.png'; // Small screen logo
-import logoLarge from '../assets/img/logo2.png'; // Large screen logo
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import logoSmall from '../assets/img/RS.png' // Small screen logo
+import logoLarge from '../assets/img/RS.png' // Large screen logo
 
 const Header = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isNavOpen, setIsNavOpen] = useState(false)
 
   const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
+    setIsSearchOpen(!isSearchOpen)
     if (!isSearchOpen && isNavOpen) {
-      setIsNavOpen(false);
+      setIsNavOpen(false)
     }
-  };
+  }
 
   const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
+    setIsNavOpen(!isNavOpen)
     if (!isNavOpen && isSearchOpen) {
-      setIsSearchOpen(false);
+      setIsSearchOpen(false)
     }
-  };
+  }
 
   return (
     <>
@@ -81,7 +81,11 @@ const Header = () => {
           />
 
           {/* Search Icon - Visible on all screens */}
-          <div onClick={toggleSearch} className="cursor-pointer" aria-label="Toggle search">
+          <div
+            onClick={toggleSearch}
+            className="cursor-pointer"
+            aria-label="Toggle search"
+          >
             <svg
               className="w-5 h-5 md:w-6 md:h-6 text-gray-700"
               fill="none"
@@ -102,7 +106,7 @@ const Header = () => {
           <div
             onClick={toggleNav}
             className="md:hidden cursor-pointer"
-            aria-label={isNavOpen ? 'Close menu' : 'Open literaturesOpen menu'}
+            aria-label={isNavOpen ? 'Close menu' : 'Open menu'}
           >
             <svg
               className="w-5 h-5 text-gray-700"
@@ -131,41 +135,33 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Small Screen: Full-Screen Search Overlay */}
+      {/* Small Screen: Search Bar Below Header */}
       {isSearchOpen && (
-        <div className="md:hidden fixed inset-0 bg-background-color flex flex-col items-center justify-center z-50 p-4">
-          <div className="w-full max-w-md">
-            <div className="flex items-center border rounded-md bg-white border-gray-300 px-3 py-2">
-              <input
-                type="text"
-                placeholder="Search for..."
-                className="w-full bg-transparent outline-none text-gray-700"
-                aria-label="Search for content"
-                autoFocus
-              />
-              <svg
-                className="w-5 h-5 text-gray-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
-                ></path>
-              </svg>
-            </div>
+        <div className="md:hidden bg-background-color px-4 py-2">
+          <div className="flex items-center border rounded-md bg-white border-gray-300 px-3 py-2">
+            <input
+              type="text"
+              placeholder="Search for..."
+              className="w-full bg-transparent outline-none text-gray-700"
+              aria-label="Search for content"
+              autoFocus
+            />
+            <svg
+              className="w-5 h-5 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
+              ></path>
+            </svg>
           </div>
-          <button
-            onClick={toggleSearch}
-            className="mt-4 text-pink-500 hover:text-pink-600 font-semibold"
-            aria-label="Close search"
-          >
-            Close
-          </button>
+         
         </div>
       )}
 
@@ -207,7 +203,7 @@ const Header = () => {
 
       <hr className="h-px border-0 bg-gradient-to-r from-gray-200 via-gray-600 to-gray-200" />
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
