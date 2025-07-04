@@ -24,7 +24,9 @@ const Footer = () => {
 
         {/* Footer Content */}
         <footer className="container mx-auto pt-20 pb-10 px-4 sm:px-6 md:px-10 lg:px-16 relative z-10">
+
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-8 md:gap-10 lg:gap-16 flex-wrap">
+
             {/* Logo & Description */}
             <div className="w-full md:w-auto md:max-w-xs">
               <img
