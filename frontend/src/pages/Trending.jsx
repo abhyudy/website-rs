@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FiSearch, FiFilter } from 'react-icons/fi'
 import TrendingCard from '../components/TrendingCard'
+import FilterBox from '../components/filter/FilterBox'
 
 const mockData = Array.from({ length: 30 }, (_, i) => ({
   id: i + 1,
@@ -41,8 +42,10 @@ const Trending = () => {
     <div className="bg-background-color">
       <div className="container mx-auto flex flex-col items-center justify-center py-10 md:py-12 px-4">
         {/* Gradient Heading Section */}
-        <div className="relative z-0 w-full max-w-6xl py-15 md:py-30 bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-black rounded-xl flex flex-col  items-center justify-start shadow-lg px-4 md:px-16">
-          <h1 className="text-4xl md:text-6xl text-center font-bold">Trending Post</h1>
+        <div className="relative z-0 w-full  py-15 md:py-30 bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-black rounded-xl flex flex-col  items-center justify-start shadow-lg px-4 md:px-16">
+          <h1 className="text-4xl md:text-6xl text-center font-bold">
+            Trending Post
+          </h1>
           <p className="text-base md:text-xl max-w-3xl mt-4 text-center">
             Unlock the latest trends, insider tips, and exclusive deals. We
             bring you expert insights, honest reviews, and the smartest shopping
@@ -51,26 +54,9 @@ const Trending = () => {
         </div>
 
         {/* Category & Search */}
-        <div className="flex flex-wrap gap-4 items-center justify-between py-8">
-          {/* Categories */}
-          <div className="flex flex-wrap gap-4 items-center">
-            {categories.map((cat, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full border text-sm transition-all ${
-                  selectedCategory === cat
-                    ? 'bg-background-black text-white border-background-black'
-                    : 'bg-white text-background-black border-gray-300 hover:bg-gray-100'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
+        <div className=" w-full flex flex-row md:flex-row-reverse gap-4 items-end justify-between py-8">
           {/* Search */}
-          <div className="flex items-center border rounded-full px-4 py-2 bg-white text-background-black border-gray-300 w-full sm:w-64">
+          <div className="flex items-center border rounded-full px-4 py-2 bg-white text-background-black border-gray-300 w-full sm:w-34">
             <input
               type="text"
               placeholder="Search by author..."
@@ -80,10 +66,11 @@ const Trending = () => {
             />
             <FiSearch className="text-gray-500 ml-2" />
           </div>
+          <FilterBox />
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 justify-items-center">
+        <div className=" w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 justify-items-center ">
           {paginatedData.map((item) => (
             <TrendingCard key={item.id} {...item} />
           ))}

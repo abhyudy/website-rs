@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaArrowLeft, FaArrowRight, FaChevronDown } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight,FaChevronDown   } from "react-icons/fa";
 import "./ImageSlider.css";
-import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
+import FilterBox from "../filter/FilterBox";
+
 
 // You can place any image in any order here (not sequential!)
 const photoData = [
@@ -47,7 +48,6 @@ const getLeft = (i, current, width, wrapperWidth) => {
 
 export default function ImageSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [activeCategory, setActiveCategory] = useState(null);
   const wrapperRef = useRef(null);
   const slidesRef = useRef([]);
   const [slideWidth, setSlideWidth] = useState(300);
@@ -55,7 +55,7 @@ export default function ImageSlider() {
   const totalSlides = photoData.length;
   const [isHovered, setIsHovered] = useState(false);
   const neighbors = 4;
-  const [menuOpen, setMenuOpen] = useState(false);
+  
 
   const moveSlide = (target) => {
     slidesRef.current.forEach((slide) => {
@@ -127,39 +127,6 @@ export default function ImageSlider() {
           <h3 className="text-3xl md:text-6xl custom-times font-semibold text-gray-800">
             What We Cover
           </h3>
-
-          {/* Hamburger Icon - Only on Mobile */}
-          <div className="md:hidden relative">
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 border rounded-md text-gray-700 bg-white shadow-sm hover:bg-gray-100"
-            >
-              <HiOutlineAdjustmentsHorizontal className="text-2xl" />
-            </button>
-
-            {/* Mobile Dropdown Menu */}
-            {menuOpen && (
-              <div className="absolute right-0 top-full mt-2 w-52 bg-white border border-gray-200 rounded-md shadow-lg z-50 flex flex-col">
-                {categories.map((category, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      setActiveCategory(index);
-                      setMenuOpen(false);
-                    }}
-                    className={`flex justify-between items-center px-4 py-2 text-left text-sm border-b last:border-b-0 ${
-                      activeCategory === index
-                        ? "bg-gray-100 text-black"
-                        : "hover:bg-gray-100 text-black"
-                    }`}
-                  >
-                    {category}
-                    <FaChevronDown className="text-xs text-pink-300" />
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
         </div>
 
         <p className="text-black mt-4 max-w-3xl">
@@ -170,24 +137,9 @@ export default function ImageSlider() {
         </p>
 
         {/* Category Buttons - Desktop */}
-        <div className="hidden md:flex flex-wrap gap-3 sm:gap-4 mt-4">
-          {categories.map((category, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveCategory(index)}
-              className={`flex items-center gap-1 px-4 py-2 rounded-full border transition-all duration-300 text-sm sm:text-base ${
-                activeCategory === index
-                  ? "bg-gray-100 text-black border-gray-800"
-                  : "bg-white text-black border-gray-400 hover:bg-gray-100"
-              }`}
-            >
-              {category}
-              <span className="p-1 rounded-full text-pink-300 bg-gray-100 hover:bg-white">
-                <FaChevronDown className="text-xs" />
-              </span>
-            </button>
-          ))}
-        </div>
+         {/* Hamburger Icon - Only on Mobile */}
+          <FilterBox/>
+       
       </div>
 
       {/* Top Bar */}

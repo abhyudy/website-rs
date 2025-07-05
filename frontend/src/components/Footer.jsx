@@ -4,11 +4,11 @@ import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <div className="w-full mx-auto bg-background-black">
+    <div className="w-full mx-auto bg-background-black ">
       <div className="relative bg-background-black text-white">
         {/* Upward curve */}
         <div className="relative">
-          <div className="absolute top-0 left-0 w-full h-[99px] bg-background-color z-0" />
+          <div className="absolute top-0 left-0 w-full h-[99px] bg-background-color z-0 " />
 
           <svg
             viewBox="0 0 1440 100"
@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Content */}
-        <footer className="container mx-auto pt-20 pb-10 px-4 sm:px-6 md:px-10 lg:px-16 relative z-10">
+        <footer className="container mx-auto pt-20 pb-10 px-4 relative z-10">
 
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-8 md:gap-10 lg:gap-16 flex-wrap">
 
@@ -32,7 +32,7 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="R&S"
-                className="w-full h-auto max-w-[137px] md:max-w-[200px] object-contain"
+                className="max-md:m-auto h-auto max-w-[137px] max-md:w-[200px] items-center object-contain"
                 style={{ maxHeight: '75px' }}
               />
               <p className="text-sm sm:text-base text-gray-300">

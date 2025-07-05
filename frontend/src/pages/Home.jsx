@@ -168,7 +168,7 @@ const Home = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className={`relative rounded-xl overflow-hidden shadow-lg h-[300px] sm:h-[346px] w-full transform transition duration-300 hover:brightness-110 hover:scale-105 cursor-pointer ${item.offset}`}
+                className={`relative rounded-xl overflow-hidden shadow-lg h-[300px] sm:h-[346px] w-full transform transition duration-300 ease-in-out hover:brightness-110 hover:scale-105 cursor-pointer ${item.offset}`}
               >
                 <img
                   src={item.img}

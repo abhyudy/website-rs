@@ -6,7 +6,7 @@ const Contact = () => {
     <div className="bg-background-color">
       <div className="container mx-auto flex flex-col items-center justify-center py-10 md:py-12 px-4">
         {/* Gradient Header */}
-        <div className="relative z-0 w-full max-w-6xl py-15 md:py-30 bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-black rounded-xl flex flex-col items-center justify-start shadow-lg px-4 md:px-16">
+        <div className="relative z-0 w-full  py-15 md:py-30 bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-black rounded-xl flex flex-col items-center justify-start shadow-lg px-4 md:px-16">
           <h1 className="text-4xl md:text-6xl font-bold text-center">
             Contact Us
           </h1>

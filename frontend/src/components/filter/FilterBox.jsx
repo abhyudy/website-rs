@@ -1,0 +1,73 @@
+import React, { useState } from 'react'
+import { FaChevronDown } from 'react-icons/fa'
+import { HiOutlineAdjustmentsHorizontal } from 'react-icons/hi2'
+const FilterBox = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [activeCategory, setActiveCategory] = useState(null)
+  
+
+  const categories = [
+    'Fashion & Apparel',
+    'Beauty & Skincare',
+    'Luxury & Designer',
+    'Sustainable Shopping',
+    'Tech & Gadgets',
+  ]
+  return (
+    <div>
+      {/* Hamburger Icon - Only on Mobile */}
+      <div className="md:hidden relative">
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="p-2 border rounded-md text-gray-700 bg-white shadow-sm hover:bg-gray-100"
+        >
+          <HiOutlineAdjustmentsHorizontal className="text-2xl" />
+        </button>
+
+        {/* Mobile Dropdown Menu */}
+        {menuOpen && (
+          <div className="absolute right-0 top-full mt-2 w-52 bg-white border border-gray-200 rounded-md shadow-lg z-50 flex flex-col">
+            {categories.map((category, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setActiveCategory(index)
+                  setMenuOpen(false)
+                }}
+                className={`flex justify-between items-center px-4 py-2 text-left text-sm border-b last:border-b-0 ${
+                  activeCategory === index
+                    ? 'bg-gray-100 text-black'
+                    : 'hover:bg-gray-100 text-black'
+                }`}
+              >
+                {category}
+                <FaChevronDown className="text-xs text-pink-300" />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+       <div className="hidden md:flex flex-wrap gap-3 sm:gap-4 mt-4">
+                {categories.map((category, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveCategory(index)}
+                    className={`flex items-center gap-1 px-4 py-2 rounded-full border transition-all duration-300 text-sm sm:text-base ${
+                      activeCategory === index
+                        ? "bg-gray-100 text-black border-gray-800"
+                        : "bg-white text-black border-gray-400 hover:bg-gray-100"
+                    }`}
+                  >
+                    {category}
+                    <span className="p-1 rounded-full text-pink-300 bg-gray-100 hover:bg-white">
+                      <FaChevronDown className="text-xs" />
+                    </span>
+                  </button>
+                ))}
+              </div>
+    </div>
+  )
+}
+
+export default FilterBox

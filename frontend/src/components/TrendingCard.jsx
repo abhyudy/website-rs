@@ -3,7 +3,7 @@ import React from 'react'
 const TrendingCard = ({ image, date, author, desc, category }) => {
   return (
     <div
-      className="bg-white rounded-xl overflow-hidden shadow-sm flex flex-col transition duration-300 hover:brightness-110 cursor-pointer w-full max-w-[370px] min-h-[335px]"
+      className="bg-white rounded-xl overflow-hidden shadow-sm flex flex-col transition duration-300 hover:brightness-110 ease-in-out hover:scale-105 cursor-pointer w-full max-w-[370px] min-h-[335px]"
       aria-label={`Trending post by ${author} on ${date}`}
     >
       {/* Image */}

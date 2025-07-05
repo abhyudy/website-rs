@@ -128,7 +128,7 @@ const TrendsDetail = () => {
 
   return (
     <>
-      <div className="bg-[#FFF3F3] text-black py-10 px-8">
+      <div className="bg-[#FFF3F3] text-black py-10 px-20">
         <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-10">
             <div className="lg:w-2/3">
