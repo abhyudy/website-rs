@@ -4,29 +4,32 @@ import { FiMapPin, FiMail, FiPhone, FiClock } from 'react-icons/fi'
 const Contact = () => {
   return (
     <div className="bg-background-color">
-      <div className="container mx-auto flex flex-col items-center justify-center  py-12">
+      <div className="container mx-auto flex flex-col items-center justify-center py-10 md:py-12 px-4">
         {/* Gradient Header */}
-        <div className="relative z-0 w-full max-w-6xl h-85 bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-black rounded-xl flex flex-col pt-20 items-center justify-start shadow-lg">
-          <h1 className="text-6xl sm:text-4xl md:text-5xl font-bold text-center mb-2 sm:mb-4">
+        <div className="relative z-0 w-full max-w-6xl py-15 md:py-30 bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-black rounded-xl flex flex-col items-center justify-start shadow-lg px-4 md:px-16">
+          <h1 className="text-4xl md:text-6xl font-bold text-center">
             Contact Us
           </h1>
-          <p className="text-sm sm:text-base max-w-3xl mx-auto px-2">
-            We'd love to hear from you!
+          <p className="text-base md:text-xl max-w-3xl mt-4 text-center">
+            We'd love to hear from you! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Totam sapiente iste aspernatur ipsam quia sed eum
+            nostrum itaque necessitatibus dolorem, odio tempore, reiciendis in
+            alias, aperiam eaque laudantium at molestias.
           </p>
         </div>
 
         {/* Main Contact Box */}
-        <div className="flex justify-center mt-[-50px] sm:mt-[-70px] lg:mt-[-10%] z-10 relative pb-10">
-          <div className="flex flex-col lg:flex-row w-full max-w-4xl  bg-white rounded-xl shadow-lg overflow-hidden relative">
+        <div className="relative z-10 -mt-8 md:-mt-15 w-full max-w-4xl text-black rounded-xl px-4">
+          <div className=" bg-white rounded-xl flex flex-col md:flex-row gap-10 md:gap-20 justify-between items-stretch max-md:items-center">
             {/* Left: Contact Form */}
-            <div className="w-full lg:w-[460px] p-6 sm:p-10">
+            <div className="w-full lg:w-[460px] p-6 sm:p-10 max-md:pr-12">
               <h2 className="text-4xl font-medium mb-2">Get in Touch</h2>
-              <p className="text-sm text-gray-700 py-4 max-w-md">
+              <p className="text-sm text-gray-700 py-4 max-w-md ">
                 Have a query or suggestion? Fill out the form below, and we’ll
                 get back to you as soon as possible.
               </p>
 
-              <form className="space-y-5">
+              <form className="space-y-5 max-md:mr-3">
                 <div>
                   <label htmlFor="name" className="block text-sm mb-1">
                     Name
@@ -70,7 +73,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="bg-black text-white font-semibold px-6 py-2 rounded-full w-full max-w-[120px] mx-auto block hover:bg-gray-800"
+                  className="bg-black text-white font-semibold px-6 py-2 rounded-full w-full max-w-[220px]  mx-auto block hover:bg-gray-800"
                 >
                   Send
                 </button>
@@ -78,13 +81,13 @@ const Contact = () => {
             </div>
 
             {/* Right: Info Section */}
-            <div className="relative bg-black text-white w-full lg:w-[480px] h-auto lg:h-[320px] mt-6 lg:mt-24 lg:mr-14 z-10 rounded-xl p-6 sm:p-8">
+            <div className="relative bg-black text-white w-[90%]  lg:w-[480px]  h-[320px] max-md:mb-[20px] mt-30 max-md:mt-0 z-10 rounded px-6 py-6 left-4 max-md:left-0  max-md:self-end ">
               {/* Sticky Note Effect */}
               <div className="absolute -top-2 -left-2 w-6 h-6 bg-[#FFFCA7] z-20" />
 
               <h2 className="text-xl font-semibold mb-6">Info</h2>
 
-              <div className="space-y-6 text-sm">
+              <div className="space-y-6 max-sm:space-y-3 text-sm">
                 <div className="flex items-center gap-3">
                   <FiMapPin className="text-white" />
                   <span>B-148, Kankarbagh Main Road, Patna, Bihar-800020</span>
@@ -105,7 +108,7 @@ const Contact = () => {
             </div>
 
             {/* Pink Background Strip on Right Edge (visible only on desktop) */}
-            <div className="hidden lg:block absolute top-0 right-0 h-full w-24 bg-[#FEC5C5] z-0 rounded-r-xl" />
+            <div className=" absolute top-0 right-0 max-md:right-4 h-full w-24 max-md:w-10 bg-[#FEC5C5] z-0 rounded-r-xl" />
           </div>
         </div>
       </div>

@@ -39,11 +39,11 @@ const Trending = () => {
 
   return (
     <div className="bg-background-color">
-      <div className="container mx-auto flex flex-col items-center justify-center py-12">
+      <div className="container mx-auto flex flex-col items-center justify-center py-10 md:py-12 px-4">
         {/* Gradient Heading Section */}
-        <div className="relative z-0 w-full max-w-6xl h-85 bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-background-black rounded-xl flex flex-col pt-20 items-center justify-start shadow-lg">
-          <h1 className="text-5xl text-center font-bold mb-2">Trending Post</h1>
-          <p className="text-xl max-w-3xl mt-4 text-center">
+        <div className="relative z-0 w-full max-w-6xl py-15 md:py-30 bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-black rounded-xl flex flex-col  items-center justify-start shadow-lg px-4 md:px-16">
+          <h1 className="text-4xl md:text-6xl text-center font-bold">Trending Post</h1>
+          <p className="text-base md:text-xl max-w-3xl mt-4 text-center">
             Unlock the latest trends, insider tips, and exclusive deals. We
             bring you expert insights, honest reviews, and the smartest shopping
             strategies.
