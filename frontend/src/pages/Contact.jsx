@@ -4,17 +4,15 @@ import { FiMapPin, FiMail, FiPhone, FiClock } from 'react-icons/fi'
 const Contact = () => {
   return (
     <div className="bg-background-color">
-      <div className="container mx-auto flex flex-col items-center justify-center py-10 md:py-12 px-4">
+      <div className="container w-full max-w-6xl mx-auto flex flex-col items-center justify-center py-10 md:py-12 px-4">
         {/* Gradient Header */}
         <div className="relative z-0 w-full  py-15 md:py-30 bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-black rounded-xl flex flex-col items-center justify-start shadow-lg px-4 md:px-16">
           <h1 className="text-4xl md:text-6xl font-bold text-center">
             Contact Us
           </h1>
           <p className="text-base md:text-xl max-w-3xl mt-4 text-center">
-            We'd love to hear from you! Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Totam sapiente iste aspernatur ipsam quia sed eum
-            nostrum itaque necessitatibus dolorem, odio tempore, reiciendis in
-            alias, aperiam eaque laudantium at molestias.
+            We’d love to hear from you! Whether you have a question, feedback,
+            or collaboration inquiry, feel free to reach out.
           </p>
         </div>
 

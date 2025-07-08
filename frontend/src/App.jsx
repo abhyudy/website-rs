@@ -3,10 +3,11 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
 import About from './pages/About'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 import Trending from './pages/Trending'
 import Contact from './pages/Contact'
 import TrendsDetail from './components/TrendsDetails'
+import ScrollToTop from './components/ScrollToTop'
 
 // Layout component to include the Header on all pages
 const Layout = () => {
@@ -23,6 +24,7 @@ const Layout = () => {
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />

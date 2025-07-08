@@ -1,15 +1,14 @@
 import React from 'react'
-import logo from '../assets/img/footerlog.png'
-import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa'
+import logo from '../assets/img/RS.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className="w-full mx-auto bg-background-black ">
+    <div className="mx-auto bg-background-black">
       <div className="relative bg-background-black text-white">
         {/* Upward curve */}
         <div className="relative">
-          <div className="absolute top-0 left-0 w-full h-[99px] bg-background-color z-0 " />
-
+          <div className="absolute top-0 left-0 w-full h-[99px] bg-background-color z-0" />
           <svg
             viewBox="0 0 1440 100"
             className="w-full h-[100px] relative z-10 rotate-180"
@@ -23,18 +22,18 @@ const Footer = () => {
         </div>
 
         {/* Footer Content */}
-        <footer className="container mx-auto pt-20 pb-10 px-4 relative z-10">
-
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-8 md:gap-10 lg:gap-16 flex-wrap">
-
+        <footer className="w-full max-w-6xl container mx-auto pt-20 pb-10 px-4 sm:px-6 relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-8 flex-wrap">
             {/* Logo & Description */}
-            <div className="w-full md:w-auto md:max-w-xs">
-              <img
-                src={logo}
-                alt="R&S"
-                className="max-md:m-auto h-auto max-w-[137px] max-md:w-[200px] items-center object-contain"
-                style={{ maxHeight: '75px' }}
-              />
+            <div className="flex-1 min-w-[200px] max-w-[250px]">
+              <Link to="/">
+                <img
+                  src={logo}
+                  alt="R&S"
+                  className="mb-4 h-auto max-w-[137px] object-contain mx-auto md:mx-0"
+                  style={{ maxHeight: '75px' }}
+                />
+              </Link>
               <p className="text-sm sm:text-base text-gray-300">
                 Your go-to source for shopping trends, exclusive deals, and
                 expert tips. Stay ahead in the retail world!
@@ -42,89 +41,107 @@ const Footer = () => {
             </div>
 
             {/* Quick Links */}
-            <div className="w-full sm:w-1/2 md:w-auto">
+            <div className="flex-1 min-w-[200px]">
               <h5 className="font-semibold mb-3 text-base sm:text-lg">
                 Quick Links
               </h5>
               <ul className="text-sm sm:text-base space-y-2 text-gray-300">
                 <li>
-                  <a href="/" className="hover:text-gray-100 transition-colors">
+                  <Link
+                    to="/"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                    className="hover:text-white transition duration-200 ease-in-out"
+                  >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/about"
-                    className="hover:text-gray-100 transition-colors"
+                  <Link
+                    to="/about"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                    className="hover:text-white transition duration-200 ease-in-out"
                   >
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/trends"
-                    className="hover:text-gray-100 transition-colors"
+                  <Link
+                    to="/trends"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                    className="hover:text-white transition duration-200 ease-in-out"
                   >
                     Trends
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/contact"
-                    className="hover:text-gray-100 transition-colors"
+                  <Link
+                    to="/contact"
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                    className="hover:text-white transition duration-200 ease-in-out"
                   >
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
 
             {/* Contact Info */}
-            <div className="w-full sm:w-1/2 md:w-auto">
+            <div className="flex-1 min-w-[200px]">
               <h5 className="font-semibold mb-3 text-base sm:text-lg">
                 Contact Us
               </h5>
               <ul className="text-sm sm:text-base space-y-2 text-gray-300">
-                <li>📍 123 Shopping Street, Retail City, RC 56789</li>
-                <li>📞 +1 (555) 123-4567</li>
-                <li>📧 support@yourblog.com</li>
+                <li>📍 B-148, Kankarbagh Main Road, Patna, Bihar-800020</li>
+                <li>📞 +91 (943) 0622181</li>
+                <li>📧 info@retailtypes.com</li>
               </ul>
             </div>
 
-            {/* Social Icons */}
-            <div className="w-full md:w-auto">
+            {/* Important Links */}
+            <div className="flex-1 min-w-[200px]">
               <h5 className="font-semibold mb-3 text-base sm:text-lg">
-                Follow Us
+                Important Links
               </h5>
-              <div className="flex justify-center md:justify-start space-x-4 text-xl sm:text-2xl text-white">
-                <a
-                  href="#"
-                  aria-label="Instagram"
-                  className="hover:text-gray-400 transition-colors"
-                >
-                  <FaInstagram />
-                </a>
-                <a
-                  href="#"
-                  aria-label="Facebook"
-                  className="hover:text-gray-400 transition-colors"
-                >
-                  <FaFacebookF />
-                </a>
-                <a
-                  href="#"
-                  aria-label="Twitter"
-                  className="hover:text-gray-400 transition-colors"
-                >
-                  <FaTwitter />
-                </a>
-              </div>
+              <ul className="text-sm sm:text-base space-y-2 text-gray-300">
+                <li>
+                  <Link
+                    to="/privacy-policy"
+                    className="hover:text-white transition duration-200 ease-in-out"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/terms-and-conditions"
+                    className="hover:text-white transition duration-200 ease-in-out"
+                  >
+                    Terms and Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/disclaimer"
+                    className="hover:text-white transition duration-200 ease-in-out"
+                  >
+                    Disclaimer
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
 
           {/* Bottom Line */}
-          <div className="border-t border-gray-700 mt-8 md:mt-10 pt-4 text-center text-xs sm:text-sm text-gray-400">
-            Rights Reserved.
+          <div className="border-t border-gray-700 mt-10 pt-4 text-center text-xs sm:text-sm text-gray-400">
+            © {new Date().getFullYear()} R&S. All Rights Reserved.
           </div>
         </footer>
       </div>

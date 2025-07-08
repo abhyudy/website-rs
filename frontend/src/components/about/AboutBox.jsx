@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const AboutBox = () => {
   return (
@@ -43,11 +43,11 @@ const AboutBox = () => {
             </h2>
           </div>
           <p className="text-left text-base md:text-lg text-black mt-4">
-            Unlike other shopping blogs, we go beyond product listings. We
-            provide detailed shopping guides, real user experiences, and tips to
-            help you maximize your budget. Our dedicated team stays updated on
-            market trends to bring you the most relevant and up-to-date shopping
-            advice.
+            We stand out by providing well-researched, unbiased recommendations
+            that ensure you get the best shopping experience. Our team curates
+            top deals, offers real product insights, and keeps you ahead with
+            emerging trends. We prioritize authenticity, quality, and savings,
+            making sure every purchase you make is worth it.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ const AboutBox = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AboutBox;
+export default AboutBox
