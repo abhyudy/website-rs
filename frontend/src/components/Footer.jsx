@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/img/RS.png'
+import logo from '../assets/img/footerlogo.png'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
@@ -30,8 +30,8 @@ const Footer = () => {
                 <img
                   src={logo}
                   alt="R&S"
-                  className="mb-4 h-auto max-w-[137px] object-contain mx-auto md:mx-0"
-                  style={{ maxHeight: '75px' }}
+                  className="mb-4 h-auto max-w-[145px] object-contain mx-auto md:mx-0"
+                  style={{ maxHeight: '100px' }}
                 />
               </Link>
               <p className="text-sm sm:text-base text-gray-300">
@@ -141,7 +141,8 @@ const Footer = () => {
 
           {/* Bottom Line */}
           <div className="border-t border-gray-700 mt-10 pt-4 text-center text-xs sm:text-sm text-gray-400">
-            © {new Date().getFullYear()} R&S. All Rights Reserved.
+            © {new Date().getFullYear()} Copyright © 2025 retailtypes.com. <br /> All
+            Rights Reserved
           </div>
         </footer>
       </div>

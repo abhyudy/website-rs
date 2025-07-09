@@ -6,7 +6,7 @@ import About from './pages/About'
 import Footer from './components/Footer'
 import Trending from './pages/Trending'
 import Contact from './pages/Contact'
-import TrendsDetail from './components/TrendsDetails'
+import TrendsDetail from './pages/TrendsDetails'
 import ScrollToTop from './components/ScrollToTop'
 
 // Layout component to include the Header on all pages
@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/trends" element={<Trending />} />
-          <Route path="/trendsDetail" element={<TrendsDetail />} />
+          <Route path="/trendsDetail" element={<TrendsDetail/>} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>

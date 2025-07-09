@@ -1,10 +1,10 @@
 import React from 'react'
 
-const TrendingCard = ({ image, date, author, desc, category }) => {
+const TrendingCard = ({ image, desc, category }) => {
   return (
     <div
       className="bg-white rounded-xl overflow-hidden shadow-sm flex flex-col transition duration-300 hover:brightness-110 ease-in-out hover:scale-105 cursor-pointer w-full max-w-[370px] min-h-[335px]"
-      aria-label={`Trending post by ${author} on ${date}`}
+      aria-label={`Trending post in ${category}`}
     >
       {/* Image */}
       <div className="w-full h-[216px] overflow-hidden">
@@ -19,11 +19,8 @@ const TrendingCard = ({ image, date, author, desc, category }) => {
       {/* Content */}
       <div className="p-4 flex flex-col justify-between flex-grow">
         {category && <p className="text-xs text-gray-600 mb-1">{category}</p>}
-        <p className="text-xs text-gray-600 mb-1">
-          By {author} • {date}
-        </p>
-        <p className="text-sm font-bold text-background-black mt-2 mb-4">
-          {desc}
+        <p className="text-sm font-bold text-background-black mt-2 mb-4 line-clamp-2">
+          {desc.split(' ').slice(0, 15).join(' ') + '…'}
         </p>
         <a
           href="/trendsDetail"

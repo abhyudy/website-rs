@@ -179,7 +179,7 @@ const Header = () => {
 
       {/* Mobile Nav */}
       {isNavOpen && (
-        <div className="md:hidden bg-background-color py-4 px-4 sm:px-6">
+        <div className="md:hidden bg-background-color py-4 px-4 sm:px-6 absolute z-[99] w-3/4 right-0">
           <nav className="flex flex-col space-y-4">
             <Link
               to="/"

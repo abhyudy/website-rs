@@ -125,17 +125,16 @@ export default function ImageSlider() {
           <h3 className="text-3xl md:text-6xl custom-times font-semibold text-gray-800">
             What We Cover
           </h3>
-
-          {/* Hamburger Icon - Only on Mobile */}
-          <FilterBox />
         </div>
-
         <p className="text-black mt-4 max-w-3xl">
           We explore a wide range of shopping categories, from fashion and tech
           to beauty and home essentials. Stay ahead with the latest trends,
           discover must-have products, and unlock exclusive deals curated just
           for you.
         </p>
+
+        {/* Hamburger Icon - Only on Mobile */}
+        <FilterBox />
       </div>
 
       {/* Top Bar */}

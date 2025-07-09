@@ -38,7 +38,7 @@ const Home = () => {
               insights – all in one place. Elevate your shopping game today!
             </p>
             <a
-              href="/trendsDetail"
+              href="/trends"
               className="bg-background-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition"
             >
               Read More
@@ -284,8 +284,8 @@ const Home = () => {
                 Luxury vs. Affordable Fashion: Is It Worth the Price?
               </h3>
               <p className="text-base text-gray-600 leading-relaxed mb-6 max-w-[60%]">
-                Is designer clothing worth the investment, or can
-                budget-friendly brands…..
+                Explore key differences, benefits, and drawbacks of luxury and
+                budget fashion…..
               </p>
               <img
                 src="/img/girlpost.png"
@@ -343,8 +343,8 @@ const Home = () => {
                     Top Ethical & Sustainable Fashion Brands to Watch
                   </p>
                   <p className="text-base text-gray-700">
-                    Is designer clothing worth the investment, or can
-                    budget-friendly brands...
+                    Find clothing brands that are good for people and the
+                    environment……
                   </p>
                 </div>
                 <div className="flex items-end h-full w-full absolute right-0 top-0">
