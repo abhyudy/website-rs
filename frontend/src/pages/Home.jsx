@@ -1,28 +1,8 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import Subscribe from '../components/Subscribe'
+import StayAheadSection from '../components/Home/StayAheadSection'
 
 const Home = () => {
-  const scrollRef = useRef(null)
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current
-    let scrollInterval
-
-    if (scrollContainer) {
-      scrollInterval = setInterval(() => {
-        scrollContainer.scrollTop += 1
-        if (
-          scrollContainer.scrollTop + scrollContainer.clientHeight >=
-          scrollContainer.scrollHeight
-        ) {
-          scrollContainer.scrollTop = 0
-        }
-      }, 30)
-    }
-
-    return () => clearInterval(scrollInterval)
-  }, [])
-
   return (
     <div className=" bg-background-color">
       {/* Hero Section */}
@@ -188,72 +168,7 @@ const Home = () => {
         </section>
 
         {/* Stay Ahead Section */}
-        <section className="bg-background-black w-full max-w-6xl h-auto  mx-auto px-4 sm:px-6 mt-8 sm:mt-16 flex flex-col lg:flex-row gap-4 rounded-xl overflow-hidden">
-          {/* Left Block */}
-          <div className="text-white p-6 sm:p-10 flex flex-col lg:w-1/2">
-            <h1 className="text-6xl font-bold custom-times mb-6">
-              Stay Ahead of <br /> the Trends!
-            </h1>
-            <p className="mb-6 text-xs sm:text-sm">
-              Get the latest insights on must-have products, <br />
-              exclusive deals, and expert shopping tips.
-            </p>
-            <a
-              href="/trends"
-              className="bg-white text-background-black px-4 sm:px-6 py-2 rounded-full font-medium self-start "
-            >
-              See All
-            </a>
-          </div>
-
-          {/* Right Block */}
-          <div
-            ref={scrollRef}
-            className="relative w-full lg:w-[475px] h-[260px] sm:h-[400px] overflow-hidden no-scrollbar"
-          >
-            <div className="absolute top-0 animate-scroll space-y-4 w-full">
-              {[
-                {
-                  title: 'Top 10 Fashion Trends for 2025',
-                  image: '/img/blog2.png',
-                  bgColor: '#FFB9B9',
-                },
-                {
-                  title: 'Wardrobe Must-Haves for Every Season',
-                  image: '/img/girlpost.png',
-                  bgColor: '#DDABAA',
-                },
-                {
-                  title: 'Eco-Friendly Fashion That Looks Great',
-                  image: '/img/fashion3.png',
-                  bgColor: '#F9D5E5',
-                },
-              ].map((card, idx) => (
-                <div
-                  key={idx}
-                  className="p-4 sm:p-6 rounded-2xl relative w-full h-[200px] sm:h-[254px] flex flex-row text-white"
-                  style={{ backgroundColor: card.bgColor }}
-                >
-                  {/* Left: Title at Top */}
-                  <div className="w-1/2 flex flex-col justify-start">
-                    <h4 className="text-xl font-bold leading-snug mb-2">
-                      {card.title}
-                    </h4>
-                  </div>
-
-                  {/* Right: Image */}
-                  <div className="w-1/2 flex items-end justify-end h-full">
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      className="w-full h-full object-cover rounded-xl"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <StayAheadSection />
 
         {/* Trending Posts Section */}
         <div className="w-full max-w-6xl mx-auto py-8 justify-between">

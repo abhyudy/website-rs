@@ -8,6 +8,9 @@ import Trending from './pages/Trending'
 import Contact from './pages/Contact'
 import TrendsDetail from './pages/TrendsDetails'
 import ScrollToTop from './components/ScrollToTop'
+import Description from './components/Disclaimer'
+import TermsConditions from './components/TermsConditions'
+import PrivacyPolicy from './components/PrivacyPolicy'
 
 // Layout component to include the Header on all pages
 const Layout = () => {
@@ -30,7 +33,10 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/trends" element={<Trending />} />
-          <Route path="/trendsDetail" element={<TrendsDetail/>} />
+          <Route path="/trendsDetail" element={<TrendsDetail />} />
+          <Route path="/disclaimer" element={<Description />} />
+          <Route path="/terms-and-conditions" element={<TermsConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>

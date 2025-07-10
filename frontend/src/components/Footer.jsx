@@ -141,8 +141,8 @@ const Footer = () => {
 
           {/* Bottom Line */}
           <div className="border-t border-gray-700 mt-10 pt-4 text-center text-xs sm:text-sm text-gray-400">
-            © {new Date().getFullYear()} Copyright © 2025 retailtypes.com. <br /> All
-            Rights Reserved
+            © {new Date().getFullYear()} Copyright © 2025 retailtypes.com.{' '}
+            <br /> All Rights Reserved
           </div>
         </footer>
       </div>
