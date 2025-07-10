@@ -1,76 +1,121 @@
 import React from 'react'
 
 const Disclaimer = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <div className="bg-background-color">
-      <div className=" max-w-5xl mx-auto px-4 py-12 text-gray-800">
-        <h1 className="text-5xl  text-background-black font-bold mb-4">
-          Disclaimer
-        </h1>
-        <p className="text-3xl text-background-black font-semibold mb-6">
-          Effective from Year:
-          <span className="text-background-black font-semibold"> 2025</span>
+    <div className="bg-background-color min-h-screen">
+      <div className="max-w-5xl mx-auto px-4 py-12 text-gray-900">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-6">Disclaimer</h1>
+        <p className="text-lg font-semibold mb-8">
+          Last updated:{' '}
+          <span className="text-gray-900 font-semibold">July 10, 2025</span>
         </p>
 
-        <p className="mb-4">
-          The information provided on [YourWebsiteName] is intended for general
-          informational purposes only. While we strive to ensure that all
-          content on this website is accurate, complete, and up to date, we make
-          no warranties or representations of any kind, express or implied,
-          about the accuracy, reliability, suitability, or availability of the
-          information, products, services, or related graphics contained on the
-          site for any purpose. Any reliance you place on such information is
-          strictly at your own risk.
-        </p>
+        <div>
+          <h2 className="text-2xl font-semibold mb-4"> Website Disclaimer</h2>
+          <p>
+            All the information on this website - retailtypes.com - is published
+            in good faith and for general information purposes only. Retail
+            Types does not make any warranties about the completeness,
+            reliability, and accuracy of this information. Any action you take
+            upon the information you find on this website (Retail Types) is
+            strictly at your own risk. Retail Types will not be liable for any
+            losses and/or damages in connection with the use of our website.
+            <br />
+            <br />
+            From our website, you can visit other websites by following
+            hyperlinks to such external sites. While we strive to provide only
+            quality links to useful and ethical websites, we have no control
+            over the content and nature of these sites. These links to other
+            websites do not imply a recommendation for all the content found on
+            these sites. Site owners and content may change without notice and
+            may occur before we have the opportunity to remove a link which may
+            have gone 'bad'.
+            <br />
+            <br />
+            Please be aware that when you leave our website, other sites may
+            have different privacy policies and terms which are beyond our
+            control. Please be sure to check the Privacy Policies of these sites
+            as well as their "Terms of Service" before engaging in any business
+            or uploading any information.
+          </p>
+        </div>
 
-        <p className="mb-4">
-          [YourWebsiteName] does not accept any responsibility or liability for
-          any loss or damage, including indirect or consequential loss or
-          damage, arising from loss of data or profits resulting from, or in
-          connection with, the use of this website. Users are advised to verify
-          any information before relying on it. We expressly disclaim liability
-          for errors or omissions in the contents of this site.
-        </p>
+        <section className="space-y-8 text-base leading-relaxed">
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">
+              Affiliates Disclaimer
+            </h2>
+            <p>
+              The Site may contain links to affiliate websites, and we receive
+              an affiliate commission for any purchases made by you on the
+              affiliate website using such links. Our affiliates include the
+              following:
+              <ul className="list-disc list-inside ml-4">
+                <li>AvantLink</li>
+                <li>Awin (Affiliate Window)</li>
+                <li>CJ Affiliate by Conversant</li>
+                <li>Clickbank</li>
+                <li>eBay Partner Network</li>
+                <li>FlexOffers</li>
+                <li>iDevAffiliate</li>
+                <li>MaxBounty</li>
+                <li>Rakuten Affiliate Network</li>
+                <li>RevenueWire</li>
+                <li>ShareASale</li>
+                <li>Others</li>
+              </ul>
+            </p>
+          </div>
 
-        <p className="mb-4">
-          This website may contain links to other websites or resources that are
-          not owned or controlled by us. Such links are provided for convenience
-          and informational purposes only. We have no control over the nature,
-          content, and availability of those sites and do not endorse or assume
-          responsibility for any information, products, or services offered by
-          third parties.
-        </p>
+          <div>
+            <h2 className="text-2xl font-semibold mb-4"> Consent</h2>
+            <p>
+              By using our website, you hereby consent to our disclaimer and
+              agree to its terms.
+            </p>
+          </div>
 
-        <p className="mb-4">
-          We make every effort to keep the website running smoothly. However,
-          [YourWebsiteName] takes no responsibility for, and will not be liable
-          for, the website being temporarily unavailable due to technical issues
-          beyond our control.
-        </p>
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Updates</h2>
+            <p>
+              Should we update, amend, or make any changes to this document,
+              those changes will be prominently posted here.
+            </p>
+          </div>
 
-        <p className="mb-4">
-          All opinions expressed on this site are those of the authors and do
-          not necessarily reflect the views of [YourWebsiteName] as a whole.
-          Content such as reviews, recommendations, or advice is subjective and
-          intended for informational use only. Users should consult
-          professionals or conduct further research when making significant
-          decisions.
-        </p>
-
-        <p className="mb-4">
-          We reserve the right to change, modify, or remove content on this
-          website at any time without prior notice. Your continued use of the
-          website after such changes indicates your acceptance of the updated
-          disclaimer.
-        </p>
-
-        <p className="mb-4">
-          If you have any questions or concerns about this disclaimer, please
-          feel free to contact us at:{' '}
-          <a href="info@retailtypes.com" className="text-blue-500 underline">
-            info@retailtypes.com
-          </a>
-        </p>
+          <div>
+            <h2 className="text-2xl font-semibold mb-4"> Contact Us</h2>
+            <p>
+              If you have any questions or concerns about this disclaimer,
+              please feel free to contact us at:
+              <br />
+              <br />
+              Retail Types
+              <br />
+              B-148, Kankarbagh Main Road
+              <br />
+              Patna, Bihar 800020
+              <br />
+              India
+              <br />
+              Phone: +91 94306 22181
+              <br />
+              <a
+                href="mailto:info@retailtypes.com"
+                className="text-blue-600 hover:underline"
+              >
+                info@retailtypes.com
+              </a>
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   )
