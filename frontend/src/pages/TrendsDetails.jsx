@@ -144,8 +144,8 @@ const TrendsDetail = () => {
 
   return (
     <>
-      <div className="bg-[#FFF3F3] text-black py-10 px-4">
-        <div className="w-full max-w-6xl mx-auto">
+      <div className="bg-[#FFF3F3] text-black py-10">
+        <div className="w-full max-w-6xl mx-auto pl-8">
           <div className="grid grid-cols-12 gap-10 lg:flex-row">
             <div className="w-full col-span-8">
               <HeaderSection />

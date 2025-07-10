@@ -15,7 +15,7 @@ const SectionIntro = ({item}) => {
           </p>
         </div>
         {item.hasButton && (
-          <button className="bg-black text-white px-8 py-4 w-82 my-auto h-fit rounded-2xl text-sm font-medium hover:bg-[#E37561] cursor-pointer transition duration-300">
+          <button className="bg-black text-white px-8 py-4 w-96 my-auto h-fit rounded-2xl text-sm font-medium hover:bg-[#E37561] cursor-pointer transition duration-300">
             Join Now
           </button>
         )}

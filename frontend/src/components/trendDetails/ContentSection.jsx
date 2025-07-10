@@ -1,21 +1,24 @@
 import React from "react";
-import TableOfContentItem from "./TableOfContentItem";
 import SectionIntro from "./SectionIntro";
 import SectionAdd from "./SectionAdd";
 import SectionGrid from "./SectionGrid";
 
-const ContentSection = ({ tableOfContent, activeSection, handleLinkClick }) => {
+// Map section types to their components
+const sectionComponentMap = {
+  intro: SectionIntro,
+  add: SectionAdd,
+  grid: SectionGrid,
+};
+
+const ContentSection = ({ tableOfContent }) => {
   return (
     <>
-      {tableOfContent.map((item) =>
-        item.type == "intro" ? (
-          <SectionIntro key={item.id} item={item} />
-        ) : item.type == "add" ? (
-          <SectionAdd key={item.id} item={item} />
-        ) : (
-          item.type == "grid" && <SectionGrid key={item.id} item={item} />
-        )
-      )}
+      {tableOfContent.map((item) => {
+        const SectionComponent = sectionComponentMap[item.type];
+        if (!SectionComponent) return null;
+
+        return <SectionComponent key={item.id} item={item} />;
+      })}
     </>
   );
 };

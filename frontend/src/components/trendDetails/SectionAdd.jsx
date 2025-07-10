@@ -1,9 +1,9 @@
 import React from "react";
 
 const SectionAdd = ({ item, buttonLabel = "Join Now" }) => {
-  const { image, title, description } = item;
+  const { id, image, title, description } = item;
   return (
-    <div className="py-10 px-4">
+    <div id={id} className="py-10 px-4">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8">
         <img
           src={image}
