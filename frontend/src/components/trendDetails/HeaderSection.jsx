@@ -14,7 +14,7 @@ const HeaderSection = () => {
       <h1 className="text-5xl font-bold leading-tight text-background-black">
         10 Must-Have Fashion <br /> Trends for This Season
       </h1>
-      <p className="text-sm text-gray-700">
+      <p className="text-base md:text-lg text-gray-700">
         Discover the top 10 trends you need now—bold colors, sleek cuts, and
         standout accessories to <br /> keep your look fresh and stylish all
         season.
