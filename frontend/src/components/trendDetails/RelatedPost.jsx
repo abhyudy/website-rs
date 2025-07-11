@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-// Data
 const relatedPosts = [
   {
     topic: 'Fashion & Apparel',
     title: 'How to Build a Capsule Wardrobe That Lasts',
     description:
       'Discover the essentials of creating a minimal, versatile wardrobe...',
-    image: '/img/img1.png',
+    image: '/img/rp.jpg',
     author: 'By Emily Davis',
     slug: 'capsule-wardrobe-1',
   },
@@ -17,7 +16,7 @@ const relatedPosts = [
     title: 'How to Build a Capsule Wardrobe That Lasts',
     description:
       'Discover the essentials of creating a minimal, versatile wardrobe...',
-    image: '/img/img2.png',
+    image: '/img/rp.jpg',
     author: 'By Emily Davis',
     slug: 'capsule-wardrobe-2',
   },
@@ -26,7 +25,7 @@ const relatedPosts = [
     title: 'How to Build a Capsule Wardrobe That Lasts',
     description:
       'Discover the essentials of creating a minimal, versatile wardrobe...',
-    image: '/img/img3.png',
+    image: '/img/rp.jpg',
     author: 'By Emily Davis',
     slug: 'capsule-wardrobe-3',
   },
@@ -35,7 +34,7 @@ const relatedPosts = [
     title: 'How to Build a Capsule Wardrobe That Lasts',
     description:
       'Discover the essentials of creating a minimal, versatile wardrobe...',
-    image: '/img/img4.png',
+    image: '/img/rp.jpg',
     author: 'By Emily Davis',
     slug: 'capsule-wardrobe-4',
   },
@@ -44,7 +43,7 @@ const relatedPosts = [
     title: 'Fashion & Apparel Wardrobe That Lasts',
     description:
       'Discover the essentials of creating a minimal, versatile wardrobe...',
-    image: '/img/img5.png',
+    image: '/img/rp.jpg',
     author: 'By Emily Davis',
     slug: 'capsule-wardrobe-5',
   },
@@ -53,7 +52,7 @@ const relatedPosts = [
     title: 'Fashion & Apparel Wardrobe That Lasts',
     description:
       'Discover the essentials of creating a minimal, versatile wardrobe...',
-    image: '/img/img6.png',
+    image: '/img/rp.jpg',
     author: 'By Emily Davis',
     slug: 'capsule-wardrobe-6',
   },
@@ -62,33 +61,39 @@ const relatedPosts = [
 const RelatedPost = () => {
   return (
     <div className="bg-white">
-      <div className="max-w-[1440px] mx-auto px-8 py-10">
-        <h1 className="text-4xl custom-times font-bold pb-4">Related Posts</h1>
-        <div className="grid grid-cols-3 gap-6 overflow-visible">
+      <div className="w-full max-w-6xl mx-auto px-4 py-10">
+        <h1 className="text-3xl sm:text-4xl font-bold pb-6 custom-times">
+          Related Posts
+        </h1>
+
+        {/* Scrollable on small, grid on medium+ */}
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible scrollbar-hide">
           {relatedPosts.map((post, index) => (
-            <Link key={index} to={`/post/${post.slug}`} className="block">
+            <Link
+              key={index}
+              to={`/post/${post.slug}`}
+              className="flex-shrink-0 md:flex-shrink md:w-auto"
+            >
               <div
-                className="p-2 transform transition duration-300 hover:brightness-110 hover:scale-105 cursor-pointer relative z-10 hover:z-20"
-                style={{ width: '100%', maxWidth: '384px', height: '226px' }}
-                role="button"
-                aria-label={`View post: ${post.title}`}
+                className="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:brightness-110 hover:scale-105 cursor-pointer"
+                style={{ width: '340px', height: '390px' }}
               >
-                <div className="flex items-center h-full">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-40 h-full object-cover mr-3"
-                  />
-                  <div className="flex-1">
-                    <p className="text-sm text-gray-500 mb-4">{post.topic}</p>
-                    <h6 className="text-lg font-semibold line-clamp-1 mb-2">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-[180px] object-cover"
+                />
+                <div className="p-4 flex flex-col justify-between h-[210px]">
+                  <div>
+                    <p className="text-sm text-gray-500 mb-1">{post.topic}</p>
+                    <h6 className="text-lg font-semibold line-clamp-2 mb-2">
                       {post.title}
                     </h6>
-                    <p className="text-sm text-gray-600 line-clamp-2 mb-2">
+                    <p className="text-sm text-gray-600 line-clamp-2">
                       {post.description}
                     </p>
-                    <p className="text-sm text-gray-500 mt-4">{post.author}</p>
                   </div>
+                  <p className="text-sm text-gray-500 mt-3">{post.author}</p>
                 </div>
               </div>
             </Link>
