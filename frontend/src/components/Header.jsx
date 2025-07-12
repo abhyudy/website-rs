@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import logoSmall from '../assets/img/RS.png'
 import logoLarge from '../assets/img/RS.png'
 
@@ -22,13 +22,18 @@ const Header = () => {
     }
   }
 
+  const navLinkClasses = ({ isActive }) =>
+    `font-semibold ${
+      isActive ? 'text-pink-500' : 'text-gray-700 hover:text-pink-500'
+    }`
+
   return (
     <>
-      <header className="  m-auto bg-background-color ">
-        <div className="w-full max-w-6xl m-auto py-3 px-4  flex items-center justify-between relative">
+      <header className="m-auto bg-background-color">
+        <div className="w-full max-w-6xl m-auto py-3 px-4 flex items-center justify-between relative">
           {/* Logo Section */}
           <div className="flex items-center">
-            <Link to="/">
+            <NavLink to="/">
               <img
                 className="h-6 md:hidden object-contain"
                 src={logoSmall}
@@ -39,35 +44,23 @@ const Header = () => {
                 src={logoLarge}
                 alt="Logo Large"
               />
-            </Link>
+            </NavLink>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-12">
-            <Link
-              to="/"
-              className="text-gray-700 hover:text-pink-500 font-semibold"
-            >
+            <NavLink to="/" className={navLinkClasses}>
               Home
-            </Link>
-            <Link
-              to="/about"
-              className="text-gray-700 hover:text-pink-500 font-semibold"
-            >
+            </NavLink>
+            <NavLink to="/about" className={navLinkClasses}>
               About Us
-            </Link>
-            <Link
-              to="/trends"
-              className="text-gray-700 hover:text-pink-500 font-semibold"
-            >
+            </NavLink>
+            <NavLink to="/trends" className={navLinkClasses}>
               Trends
-            </Link>
-            <Link
-              to="/contact"
-              className="text-gray-700 hover:text-pink-500 font-semibold"
-            >
+            </NavLink>
+            <NavLink to="/contact" className={navLinkClasses}>
               Contact Us
-            </Link>
+            </NavLink>
           </nav>
 
           {/* Icons */}
@@ -181,34 +174,34 @@ const Header = () => {
       {isNavOpen && (
         <div className="md:hidden bg-background-color py-4 px-4 sm:px-6 absolute z-[99] w-3/4 right-0">
           <nav className="flex flex-col space-y-4">
-            <Link
+            <NavLink
               to="/"
-              className="text-gray-700 hover:text-pink-500 font-semibold"
+              className={navLinkClasses}
               onClick={() => setIsNavOpen(false)}
             >
               Home
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/about"
-              className="text-gray-700 hover:text-pink-500 font-semibold"
+              className={navLinkClasses}
               onClick={() => setIsNavOpen(false)}
             >
               About Us
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/trends"
-              className="text-gray-700 hover:text-pink-500 font-semibold"
+              className={navLinkClasses}
               onClick={() => setIsNavOpen(false)}
             >
               Trends
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/contact"
-              className="text-gray-700 hover:text-pink-500 font-semibold"
+              className={navLinkClasses}
               onClick={() => setIsNavOpen(false)}
             >
               Contact Us
-            </Link>
+            </NavLink>
           </nav>
         </div>
       )}

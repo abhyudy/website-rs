@@ -34,7 +34,7 @@ const StayAheadSection = () => {
       bgColor: '#FFB9B9',
     },
     {
-      title: 'How Smart Shoppers Save Big Without',
+      title: 'How Smart Shoppers Save Big Without Sacrificing Style',
       image: '/img/pic3.png',
       bgColor: '#F9D5E5',
     },
@@ -75,7 +75,7 @@ const StayAheadSection = () => {
             >
               {/* Left: Title */}
               <div className="w-2/3 flex flex-col justify-start p-4">
-                <h1 className="text-xl sm:text-2xl font-bold leading-snug">
+                <h1 className="text-2xl sm:text-3xl font-bold leading-snug">
                   {card.title}
                 </h1>
               </div>
