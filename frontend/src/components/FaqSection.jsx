@@ -40,7 +40,7 @@ const FaqSection = () => {
   return (
     <div>
       <section className="py-2">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-2 ">
           <div className="pb-2">
             <h6 className="text-3xl font-bold text-left">FAQs</h6>
           </div>

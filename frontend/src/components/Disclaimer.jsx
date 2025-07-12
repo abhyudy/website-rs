@@ -20,13 +20,20 @@ const Disclaimer = () => {
         <div>
           <h2 className="text-2xl font-semibold mb-4"> Website Disclaimer</h2>
           <p>
-            All the information on this website - retailtypes.com - is published
-            in good faith and for general information purposes only. Retail
-            Types does not make any warranties about the completeness,
-            reliability, and accuracy of this information. Any action you take
-            upon the information you find on this website (Retail Types) is
-            strictly at your own risk. Retail Types will not be liable for any
-            losses and/or damages in connection with the use of our website.
+            All the information on this website -{' '}
+            <a
+              href="mailto:info@retailtypes.com"
+              className="text-blue-600 hover:underline"
+            >
+              info@retailtypes.com
+            </a>
+            - is published in good faith and for general information purposes
+            only. Retail Types does not make any warranties about the
+            completeness, reliability, and accuracy of this information. Any
+            action you take upon the information you find on this website
+            (Retail Types) is strictly at your own risk. Retail Types will not
+            be liable for any losses and/or damages in connection with the use
+            of our website.
             <br />
             <br />
             From our website, you can visit other websites by following
@@ -49,7 +56,7 @@ const Disclaimer = () => {
 
         <section className="space-y-8 text-base leading-relaxed">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">
+            <h2 className="text-2xl font-semibold mb-4 mt-8">
               Affiliates Disclaimer
             </h2>
             <p>
@@ -87,32 +94,6 @@ const Disclaimer = () => {
             <p>
               Should we update, amend, or make any changes to this document,
               those changes will be prominently posted here.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-2xl font-semibold mb-4"> Contact Us</h2>
-            <p>
-              If you have any questions or concerns about this disclaimer,
-              please feel free to contact us at:
-              <br />
-              <br />
-              Retail Types
-              <br />
-              B-148, Kankarbagh Main Road
-              <br />
-              Patna, Bihar 800020
-              <br />
-              India
-              <br />
-              Phone: +91 94306 22181
-              <br />
-              <a
-                href="mailto:info@retailtypes.com"
-                className="text-blue-600 hover:underline"
-              >
-                info@retailtypes.com
-              </a>
             </p>
           </div>
         </section>

@@ -15,8 +15,8 @@ const TermsConditions = () => {
           Terms & Conditions
         </h1>
         <p className="text-lg font-semibold mb-8">
-          Effective from Year:{' '}
-          <span className="text-gray-900 font-semibold">2025</span>
+          Last updated:{' '}
+          <span className="text-gray-900 font-semibold">July 10, 2025</span>
         </p>
 
         <section className="space-y-8">
@@ -36,9 +36,9 @@ const TermsConditions = () => {
               "Services").
               <br />
               <br />
-              You can contact us by phone at +91 94306 22181, email at
-              info@retailtypes.com, or by mail to B-148, Kankarbagh Main Road,
-              Patna, Bihar 800020, India.
+              You can contact us by phone at <strong>+91 94306 22181</strong>,
+              email at <strong>info@retailtypes.com</strong>, or by mail to
+              B-148, Kankarbagh Main Road, Patna, Bihar 800020, India.
               <br />
               <br />
               These Legal Terms constitute a legally binding agreement made
