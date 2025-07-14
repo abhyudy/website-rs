@@ -42,7 +42,7 @@ const FaqSection = () => {
       <section className="py-2">
         <div className="mx-auto max-w-6xl px-2 ">
           <div className="pb-2">
-            <h6 className="text-3xl font-bold text-left">FAQs</h6>
+            <h6 className="text-3xl  font-inter font-bold text-left">FAQs</h6>
           </div>
 
           <div className="accordion-group">
@@ -65,7 +65,7 @@ const FaqSection = () => {
                   aria-expanded={openAccordion === faq.id}
                   onClick={() => toggleAccordion(faq.id)}
                 >
-                  <h5 className="text-base sm:text-lg">{faq.question}</h5>
+                  <h5 className="text-base sm:text-lg font-inter">{faq.question}</h5>
                   <svg
                     className={`transition duration-500 group-hover:[color:#E37561] ${
                       openAccordion === faq.id

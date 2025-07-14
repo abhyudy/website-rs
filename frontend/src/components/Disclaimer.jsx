@@ -21,11 +21,8 @@ const Disclaimer = () => {
           <h2 className="text-2xl font-semibold mb-4"> Website Disclaimer</h2>
           <p>
             All the information on this website -{' '}
-            <a
-              href="mailto:info@retailtypes.com"
-              className="text-blue-600 hover:underline"
-            >
-              info@retailtypes.com
+            <a href="/" className="text-blue-600 hover:underline">
+              retailtypes.com
             </a>
             - is published in good faith and for general information purposes
             only. Retail Types does not make any warranties about the

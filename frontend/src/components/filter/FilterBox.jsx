@@ -39,7 +39,7 @@ const FilterBox = ({
                   onCategoryChange(index)
                   setMenuOpen(false)
                 }}
-                className={`flex justify-between items-center px-4 py-2 text-left text-sm border-b last:border-b-0 ${
+                className={`flex justify-between items-center px-4 py-2 text-left text-sm font-inter border-b last:border-b-0 ${
                   selectedCategory === index
                     ? 'bg-gray-100 text-black'
                     : 'hover:bg-gray-100 text-black'
@@ -54,12 +54,12 @@ const FilterBox = ({
       </div>
 
       {/* Desktop Categories and Search */}
-      <div className="hidden md:flex items-center gap-4 mt-4">
+      <div className="hidden md:flex items-center  gap-4 mt-4">
         {categories.map((category, index) => (
           <button
             key={index}
             onClick={() => onCategoryChange(index)}
-            className={`flex items-center gap-1 px-3 py-2 rounded-full border transition-all duration-300 text-sm ${
+            className={`flex items-center gap-1 px-3 py-2 rounded-full border transition-all duration-300 text-sm font-inter ${
               selectedCategory === index
                 ? 'bg-gray-100 text-black border-gray-800'
                 : 'bg-white text-black border-gray-400 hover:bg-gray-100'
@@ -67,12 +67,12 @@ const FilterBox = ({
           >
             {category}
             <span className="p-1 rounded-full text-pink-300 bg-gray-100 hover:bg-white">
-              <FaChevronDown className="text-xs" />
+              <FaChevronDown className="text-xs font-inter" />
             </span>
           </button>
         ))}
         <div className="flex-1">
-          <div className="flex items-center border rounded-full px-4 py-2 bg-white text-black border-gray-300">
+          <div className="flex items-center border rounded-full px-4 py-2 bg-white text-black font-inter border-gray-300">
             <input
               type="text"
               placeholder="Search by category..."

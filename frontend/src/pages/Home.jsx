@@ -1,6 +1,7 @@
 import React from 'react'
 import Subscribe from '../components/Subscribe'
 import StayAheadSection from '../components/Home/StayAheadSection'
+import CategoryButtons from '../components/Home/CategoryButtons'
 
 const Home = () => {
   return (
@@ -13,13 +14,17 @@ const Home = () => {
             <h1 className="text-5xl font-bold custom-times text-gray-900 mb-4 leading-tight">
               Style Meets Savings: <br /> Discover, Shop & Stay Ahead!
             </h1>
-            <p className="text-base  text-gray-600 mb-6">
+            <p className="text-base font-inter text-gray-600 mb-6">
               Unlock the latest trends, exclusive deals, and expert shopping
               insights – all in one place. Elevate your shopping game today!
             </p>
             <a
               href="/trends"
-              className="bg-background-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition"
+              className="font-inter bg-background-black text-white rounded-full hover:bg-gray-800 transition flex items-center justify-center"
+              style={{
+                width: '156px',
+                height: '45px',
+              }}
             >
               Read More
             </a>
@@ -85,29 +90,7 @@ const Home = () => {
           </div>
 
           {/* Categories */}
-          <div className="w-full max-w-6xl lg:w-1/3 sm:mt-6">
-            <h1 className="text-background-black text-4xl font-bold custom-times mb-4">
-              Categories
-              <hr className="h-px mb-6 mt-2 border-0 bg-gradient-to-r from-gray-200 via-gray-600 to-gray-200" />
-            </h1>
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              <button className="px-3 py-1 sm:px-4 sm:py-2 border border-pink-500 text-pink-600 rounded-full hover:bg-pink-50 transition text-sm sm:text-base">
-                Luxury & Designer
-              </button>
-              <button className="px-3 py-1 sm:px-4 sm:py-2 bg-blue-100 text-blue-700 border border-blue-400 rounded-full hover:bg-blue-200 transition text-sm sm:text-base">
-                Fashion & Style
-              </button>
-              <button className="px-3 py-1 sm:px-4 sm:py-2 border border-gray-300 text-gray-700 rounded-full hover:bg-gray-100 transition text-sm sm:text-base">
-                Sustainable Shopping
-              </button>
-              <button className="px-3 py-1 sm:px-4 sm:py-2 border border-gray-300 text-gray-700 rounded-full hover:bg-gray-100 transition text-sm sm:text-base">
-                Tech & Gadgets
-              </button>
-              <button className="px-3 py-1 sm:px-4 sm:py-2 border border-gray-300 text-gray-700 rounded-full hover:bg-gray-100 transition text-sm sm:text-base">
-                Beauty & Skincare
-              </button>
-            </div>
-          </div>
+          <CategoryButtons />
         </div>
 
         {/* Most Popular Section */}
@@ -119,7 +102,7 @@ const Home = () => {
             </h1>
             <a
               href="/trends"
-              className="text-base sm:text-xl font-medium underline text-background-black mt-4 sm:mt-0"
+              className="text-base sm:text-xl font-inter font-medium underline text-background-black mt-4 sm:mt-0"
             >
               SEE ALL
             </a>
@@ -158,7 +141,7 @@ const Home = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background-black/70 to-transparent p-4">
-                  <h5 className="text-white font-semibold text-base sm:text-lg">
+                  <h5 className="text-white custom-times  font-semibold text-base sm:text-lg">
                     {item.title}
                   </h5>
                 </div>
@@ -174,12 +157,12 @@ const Home = () => {
         <div className="w-full max-w-6xl mx-auto py-8 justify-between">
           {/* Header */}
           <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
-            <h1 className="text-6xl font-bold custom-times text-center sm:text-left">
+            <h1 className="text-6xl font-bold custom-times text-center sm:text-left ">
               Trending Posts
             </h1>
             <a
               href="/trends"
-              className="text-base sm:text-xl font-medium underline text-background-black mt-4 sm:mt-0"
+              className="text-base font-inter sm:text-xl font-medium underline text-background-black mt-4 sm:mt-0"
             >
               SEE ALL
             </a>
@@ -192,13 +175,23 @@ const Home = () => {
               className="bg-[#EAEAEA] rounded-xl p-6 flex flex-col justify-start relative overflow-hidden w-full"
               style={{ height: '482px' }}
             >
-              <span className="text-xs text-pink-500 bg-white border border-pink-200 px-4 py-1 rounded-full mb-4 w-fit font-medium">
+              <span
+                className="text-xs font-medium font-inter rounded-full flex items-center justify-center mb-3"
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  color: '#FFA8A8',
+                  border: '1px solid #FFA8A8',
+                  width: '117px',
+                  height: '37px',
+                }}
+              >
                 TrendyLooks
               </span>
-              <h3 className="text-xl font-bold text-background-black leading-snug mb-3 max-w-[60%]">
+
+              <h3 className="text-xl font-bold font-inter text-background-black leading-snug mb-3 max-w-[60%]">
                 Luxury vs. Affordable Fashion: Is It Worth the Price?
               </h3>
-              <p className="text-base text-gray-600 leading-relaxed mb-6 max-w-[60%]">
+              <p className="text-base font-inter text-gray-600 leading-relaxed mb-6 max-w-[60%]">
                 Explore key differences, benefits, and drawbacks of luxury and
                 budget fashion…..
               </p>
@@ -218,21 +211,21 @@ const Home = () => {
               <div className="flex gap-4 h-[48%]">
                 {/* Top Left Card */}
                 <div className="bg-orange-100 rounded-xl px-5 py-6 flex justify-between relative items-start w-1/2">
-                  <p className="text-base font-semibold text-background-black w-2/3">
+                  <p className="text-base font-inter font-semibold text-background-black w-2/3">
                     Latest in Retail & Shopping
                   </p>
                   <div className="flex items-end h-full w-full absolute right-0 top-0 ">
                     <img
                       src="/img/bag.png"
                       alt="Retail"
-                      className="absolute h-4/5  object-contain right-0"
+                      className="absolute h-3/5  object-contain right-0"
                     />
                   </div>
                 </div>
 
                 {/* Top Right Card */}
                 <div className="bg-blue-100 rounded-xl px-5 py-6 flex justify-between  relative items-start w-1/2">
-                  <p className="text-base font-semibold text-background-black w-2/3">
+                  <p className="text-base font-inter font-semibold text-background-black w-2/3">
                     Recent Insights <br /> & Trends
                   </p>
                   <div className="flex items-end h-full absolute top-0 w-full">
@@ -254,10 +247,10 @@ const Home = () => {
                 }}
               >
                 <div className="max-w-[60%] ">
-                  <p className="text-lg font-semibold text-background-black leading-snug mb-2">
+                  <p className="text-lg font-semibold font-inter text-background-black leading-snug mb-2">
                     Top Ethical & Sustainable Fashion Brands to Watch
                   </p>
-                  <p className="text-base text-gray-700">
+                  <p className="text-base font-inter text-gray-700">
                     Find clothing brands that are good for people and the
                     environment……
                   </p>
@@ -277,32 +270,36 @@ const Home = () => {
 
       {/* Top Discount Section */}
       <section className="bg-[url('/img/backgroundimg.png')] bg-cover bg-center ">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 ">
             {/* Left Image */}
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 lg:pr-[150px] ">
               <img
                 src="/img/img6.png"
                 alt="Top Discounts"
-                className="w-full h-auto object-cover object-top max-h-[200px] sm:max-h-[400px]"
+                className="w-full h-auto object-cover  object-top max-h-[400px] mt-6"
               />
             </div>
 
             {/* Right Content */}
-            <div className="md:w-1/2 text-center md:text-left">
-              <p className="text-xs sm:text-sm text-[#D96B69] font-semibold mb-2">
+            <div className="md:w-1/2 text-center md:text-left lg:pr-[85px]">
+              <p className="text-xs sm:text-sm font-inter text-[#E37561] font-semibold mb-2">
                 Top Deals & Discounts
               </p>
-              <h1 className="text-5xl custom-times sm:text-2xl md:text-3xl font-bold mb-4 leading-snug">
+              <h1 className="text-5xl custom-times sm:text-2xl md:text-3xl font-bold mb-4 leading-snug text-[#000000]">
                 Ultimate Guide to Finding the <br /> Best Online Discounts
               </h1>
-              <p className="text-xs sm:text-sm text-background-gray mb-6">
+              <p className="text-xs sm:text-sm font-inter text-[#000000] mb-6">
                 Never pay full price again! Learn how to find hidden deals,
                 discount codes, and cashback offers while shopping online.
               </p>
               <a
                 href="/trends"
-                className="bg-background-black text-white text-xs sm:text-sm px-4 sm:px-5 py-2 rounded-full hover:bg-gray-800"
+                className="font-inter bg-background-black text-white rounded-full hover:bg-gray-800 transition flex items-center justify-center"
+                style={{
+                  width: '156px',
+                  height: '45px',
+                }}
               >
                 Read More
               </a>

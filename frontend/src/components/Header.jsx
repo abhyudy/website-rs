@@ -133,7 +133,7 @@ const Header = () => {
 
       {/* Mobile Search Input */}
       {isSearchOpen && (
-        <div className="md:hidden bg-background-color px-4 py-2">
+        <div className="md:hidden bg-background-color px-4 py-2 absolute z-50 w-full">
           <div className="flex items-center border rounded-md bg-white border-gray-300 px-3 py-2 relative">
             <svg
               className="w-5 h-5 text-gray-700 mr-2"
@@ -167,6 +167,7 @@ const Header = () => {
               </button>
             )}
           </div>
+          <hr className="h-px border-0 bg-gradient-to-r from-gray-200 via-gray-600 to-gray-200 mt-2" />
         </div>
       )}
 

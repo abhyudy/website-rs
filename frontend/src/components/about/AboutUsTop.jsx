@@ -6,10 +6,10 @@ const AboutUsTop = () => {
       <div className="container w-full max-w-6xl mx-auto flex flex-col items-center justify-center py-10 md:py-12 px-4">
         {/* Top Section */}
         <div className="relative z-0 w-full py-15 md:py-30 bg-gradient-to-r from-[#FEC5C5] to-[#FFFCA7] text-black rounded-xl flex flex-col  items-center justify-start shadow-lg px-4 md:px-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-center">
+          <h1 className="text-4xl md:text-6xl font-bold custom-times text-center">
             About Us
           </h1>
-          <p className="text-base md:text-xl max-w-3xl mt-4 text-center">
+          <p className="text-base md:text-base font-inter max-w-3xl mt-4 text-center">
             Unlock the latest trends, insider tips, and exclusive deals. We
             bring you expert insights, honest reviews, and the smartest shopping
             strategies.
