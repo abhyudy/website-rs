@@ -21,9 +21,9 @@ const AboutUsTop = () => {
           <div className="flex flex-col md:flex-row gap-6 md:gap-10 justify-between items-stretch">
             {/* Left Box */}
             <div className="flex-1 bg-white border border-gray-300 rounded-xl flex flex-col justify-between gap-10 p-6 md:p-10 shadow-md text-center">
-              <h2 className="flex text-start text-2xl md:text-4xl font-semibold mb-4">
+              <h1 className="flex text-start text-2xl md:text-4xl font-semibold mb-4">
                 Who We Are
-              </h2>
+              </h1>
               <p className="flex text-start">
                 We are a community of shopping enthusiasts, trendsetters, and
                 deal hunters, bringing you expert recommendations, honest
@@ -33,9 +33,9 @@ const AboutUsTop = () => {
 
             {/* Right Box */}
             <div className="flex-1 bg-white border border-gray-300 rounded-xl flex flex-col justify-between gap-10 p-6 md:p-10 shadow-md text-center">
-              <h2 className="flex text-2xl md:text-4xl font-semibold mb-4">
+              <h1 className="flex text-2xl md:text-4xl font-semibold mb-4">
                 Our Mission
-              </h2>
+              </h1>
               <p className="flex text-start mb-6">
                 We're your go-to for smart, stylish, and eco-friendly shopping
                 advice—helping you find trends, quality, and value.

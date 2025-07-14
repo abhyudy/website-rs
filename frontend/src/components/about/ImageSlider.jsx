@@ -131,7 +131,7 @@ export default function ImageSlider() {
           </div>
         </div>
 
-        <div id='big-filter-box' className="hidden md:inline-block">
+        <div id="big-filter-box" className="hidden md:inline-block">
           <FilterBox />
         </div>
 
