@@ -122,26 +122,32 @@ export default function ImageSlider() {
       {/* Intro */}
       <div className="py-5">
         <div className="relative flex items-center justify-between mt-2">
-          <h3 className="text-3xl md:text-6xl custom-times font-semibold text-gray-800">
+          <h3 className="text-3xl md:text-6xl custom-times font-semibold text-black">
             What We Cover
           </h3>
+          <div className="inline-block md:hidden">
+            {/* Hamburger Icon - Only on Mobile */}
+            <FilterBox />
+          </div>
         </div>
-        <p className="text-black mt-4 max-w-3xl">
+
+        <div id='big-filter-box' className="hidden md:inline-block">
+          <FilterBox />
+        </div>
+
+        <p className="text-black font-inter mt-4 max-w-3xl">
           We explore a wide range of shopping categories, from fashion and tech
           to beauty and home essentials. Stay ahead with the latest trends,
           discover must-have products, and unlock exclusive deals curated just
           for you.
         </p>
-
-        {/* Hamburger Icon - Only on Mobile */}
-        <FilterBox />
       </div>
 
       {/* Top Bar */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-10 gap-4 md:gap-0">
-        <h2 className="text-3xl md:text-5xl font-bold text-gray-800 border-l-4 border-[#E37561] pl-4">
+        <h1 className="text-3xl md:text-5xl font-bold font-inter text-black border-l-4 border-[#E37561] pl-4">
           Blog
-        </h2>
+        </h1>
         <div className="flex items-center space-x-3 sm:space-x-6">
           <span className="text-lg sm:text-2xl text-black font-medium">
             See All ({photoData.length})

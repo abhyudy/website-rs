@@ -16,14 +16,14 @@ const AboutBox = () => {
         {/* Box 2 - Text */}
         <div className="w-full bg-white p-6 md:p-10 flex flex-col justify-between text-center rounded-3xl aspect-auto md:aspect-square">
           <div className="text-left">
-            <h2 className="text-3xl md:text-5xl font-semibold text-gray-800">
+            <h1 className="text-3xl md:text-5xl font-inter font-semibold text-black">
               Why We Are
-            </h2>
-            <h2 className="text-3xl md:text-5xl font-semibold text-gray-800">
+            </h1>
+            <h1 className="text-3xl md:text-5xl font-inter font-semibold text-black">
               the Best?
-            </h2>
+            </h1>
           </div>
-          <p className="text-left text-base md:text-lg text-black mt-4">
+          <p className="text-left text-base font-inter md:text-lg text-black mt-4">
             Unlike other shopping blogs, we go beyond product listings. We
             provide detailed shopping guides, real user experiences, and tips to
             help you maximize your budget. Our dedicated team stays updated on
@@ -35,14 +35,14 @@ const AboutBox = () => {
         {/* Box 3 - Text */}
         <div className="w-full bg-white p-6 md:p-10 flex flex-col justify-between rounded-3xl aspect-auto md:aspect-square">
           <div className="text-left">
-            <h2 className="text-3xl md:text-5xl font-semibold text-gray-800">
+            <h1 className="text-3xl md:text-5xl font-inter font-semibold text-black">
               Why Choose
-            </h2>
-            <h2 className="text-3xl md:text-5xl font-semibold text-gray-800">
+            </h1>
+            <h1 className="text-3xl md:text-5xl font-inter font-semibold text-black">
               Us?
-            </h2>
+            </h1>
           </div>
-          <p className="text-left text-base md:text-lg text-black mt-4">
+          <p className="text-left text-base font-inter md:text-lg text-black mt-4">
             We stand out by providing well-researched, unbiased recommendations
             that ensure you get the best shopping experience. Our team curates
             top deals, offers real product insights, and keeps you ahead with

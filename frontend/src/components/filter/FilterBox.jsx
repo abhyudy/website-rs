@@ -24,7 +24,7 @@ const FilterBox = ({
       <div className="md:hidden relative">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="p-2 border rounded-md text-gray-700 bg-white shadow-sm hover:bg-gray-100"
+          className="p-2 border rounded-md text-black bg-white shadow-sm hover:bg-gray-100"
         >
           <HiOutlineAdjustmentsHorizontal className="text-2xl" />
         </button>
@@ -71,7 +71,7 @@ const FilterBox = ({
             </span>
           </button>
         ))}
-        <div className="flex-1">
+        <div className="flex-1" id='search-box'>
           <div className="flex items-center border rounded-full px-4 py-2 bg-white text-black font-inter border-gray-300">
             <input
               type="text"

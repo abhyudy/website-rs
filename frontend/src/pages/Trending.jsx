@@ -62,6 +62,7 @@ const Trending = () => {
 
         {/* Category & Search */}
         <div className="w-full flex flex-col md:flex-row items-end md:items-center justify-between py-8">
+          
           <FilterBox
             selectedCategory={selectedCategory}
             onCategoryChange={setSelectedCategory}

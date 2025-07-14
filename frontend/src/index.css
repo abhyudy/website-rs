@@ -28,3 +28,8 @@
   }
 }
 
+
+#big-filter-box #search-box {
+  display: none;
+}
+

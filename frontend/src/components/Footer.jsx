@@ -30,11 +30,11 @@ const Footer = () => {
                 <img
                   src={logo}
                   alt="R&S"
-                  className="mb-4 h-auto max-w-[200px] object-contain mx-auto md:mx-0"
+                  className="mb-4 h-auto max-w-[200px] font-inter object-contain mx-auto md:mx-0"
                   style={{ maxHeight: '100px' }}
                 />
               </Link>
-              <p className="text-sm sm:text-base text-gray-300 max-w-xs mx-auto md:mx-0">
+              <p className="text-sm sm:text-base font-inter text-gray-300 max-w-xs mx-auto md:mx-0">
                 Your go-to source for shopping trends, exclusive deals, and
                 expert tips. Stay ahead in the retail world!
               </p>
@@ -42,10 +42,10 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div className="flex-1 min-w-[200px] text-center md:text-left">
-              <h5 className="font-semibold mb-3 text-base sm:text-lg">
+              <h5 className="font-semibold mb-3 font-inter text-base sm:text-lg">
                 Quick Links
               </h5>
-              <ul className="text-sm sm:text-base space-y-2 text-gray-300">
+              <ul className="text-sm sm:text-base font-inter space-y-2 text-gray-300">
                 {['/', '/about', '/trends', '/contact'].map((path, idx) => (
                   <li key={idx}>
                     <Link
@@ -64,10 +64,10 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="flex-1 min-w-[200px] text-center md:text-left">
-              <h5 className="font-semibold mb-3 text-base sm:text-lg">
+              <h5 className="font-semibold font-inter mb-3 text-base sm:text-lg">
                 Contact Us
               </h5>
-              <ul className="text-sm sm:text-base space-y-2 text-gray-300">
+              <ul className="text-sm sm:text-base font-inter space-y-2 text-gray-300">
                 <li>📍 B-148, Kankarbagh Main Road, Patna, Bihar-800020</li>
                 <li>📞 +91 (943) 0622181</li>
                 <li>📧 info@retailtypes.com</li>
@@ -76,10 +76,10 @@ const Footer = () => {
 
             {/* Important Links */}
             <div className="flex-1 min-w-[200px] text-center md:text-left">
-              <h5 className="font-semibold mb-3 text-base sm:text-lg">
+              <h5 className="font-semibold mb-3 font-inter text-base sm:text-lg">
                 Important Links
               </h5>
-              <ul className="text-sm sm:text-base space-y-2 text-gray-300">
+              <ul className="text-sm sm:text-base font-inter space-y-2 text-gray-300">
                 <li>
                   <Link
                     to="/privacy-policy"
@@ -109,7 +109,7 @@ const Footer = () => {
           </div>
 
           {/* Bottom Line */}
-          <div className="border-t border-gray-700 mt-10 pt-4 text-center text-xs sm:text-sm text-gray-400">
+          <div className="border-t border-gray-700 mt-10 pt-4 text-center font-inter text-xs sm:text-sm text-gray-400">
             © {new Date().getFullYear()} Copyright retailtypes.com.
             <br /> All Rights Reserved
           </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { RiTelegram2Line } from 'react-icons/ri'
 const Subscribe = () => {
   return (
     <div className="bg-background-color py-6 sm:py-12 px-6">
@@ -10,17 +10,18 @@ const Subscribe = () => {
         <p className="text-xs sm:text-sm md:text-base font-inter text-background-black mb-4 sm:mb-6 text-center max-w-lg">
           Subscribe to get the latest trends and exclusive deals!
         </p>
-        <form className="flex flex-col sm:flex-row  justify-center w-full max-w-md gap-2 sm:gap-0">
+        <form className="flex flex-col sm:flex-row  justify-center w-full max-w-md gap-2">
           <input
             type="email"
             placeholder="Enter your email..."
-            className="flex-1 px-3 sm:px-4 py-2 border bg-white border-white rounded-l-md sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-background-black text-xs sm:text-sm font-inter"
+            className="flex-1 px-3 sm:px-4 py-2 border bg-white border-white rounded-md focus:outline-none focus:ring-2 focus:ring-background-black text-xs sm:text-sm font-inter"
             required
           />
           <a
             href="/contact"
-            className="bg-background-black text-white px-4 sm:px-5 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md hover:bg-gray-800 transition text-xs sm:text-sm text-center font-inter"
+            className="bg-background-black flex items-center gap-1 text-white px-4 sm:px-3 py-2 rounded-md  sm:rounded-md hover:bg-gray-800 transition text-xs sm:text-sm text-center font-inter"
           >
+            <img src="./img/air.png" alt="" />
             Subscribe
           </a>
         </form>
