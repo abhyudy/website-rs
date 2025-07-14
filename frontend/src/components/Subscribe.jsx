@@ -19,7 +19,7 @@ const Subscribe = () => {
           />
           <a
             href="/contact"
-            className="bg-background-black flex items-center gap-1 text-white px-4 sm:px-3 py-2 rounded-md  sm:rounded-md hover:bg-gray-800 transition text-xs sm:text-sm text-center font-inter"
+            className="bg-background-black flex items-center gap-1 w-fit mx-auto text-white px-4 sm:px-3 py-2 rounded-md  sm:rounded-md hover:bg-gray-800 transition text-xs sm:text-sm text-center font-inter"
           >
             <img src="./img/air.png" alt="" />
             Subscribe

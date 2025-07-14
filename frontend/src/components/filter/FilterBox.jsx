@@ -46,7 +46,8 @@ const FilterBox = ({
                 }`}
               >
                 {category}
-                <FaChevronDown className="text-xs text-pink-300" />
+                <img src="/img/Vector.png" alt="arrow" />
+                {/* <FaChevronDown className="text-xs text-pink-300" /> */}
               </button>
             ))}
           </div>
@@ -67,11 +68,12 @@ const FilterBox = ({
           >
             {category}
             <span className="p-1 rounded-full text-pink-300 bg-gray-100 hover:bg-white">
-              <FaChevronDown className="text-xs font-inter" />
+              <img src="/img/Vector.png" alt="arrow" />
+                {/* <FaChevronDown className="text-xs text-pink-300" /> */}
             </span>
           </button>
         ))}
-        <div className="flex-1" id='search-box'>
+        <div className="flex-1" id="search-box">
           <div className="flex items-center border rounded-full px-4 py-2 bg-white text-black font-inter border-gray-300">
             <input
               type="text"
