@@ -10,8 +10,8 @@ const Home = () => {
       <div className=" py-container mx-auto flex flex-col items-center justify-center  py-8">
         <div className="w-full max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
           {/* Left: Text */}
-          <div className="w-1/2 text-left">
-            <h1 className="text-5xl font-bold custom-times text-gray-900 mb-4 leading-tight">
+          <div className=" w-full sm:w-1/2 text-left">
+            <h1 className="text-5xl font-bold custom-times text-black mb-4 leading-tight">
               Style Meets Savings: <br /> Discover, Shop & Stay Ahead!
             </h1>
             <p className="text-base font-inter text-gray-600 mb-6">
@@ -20,7 +20,7 @@ const Home = () => {
             </p>
             <a
               href="/trends"
-              className="font-inter bg-background-black text-white rounded-full hover:bg-gray-800 transition flex items-center justify-center"
+              className="font-inter bg-black text-white rounded-full hover:bg-gray-800 transition flex items-center justify-center"
               style={{
                 width: '156px',
                 height: '45px',
@@ -32,83 +32,82 @@ const Home = () => {
 
           {/* Right: Image */}
 
-          <div className=" relative w-1/2 mt-6">
+          <div className=" w-full relative sm:w-1/2 mt-6">
             <div className="absolute h-full w-full bg-black/40 rounded-2xl"></div>
             <img
               src="/img/home2.png"
               alt="Shopping Fun"
-              className="w-full h-auto rounded-2xl object-cover max-h-[400px]"
+              className="w-full h-auto rounded-2xl object-cover max-h-[344px]"
             />
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="w-full max-w-6xl mx-auto px-2 flex flex-col lg:flex-row gap-4 lg:gap-10 mt-8">
-          {/* Visitor Box */}
-          <div
-            className="rounded-xl flex flex-col items-center justify-center p-4 relative mt-4 sm:mt-6"
-            style={{
-              backgroundColor: 'var(--color-color)',
-              width: '100%',
-              maxWidth: '251px',
-              height: '250px',
-            }}
-          >
-            {/* Grouped Profile Images */}
-            <div className="flex -space-x-4 mb-4">
-              <img
-                src="https://randomuser.me/api/portraits/men/32.jpg"
-                alt="User 1"
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white"
-              />
-              <img
-                src="https://randomuser.me/api/portraits/women/44.jpg"
-                alt="User 2"
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white"
-              />
-              <img
-                src="https://randomuser.me/api/portraits/women/65.jpg"
-                alt="User 3"
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white"
-              />
+        <div className="w-full max-w-6xl mx-auto px-2 flex justify-start flex-col lg:flex-row gap-4 lg:gap-10 mt-8">
+          {/* Visitor Box + Image in a row */}
+          <div className="flex flex-row flex-wrap gap-4 justify-center">
+            {/* Visitor Box */}
+            <div
+              className="rounded-xl flex flex-col items-center justify-center p-4 mt-4 sm:mt-6 flex-shrink-0"
+              style={{
+                backgroundColor: 'var(--color-color)',
+                width: '251px',
+                height: '250px',
+              }}
+            >
+              <div className="flex -space-x-4 mb-4">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="User 1"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white"
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt="User 2"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white"
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/women/65.jpg"
+                  alt="User 3"
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white"
+                />
+              </div>
+              <p className="text-5xl sm:text-6xl font-bold text-white">4.3k</p>
             </div>
 
-            {/* Visitor Count */}
-            <p className="text-5xl sm:text-6xl font-bold text-white">4.3k</p>
-          </div>
-
-          {/* Shopping Bags Image */}
-          <div
-            className="mt-4 sm:mt-6"
-            style={{ width: '100%', maxWidth: '251px', height: '250px' }}
-          >
-            <img
-              src="/img/home3.png"
-              alt="Shopping Bags"
-              className="w-full h-full rounded-xl object-cover"
-            />
+            {/* Image */}
+            <div
+              className="mt-4 sm:mt-6 flex-shrink-0"
+              style={{ width: '251px', height: '250px' }}
+            >
+              <img
+                src="/img/home3.png"
+                alt="Shopping Bags"
+                className="w-full h-full rounded-xl object-cover"
+              />
+            </div>
           </div>
 
           {/* Categories */}
           <CategoryButtons />
         </div>
-
         {/* Most Popular Section */}
-        <section className="w-full max-w-6xl mx-auto px-2 py-8 max-md:px-6">
+        <section className="w-full max-w-6xl mx-auto px-4 py-8">
           {/* Heading */}
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8">
-            <h1 className=" text-5xl custom-times font-bold  text-background-black text-center sm:text-left">
-              Most Popular At <br /> The Moment
+          <div className="flex flex-row  justify-between items-center mb-6 sm:mb-8 flex-wrap">
+            <h1 className="text-xl sm:text-5xl custom-times font-bold text-background-black text-center sm:text-left">
+              Most Popular At <br className="hidden sm:block" /> The Moment
             </h1>
             <a
               href="/trends"
-              className="text-base sm:text-xl font-inter font-medium underline text-background-black mt-4 sm:mt-0"
+              className="text-sm sm:text-xl font-inter font-medium underline text-background-black ml-auto "
             >
-              SEE ALL
+              See All
             </a>
           </div>
-          {/* Staggered Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+
+          {/* Grid with Up-Down Staggering */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               {
                 title: 'Fashion & Apparel',
@@ -116,7 +115,7 @@ const Home = () => {
                 offset: 'translate-y-4',
               },
               {
-                title: 'Tech & Gadgets',
+                title: 'Tech & Gadget',
                 img: '/img/img2.png',
                 offset: '-translate-y-4',
               },
@@ -133,15 +132,15 @@ const Home = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className={`relative rounded-xl overflow-hidden shadow-lg h-[300px] sm:h-[346px] w-full transform transition duration-300 ease-in-out hover:brightness-110 hover:scale-105 cursor-pointer ${item.offset}`}
+                className={`relative rounded-xl overflow-hidden shadow-lg h-[220px] sm:h-[346px] w-full transform transition duration-300 ease-in-out hover:brightness-110 hover:scale-105 cursor-pointer ${item.offset}`}
               >
                 <img
                   src={item.img}
                   alt={item.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background-black/70 to-transparent p-4">
-                  <h5 className="text-white custom-times  font-semibold text-base sm:text-lg">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background-black/70 to-transparent p-3">
+                  <h5 className="text-white custom-times font-semibold text-xs sm:text-lg">
                     {item.title}
                   </h5>
                 </div>
@@ -273,36 +272,40 @@ const Home = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 ">
             {/* Left Image */}
-            <div className="md:w-1/2 lg:pr-[150px] ">
+            <div className="w-full md:w-1/2 lg:pr-[150px] ">
               <img
                 src="/img/img6.png"
                 alt="Top Discounts"
-                className="w-full h-auto object-cover  object-top max-h-[400px] mt-6"
+                className="w-full  object-cover  object-top max-h-[400px] mt-6"
               />
             </div>
 
             {/* Right Content */}
             <div className="md:w-1/2 text-center md:text-left lg:pr-[85px]">
-              <p className="text-xs sm:text-sm font-inter text-[#E37561] font-semibold mb-2">
+              <p className="text-base sm:text-sm font-inter text-[#E37561] font-semibold mb-2">
                 Top Deals & Discounts
               </p>
-              <h1 className="text-5xl custom-times sm:text-2xl md:text-3xl font-bold mb-4 leading-snug text-[#000000]">
+              <h1 className="text-xl custom-times sm:text-2xl md:text-3xl font-bold mb-4 leading-snug text-black">
                 Ultimate Guide to Finding the <br /> Best Online Discounts
               </h1>
-              <p className="text-xs sm:text-sm font-inter text-[#000000] mb-6">
+              <p className="text-xs sm:text-sm font-inter text-black mb-6">
                 Never pay full price again! Learn how to find hidden deals,
                 discount codes, and cashback offers while shopping online.
               </p>
-              <a
-                href="/trends"
-                className="font-inter bg-background-black text-white rounded-full hover:bg-gray-800 transition flex items-center justify-center"
-                style={{
-                  width: '156px',
-                  height: '45px',
-                }}
-              >
-                Read More
-              </a>
+
+              {/* Button: Centered on mobile */}
+              <div className="flex justify-center md:justify-start mb-4">
+                <a
+                  href="/trends"
+                  className="font-inter bg-background-black text-white rounded-full hover:bg-gray-800 transition flex items-center justify-center"
+                  style={{
+                    width: '156px',
+                    height: '45px',
+                  }}
+                >
+                  Read More
+                </a>
+              </div>
             </div>
           </div>
         </div>

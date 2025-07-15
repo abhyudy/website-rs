@@ -68,9 +68,22 @@ const Footer = () => {
                 Contact Us
               </h5>
               <ul className="text-sm sm:text-base font-inter space-y-2 text-gray-300">
-                <li>📍 B-148, Kankarbagh Main Road, Patna, Bihar-800020</li>
-                <li>📞 +91 (943) 0622181</li>
-                <li>📧 info@retailtypes.com</li>
+                <li className="flex items-start gap-2">
+                  <img
+                    src="/img/location.png"
+                    alt="location"
+                    className="w-3 h-3 mt-1"
+                  />
+                  <span>B-148, Kankarbagh Main Road, Patna, Bihar-800020</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <img src="/img/call.png" alt="call" className="w-3 h-3" />
+                  <span>+91 (943) 0622181</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <img src="/img/mail.png" alt="mail" className="w-3 h-3" />
+                  <span>info@retailtypes.com</span>
+                </li>
               </ul>
             </div>
 

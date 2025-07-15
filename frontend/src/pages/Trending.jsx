@@ -16,7 +16,7 @@ const mockData = Array.from({ length: 30 }, (_, i) => ({
   ][i % 5],
 }))
 
-const ITEMS_PER_PAGE = 12
+const ITEMS_PER_PAGE = 3 // Set to 3 for pagination of 3 items per page
 
 const Trending = () => {
   const categories = [
@@ -62,7 +62,6 @@ const Trending = () => {
 
         {/* Category & Search */}
         <div className="w-full flex flex-col md:flex-row items-end md:items-center justify-between py-8">
-          
           <FilterBox
             selectedCategory={selectedCategory}
             onCategoryChange={setSelectedCategory}
