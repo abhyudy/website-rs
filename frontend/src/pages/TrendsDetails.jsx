@@ -5,6 +5,7 @@ import FaqSection from '../components/FaqSection'
 import NavigationSection from '../components/trendDetails/NavigationSection'
 import RelatedPost from '../components/trendDetails/RelatedPost'
 import { useState, useRef, useEffect } from 'react'
+import MobileTOC from '../components/trendDetails/MobileTOC'
 
 const TrendsDetail = () => {
   const tableOfContent = [
@@ -143,11 +144,16 @@ const TrendsDetail = () => {
 
   return (
     <>
-      <div className="bg-[#FFF3F3] text-black py-10">
+      <div className="bg-[#FFF3F3] text-black py-10 px-4 sm:px-6">
         <div className="w-full max-w-6xl mx-auto pl-8">
           <div className="grid grid-cols-12 gap-10 lg:flex-row">
             <div className="w-full col-span-8">
               <HeaderSection />
+              <MobileTOC
+                tableOfContent={tableOfContent}
+                handleLinkClick={handleLinkClick}
+                activeSection={activeSection}
+              />
               <ContentSection
                 tableOfContent={tableOfContent}
                 activeSection={activeSection}

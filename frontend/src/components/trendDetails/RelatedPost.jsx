@@ -67,7 +67,7 @@ const RelatedPost = () => {
         </h1>
 
         {/* Scrollable on small, grid on medium+ */}
-        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible scrollbar-hide">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {relatedPosts.map((post, index) => (
             <Link
               key={index}
@@ -85,7 +85,9 @@ const RelatedPost = () => {
                 />
                 <div className="p-4 flex flex-col justify-between h-[210px]">
                   <div>
-                    <p className="text-sm font-inter text-gray-500 mb-1">{post.topic}</p>
+                    <p className="text-sm font-inter text-gray-500 mb-1">
+                      {post.topic}
+                    </p>
                     <h6 className="text-lg  font-inter font-semibold line-clamp-2 mb-2">
                       {post.title}
                     </h6>
@@ -93,7 +95,9 @@ const RelatedPost = () => {
                       {post.description}
                     </p>
                   </div>
-                  <p className="text-sm font-inter text-gray-500 mt-3">{post.author}</p>
+                  <p className="text-sm font-inter text-gray-500 mt-3">
+                    {post.author}
+                  </p>
                 </div>
               </div>
             </Link>

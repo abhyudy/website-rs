@@ -2,16 +2,17 @@ import React from 'react'
 import Subscribe from '../components/Subscribe'
 import StayAheadSection from '../components/Home/StayAheadSection'
 import CategoryButtons from '../components/Home/CategoryButtons'
+import MobileBottomSection from '../components/Home/MobileBottomSection'
 
 const Home = () => {
   return (
     <div className=" bg-background-color">
       {/* Hero Section */}
-      <div className=" py-container mx-auto flex flex-col items-center justify-center  py-8">
-        <div className="w-full max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
+      <div className="py-container mx-auto py-8">
+        <div className="w-full max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-6 lg:gap-10">
           {/* Left: Text */}
-          <div className=" w-full sm:w-1/2 text-left">
-            <h1 className="text-5xl font-bold custom-times text-black mb-4 leading-tight">
+          <div className="w-full md:w-1/2 text-left">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold custom-times text-black mb-4 leading-tight">
               Style Meets Savings: <br /> Discover, Shop & Stay Ahead!
             </h1>
             <p className="text-base font-inter text-gray-600 mb-6">
@@ -32,7 +33,7 @@ const Home = () => {
 
           {/* Right: Image */}
 
-          <div className=" w-full relative sm:w-1/2 mt-6">
+          <div className="w-full md:w-1/2 relative mb-6 md:mb-0">
             <div className="absolute h-full w-full bg-black/40 rounded-2xl"></div>
             <img
               src="/img/home2.png"
@@ -42,55 +43,58 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="w-full max-w-6xl mx-auto px-2 flex justify-start flex-col lg:flex-row gap-4 lg:gap-10 mt-8">
-          {/* Visitor Box + Image in a row */}
-          <div className="flex flex-row flex-wrap gap-4 justify-center">
-            {/* Visitor Box */}
-            <div
-              className="rounded-xl flex flex-col items-center justify-center p-4 mt-4 sm:mt-6 flex-shrink-0"
-              style={{
-                backgroundColor: 'var(--color-color)',
-                width: '251px',
-                height: '250px',
-              }}
-            >
-              <div className="flex -space-x-4 mb-4">
+        {/* Bottom Section  */}
+
+        <div className="hidden sm:block">
+          <div className="w-full max-w-6xl mx-auto px-2 flex justify-start flex-col lg:flex-row gap-4 lg:gap-10 mt-8">
+            {/* Visitor Box + Image in a row */}
+            <div className="flex flex-row flex-wrap gap-4 justify-center">
+              {/* Visitor Box */}
+              <div
+                className="rounded-xl flex flex-col items-center justify-center p-4 mt-4 sm:mt-6 flex-shrink-0"
+                style={{
+                  backgroundColor: 'var(--color-color)',
+                  width: '251px',
+                  height: '250px',
+                }}
+              >
+                <div className="flex -space-x-4 mb-4">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    className="w-10 h-10 rounded-full border-2 border-white"
+                  />
+                  <img
+                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                    className="w-10 h-10 rounded-full border-2 border-white"
+                  />
+                  <img
+                    src="https://randomuser.me/api/portraits/women/65.jpg"
+                    className="w-10 h-10 rounded-full border-2 border-white"
+                  />
+                </div>
+                <p className="text-6xl font-bold text-white">4.3k</p>
+              </div>
+
+              {/* Image */}
+              <div
+                className="mt-4 sm:mt-6 flex-shrink-0"
+                style={{ width: '251px', height: '250px' }}
+              >
                 <img
-                  src="https://randomuser.me/api/portraits/men/32.jpg"
-                  alt="User 1"
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white"
-                />
-                <img
-                  src="https://randomuser.me/api/portraits/women/44.jpg"
-                  alt="User 2"
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white"
-                />
-                <img
-                  src="https://randomuser.me/api/portraits/women/65.jpg"
-                  alt="User 3"
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white"
+                  src="/img/home3.png"
+                  className="w-full h-full rounded-xl object-cover"
                 />
               </div>
-              <p className="text-5xl sm:text-6xl font-bold text-white">4.3k</p>
             </div>
 
-            {/* Image */}
-            <div
-              className="mt-4 sm:mt-6 flex-shrink-0"
-              style={{ width: '251px', height: '250px' }}
-            >
-              <img
-                src="/img/home3.png"
-                alt="Shopping Bags"
-                className="w-full h-full rounded-xl object-cover"
-              />
-            </div>
+            {/* Categories */}
+            <CategoryButtons />
           </div>
-
-          {/* Categories */}
-          <CategoryButtons />
         </div>
+
+        {/* ✅ Mobile Layout only */}
+        <MobileBottomSection />
+
         {/* Most Popular Section */}
         <section className="w-full max-w-6xl mx-auto px-4 py-8">
           {/* Heading */}
@@ -153,15 +157,15 @@ const Home = () => {
         <StayAheadSection />
 
         {/* Trending Posts Section */}
-        <div className="w-full max-w-6xl mx-auto py-8 justify-between">
+        <div className="w-full max-w-6xl mx-auto py-8">
           {/* Header */}
           <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
-            <h1 className="text-6xl font-bold custom-times text-center sm:text-left ">
+            <h1 className="text-4xl sm:text-6xl font-bold custom-times text-center sm:text-left">
               Trending Posts
             </h1>
             <a
               href="/trends"
-              className="text-base font-inter sm:text-xl font-medium underline text-background-black mt-4 sm:mt-0"
+              className="text-base sm:text-xl font-inter font-medium underline text-background-black mt-4 sm:mt-0"
             >
               SEE ALL
             </a>
@@ -169,13 +173,10 @@ const Home = () => {
 
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Left Card (Fixed Height) */}
-            <div
-              className="bg-[#EAEAEA] rounded-xl p-6 flex flex-col justify-start relative overflow-hidden w-full"
-              style={{ height: '482px' }}
-            >
+            {/* Left Card */}
+            <div className="bg-[#EAEAEA] rounded-xl p-6 relative overflow-hidden w-full h-[482px] flex flex-col justify-start">
               <span
-                className="text-xs font-medium font-inter rounded-full flex items-center justify-center mb-3"
+                className="text-xs font-medium font-inter rounded-full flex items-center justify-center mb-3 z-10"
                 style={{
                   backgroundColor: '#FFFFFF',
                   color: '#FFA8A8',
@@ -187,57 +188,55 @@ const Home = () => {
                 TrendyLooks
               </span>
 
-              <h3 className="text-xl font-bold font-inter text-background-black leading-snug mb-3 max-w-[60%]">
+              <h3 className="text-xl font-bold font-inter text-background-black leading-snug mb-3 max-w-[60%] z-10">
                 Luxury vs. Affordable Fashion: Is It Worth the Price?
               </h3>
-              <p className="text-base font-inter text-gray-600 leading-relaxed mb-6 max-w-[60%]">
+              <p className="text-base font-inter text-gray-600 leading-relaxed mb-6 max-w-[60%] z-10">
                 Explore key differences, benefits, and drawbacks of luxury and
                 budget fashion…..
               </p>
-              <img
-                src="/img/girlpost.png"
-                alt="Luxury vs Affordable"
-                className="absolute bottom-0 left-24 h-3/4 object-contain"
-              />
+
+              {/* Image */}
+              <div className="absolute inset-0 pointer-events-none">
+                <img
+                  src="/img/girlpost.png"
+                  alt="Luxury vs Affordable"
+                  className="absolute bottom-0 left-24 h-[70%] object-contain"
+                />
+              </div>
             </div>
 
-            {/* Right Cards (Also Total Height = 482px) */}
-            <div
-              className="flex flex-col justify-between  relative w-full"
-              style={{ height: '482px' }}
-            >
-              {/* Top Row: Two Cards side by side, each 50% height */}
+            {/* Right Section */}
+            <div className="flex flex-col justify-between w-full h-[482px]">
+              {/* Top Row */}
               <div className="flex gap-4 h-[48%]">
                 {/* Top Left Card */}
-                <div className="bg-orange-100 rounded-xl px-5 py-6 flex justify-between relative items-start w-1/2">
-                  <p className="text-base font-inter font-semibold text-background-black w-2/3">
+                <div className="bg-orange-100 rounded-xl px-5 py-6 relative w-1/2 overflow-hidden">
+                  <p className="text-base font-inter font-semibold text-background-black w-2/3 relative z-10">
                     Latest in Retail & Shopping
                   </p>
-                  <div className="flex items-end h-full w-full absolute right-0 top-0 ">
-                    <img
-                      src="/img/bag.png"
-                      alt="Retail"
-                      className="absolute h-3/5  object-contain right-0"
-                    />
-                  </div>
+                  <img
+                    src="/img/bag.png"
+                    alt="Retail"
+                    className="absolute bottom-2 right-2 h-3/5 sm:h-[65%] object-contain z-0"
+                  />
                 </div>
 
                 {/* Top Right Card */}
-                <div className="bg-blue-100 rounded-xl px-5 py-6 flex justify-between  relative items-start w-1/2">
-                  <p className="text-base font-inter font-semibold text-background-black w-2/3">
+
+                <div className="bg-blue-100 rounded-xl px-5 py-6 relative w-1/2 overflow-hidden">
+                  <p className="text-base font-inter font-semibold text-background-black w-2/3 relative z-10">
                     Recent Insights <br /> & Trends
                   </p>
-                  <div className="flex items-end h-full absolute top-0 w-full">
-                    <img
-                      src="/img/watch.png"
-                      alt="Watch"
-                      className="absolute h-full top-0 right-0 z-10 object-contain"
-                    />
-                  </div>
+                  <img
+                    src="/img/watch.png"
+                    alt="Watch"
+                    className="absolute top-0 right-[-20] h-full object-contain z-0"
+                  />
                 </div>
               </div>
 
-              {/* Bottom Card (Remaining 50% height) */}
+              {/* Bottom Card */}
               <div
                 className="rounded-xl px-5 py-6 flex justify-between items-start relative"
                 style={{
@@ -245,7 +244,7 @@ const Home = () => {
                   backgroundColor: '#FFE58F',
                 }}
               >
-                <div className="max-w-[60%] ">
+                <div className="max-w-[60%] z-10 relative">
                   <p className="text-lg font-semibold font-inter text-background-black leading-snug mb-2">
                     Top Ethical & Sustainable Fashion Brands to Watch
                   </p>
@@ -254,13 +253,11 @@ const Home = () => {
                     environment……
                   </p>
                 </div>
-                <div className="flex items-end h-full w-full absolute right-0 top-0">
-                  <img
-                    src="/img/bag2.png"
-                    alt="Sustainable"
-                    className="absolute right-0  h-full  object-contain"
-                  />
-                </div>
+                <img
+                  src="/img/bag2.png"
+                  alt="Sustainable"
+                  className="absolute top-0  right-0 bottom-0 h-full object-contain z-0"
+                />
               </div>
             </div>
           </div>
