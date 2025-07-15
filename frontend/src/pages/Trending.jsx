@@ -70,47 +70,58 @@ const Trending = () => {
           />
         </div>
 
+        {/* No Results Message */}
+        {filteredData.length === 0 && search && (
+          <p className="text-xl font-bold text-center text-black mt-6">
+            No results found for "{search}"
+          </p>
+        )}
+
         {/* Cards */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 justify-items-center">
-          {paginatedData.map((item) => (
-            <TrendingCard key={item.id} {...item} />
-          ))}
-        </div>
+        {filteredData.length > 0 && (
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 justify-items-center">
+            {paginatedData.map((item) => (
+              <TrendingCard key={item.id} {...item} />
+            ))}
+          </div>
+        )}
 
         {/* Pagination */}
-        <div className="flex justify-center mt-10 space-x-2 text-sm flex-wrap">
-          {/* Previous */}
-          <button
-            onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-            disabled={currentPage === 1}
-            className="border border-background-black text-background-black px-3 py-1 rounded disabled:opacity-50"
-          >
-            «
-          </button>
-
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+        {filteredData.length > 0 && (
+          <div className="flex justify-center mt-10 space-x-2 text-sm flex-wrap">
+            {/* Previous */}
             <button
-              key={page}
-              onClick={() => setCurrentPage(page)}
-              className={`border border-background-black px-3 py-1 rounded ${
-                currentPage === page
-                  ? 'bg-background-black text-white'
-                  : 'text-background-black'
-              }`}
+              onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+              disabled={currentPage === 1}
+              className="border border-background-black text-background-black px-3 py-1 rounded disabled:opacity-50"
             >
-              {page}
+              «
             </button>
-          ))}
 
-          {/* Next */}
-          <button
-            onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
-            disabled={currentPage === totalPages}
-            className="border border-background-black text-background-black px-3 py-1 rounded disabled:opacity-50"
-          >
-            »
-          </button>
-        </div>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`border border-background-black px-3 py-1 rounded ${
+                  currentPage === page
+                    ? 'bg-background-black text-white'
+                    : 'text-background-black'
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+
+            {/* Next */}
+            <button
+              onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className="border border-background-black text-background-black px-3 py-1 rounded disabled:opacity-50"
+            >
+              »
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )
