@@ -98,13 +98,13 @@ const Home = () => {
         {/* Most Popular Section */}
         <section className="w-full max-w-6xl mx-auto px-4 py-8">
           {/* Heading */}
-          <div className="flex flex-row  justify-between items-center mb-6 sm:mb-8 flex-wrap">
-            <h1 className="text-xl sm:text-5xl custom-times font-bold text-background-black text-center sm:text-left">
+          <div className="flex flex-row  justify-between items-center mb-6 sm:mb-8 ">
+            <h1 className="text-3xl sm:text-5xl custom-times font-bold text-background-black text-left sm:text-left">
               Most Popular At <br className="hidden sm:block" /> The Moment
             </h1>
             <a
               href="/trends"
-              className="text-sm sm:text-xl font-inter font-medium underline text-background-black ml-auto "
+              className="text-sm sm:text-xl font-inter whitespace-nowrap font-medium underline text-background-black ml-auto "
             >
               See All
             </a>
@@ -159,13 +159,13 @@ const Home = () => {
         {/* Trending Posts Section */}
         <div className="w-full max-w-6xl mx-auto py-8">
           {/* Header */}
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
-            <h1 className="text-4xl sm:text-6xl font-bold custom-times text-center sm:text-left">
+          <div className="flex flex-row justify-between items-center mb-8 px-4">
+            <h1 className="text-3xl sm:text-6xl font-bold custom-times text-center sm:text-left ">
               Trending Posts
             </h1>
             <a
               href="/trends"
-              className="text-base sm:text-xl font-inter font-medium underline text-background-black mt-4 sm:mt-0"
+              className="text-base sm:text-xl font-inter font-medium underline text-background-black"
             >
               SEE ALL
             </a>
@@ -231,14 +231,14 @@ const Home = () => {
                   <img
                     src="/img/watch.png"
                     alt="Watch"
-                    className="absolute top-0 right-[-20] h-full object-contain z-0"
+                    className="absolute top-0 right-0 max-md:-right-1/2 h-full object-cover z-0"
                   />
                 </div>
               </div>
 
               {/* Bottom Card */}
               <div
-                className="rounded-xl px-5 py-6 flex justify-between items-start relative"
+                className="rounded-xl px-5 py-6 flex justify-between items-start relative overflow-hidden"
                 style={{
                   height: '48%',
                   backgroundColor: '#FFE58F',
@@ -256,7 +256,7 @@ const Home = () => {
                 <img
                   src="/img/bag2.png"
                   alt="Sustainable"
-                  className="absolute top-0  right-0 bottom-0 h-full object-contain z-0"
+                  className="absolute top-0  right-0 max-md:right-[-20%] bottom-0 h-full object-cover z-0"
                 />
               </div>
             </div>

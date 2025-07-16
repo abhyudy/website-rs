@@ -74,10 +74,7 @@ const RelatedPost = () => {
               to={`/post/${post.slug}`}
               className="flex-shrink-0 md:flex-shrink md:w-auto"
             >
-              <div
-                className="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:brightness-110 hover:scale-105 cursor-pointer"
-                style={{ width: '340px', height: '390px' }}
-              >
+              <div className="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:brightness-110 hover:scale-105 cursor-pointer min-w-[288px] max-w-[340px]">
                 <img
                   src={post.image}
                   alt={post.title}

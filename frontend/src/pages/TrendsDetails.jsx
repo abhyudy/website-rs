@@ -16,7 +16,7 @@ const TrendsDetail = () => {
       description:
         'Fashion isn’t just about appearance—it’s about confidence, comfort, and self-expression. In 2025, the fashion scene is thriving with creativity, embracing daring silhouettes, timeless textures, and sustainable innovation. Designers and style icons are mixing vintage charm with modern edge, creating trends that feel both exciting and wearable. <br/> <br/> This season, the spotlight is on oversized tailoring, playful prints, and eco-conscious materials. Runways from Paris to New York have shown a surge in gender-neutral designs, modern athleisure, and revived 90s vibes, while street style is embracing a more individualistic approach, encouraging people to mix high-fashion with thrift-store finds',
       hasButton: true,
-      images: ['/img/trend1.jpg', '/img/trend2.jpg'],
+      images: ['/img/trend2.jpg', '/img/trend2.jpg'],
     },
     {
       type: 'intro',
@@ -145,9 +145,9 @@ const TrendsDetail = () => {
   return (
     <>
       <div className="bg-[#FFF3F3] text-black py-10 px-4 sm:px-6">
-        <div className="w-full max-w-6xl mx-auto pl-8">
-          <div className="grid grid-cols-12 gap-10 lg:flex-row">
-            <div className="w-full col-span-8">
+        <div className="w-full max-w-6xl mx-auto ">
+          <div className="grid grid-cols-12 lg:gap-10 lg:flex-row">
+            <div className="w-full col-span-12 lg:col-span-8">
               <HeaderSection />
               <MobileTOC
                 tableOfContent={tableOfContent}

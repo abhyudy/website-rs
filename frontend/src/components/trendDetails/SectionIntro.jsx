@@ -3,7 +3,7 @@ import React from 'react'
 const SectionIntro = ({ item }) => {
   return (
     <section key={item.id} id={item.id} className="mb-10 scroll-mt-24">
-      <div className="flex flex-col md:flex-row gap-4">
+      <div className="flex flex-col items-center md:flex-row gap-4">
         <div>
           <h1 className="text-4xl font-inter font-semibold mb-2">
             {item.title}
