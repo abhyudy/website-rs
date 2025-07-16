@@ -4,8 +4,8 @@ const MobileTOC = ({ tableOfContent, handleLinkClick, activeSection }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="block lg:hidden px-4 mb-6">
-      <div className="bg-white border border-[#E37561] rounded">
+    <div className="block lg:hidden  px-4 mb-6">
+      <div className="bg-white border border-[#E37561] rounded ">
         <button
           className="w-full px-4 py-3 font-bold text-left text-base font-inter flex justify-between items-center"
           onClick={() => setOpen(!open)}

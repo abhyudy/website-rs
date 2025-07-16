@@ -1,5 +1,5 @@
 import React from 'react'
-import CategoryButtons from './CategoryButtons' // adjust the import path if needed
+import CategoryButtons from './CategoryButtons' 
 
 const MobileBottomSection = () => {
   return (

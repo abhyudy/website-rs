@@ -157,9 +157,9 @@ const Home = () => {
         <StayAheadSection />
 
         {/* Trending Posts Section */}
-        <div className="w-full max-w-6xl mx-auto py-8">
+        <div className="w-full max-w-6xl mx-auto py-8 px-4">
           {/* Header */}
-          <div className="flex flex-row justify-between items-center mb-8 px-4">
+          <div className="flex flex-row justify-between items-center mb-8 ">
             <h1 className="text-3xl sm:text-6xl font-bold custom-times text-center sm:text-left ">
               Trending Posts
             </h1>
@@ -174,7 +174,7 @@ const Home = () => {
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Left Card */}
-            <div className="bg-[#EAEAEA] rounded-xl p-6 relative overflow-hidden w-full h-[482px] flex flex-col justify-start">
+            <div className="bg-[#EAEAEA] rounded-xl p-6 relative overflow-hidden w-full h-[482px] flex flex-col justify-start px-4">
               <span
                 className="text-xs font-medium font-inter rounded-full flex items-center justify-center mb-3 z-10"
                 style={{

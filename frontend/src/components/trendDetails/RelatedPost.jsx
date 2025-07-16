@@ -67,7 +67,7 @@ const RelatedPost = () => {
         </h1>
 
         {/* Scrollable on small, grid on medium+ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 place-items-center">
           {relatedPosts.map((post, index) => (
             <Link
               key={index}

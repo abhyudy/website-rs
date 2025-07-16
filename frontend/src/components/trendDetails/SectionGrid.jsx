@@ -3,7 +3,7 @@ import React from 'react'
 const SectionGrid = ({ item }) => {
   const { id, title, description, images = [] } = item
   return (
-    <div id={id} className="py-10">
+    <div id={id}>
       <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-inter font-semibold mb-2">{title}</h2>
         <p className="text-black mb-6 text-base md:text-lg">{description}</p>
