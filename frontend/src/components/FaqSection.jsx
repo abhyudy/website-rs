@@ -39,7 +39,7 @@ const FaqSection = () => {
 
   return (
     <div>
-      <section className="py-2">
+      <section className="py-6">
         <div className="mx-auto max-w-6xl px-2 ">
           <div className="pb-2">
             <h6 className="text-3xl  font-inter font-bold text-left">FAQs</h6>
@@ -49,8 +49,8 @@ const FaqSection = () => {
             {faqs.map((faq) => (
               <div
                 key={faq.id}
-                className={`accordion py-4 px-6 border-b border-solid border-gray-200 transition-all duration-500 rounded-2xl hover:[background-color:#FEC5C5B2] ${
-                  openAccordion === faq.id ? '[background-color:#FEC5C5B2]' : ''
+                className={`accordion py-4 px-6 border-b border-solid border-gray-200 transition-all duration-500 rounded-2xl hover:[background-color:white] ${
+                  openAccordion === faq.id ? '[background-color:white]' : ''
                 }`}
                 id={faq.id}
               >

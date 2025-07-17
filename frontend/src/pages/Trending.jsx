@@ -27,12 +27,12 @@ const Trending = () => {
     'Tech & Gadgets',
   ]
 
-  const [selectedCategory, setSelectedCategory] = useState(0)
+  const [selectedCategory, setSelectedCategory] = useState(null)
   const [search, setSearch] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
 
   const filteredData = mockData.filter((item) => {
-    const matchesCategory = item.category === categories[selectedCategory]
+    const matchesCategory = selectedCategory=== null || item.category === categories[selectedCategory]
     const matchesSearch = item.desc.toLowerCase().includes(search.toLowerCase())
 
     return matchesCategory && matchesSearch

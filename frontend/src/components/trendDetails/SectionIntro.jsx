@@ -2,10 +2,10 @@ import React from 'react'
 
 const SectionIntro = ({ item }) => {
   return (
-    <section key={item.id} id={item.id} className="mb-10 scroll-mt-24">
-      <div className="flex flex-col items-center md:flex-row gap-4">
+    <section id={item.id} className=" scroll-mt-24">
+      <div className="flex flex-col items-center md:flex-row gap-6">
         <div>
-          <h1 className="text-4xl font-inter font-semibold mb-2">
+          <h1 className="text-4xl font-inter font-semibold py-2">
             {item.title}
           </h1>
 
@@ -23,7 +23,7 @@ const SectionIntro = ({ item }) => {
         )}
       </div>
       {item.images && (
-        <div className="flex flex-col sm:flex-row gap-4 mt-4 flex-wrap">
+        <div className="flex flex-col sm:flex-row gap-6 py-2 flex-wrap">
           {item.images.map((img, index) => (
             <img
               key={index}

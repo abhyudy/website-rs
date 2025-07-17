@@ -102,98 +102,68 @@ const PrivacyPolicy = () => {
             </p>
           </div>
 
+          {/* Table of COntent */}
           <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Table of Contents</h2>
-            <ul className="list-decimal list-inside space-y-2 text-base">
-              <li>
-                <button
-                  onClick={() => scrollToSection('information-collected')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  What Information Do We Collect?
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('process-information')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  How Do We Process Your Information?
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('share-information')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  When and With Whom Do We Share Your Personal Information?
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('retention-period')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  How Long Do We Keep Your Information?
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('data-security')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  How Do We Keep Your Information Safe?
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('minors')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Do We Collect Information from Minors?
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('privacy-rights')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  What Are Your Privacy Rights?
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('do-not-track')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Controls for Do-Not-Track Features
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('updates')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Do We Make Updates to This Notice?
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('contact-us')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  How Can You Contact Us About This Notice?
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('manage-data')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  How Can You Review, Update, or Delete the Data We Collect from
-                  You?
-                </button>
-              </li>
+            <ul className="space-y-2 text-base">
+              {[
+                {
+                  id: 'information-collected',
+                  text: 'What Information Do We Collect?',
+                },
+                {
+                  id: 'process-information',
+                  text: 'How Do We Process Your Information?',
+                },
+                {
+                  id: 'share-information',
+                  text: 'When and With Whom Do We Share Your Personal Information?',
+                },
+                {
+                  id: 'retention-period',
+                  text: 'How Long Do We Keep Your Information?',
+                },
+                {
+                  id: 'data-security',
+                  text: 'How Do We Keep Your Information Safe?',
+                },
+                {
+                  id: 'minors',
+                  text: 'Do We Collect Information from Minors?',
+                },
+                {
+                  id: 'privacy-rights',
+                  text: 'What Are Your Privacy Rights?',
+                },
+                {
+                  id: 'do-not-track',
+                  text: 'Controls for Do-Not-Track Features',
+                },
+                {
+                  id: 'updates',
+                  text: 'Do We Make Updates to This Notice?',
+                },
+                {
+                  id: 'contact-us',
+                  text: 'How Can You Contact Us About This Notice?',
+                },
+                {
+                  id: 'manage-data',
+                  text: 'How Can You Review, Update, or Delete the Data We Collect from You?',
+                },
+              ].map((item, index) => (
+                <li key={item.id} className="flex gap-2 items-start">
+                  <span className="min-w-[1.5rem] text-gray-700 font-medium">
+                    {index + 1}.
+                  </span>
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-blue-600 text-left hover:underline focus:outline-none"
+                  >
+                    {item.text}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 

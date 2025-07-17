@@ -76,170 +76,60 @@ const TermsConditions = () => {
             </p>
           </div>
 
+          {/* Table of Content */}
+
           <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Table of Contents</h2>
-            <ul className="list-decimal list-inside space-y-2 text-base">
-              <li>
-                <button
-                  onClick={() => scrollToSection('our-services')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Our Services
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('intellectual-property')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Intellectual Property Rights
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('user-representations')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  User Representations
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('prohibited-activities')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Prohibited Activities
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('user-contributions')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  User Generated Contributions
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('contribution-license')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Contribution License
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('services-management')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Services Management
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('privacy-policy')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Privacy Policy
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('term-termination')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Term and Termination
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('modifications-interruptions')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Modifications and Interruptions
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('governing-law')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Governing Law
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('dispute-resolution')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Dispute Resolution
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('corrections')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Corrections
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('disclaimer')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Disclaimer
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('limitations-liability')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Limitations of Liability
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('indemnification')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Indemnification
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('user-data')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  User Data
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('electronic-communications')}
-                  className="text-blue-600 hover:underline focus:outline-n
-                  one"
-                >
-                  Electronic Communications, Transactions, and Signatures
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('miscellaneous')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Miscellaneous
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('contact-us')}
-                  className="text-blue-600 hover:underline focus:outline-none"
-                >
-                  Contact Us
-                </button>
-              </li>
+            <ul className="space-y-2 text-base">
+              {[
+                { id: 'our-services', text: 'Our Services' },
+                {
+                  id: 'intellectual-property',
+                  text: 'Intellectual Property Rights',
+                },
+                { id: 'user-representations', text: 'User Representations' },
+                { id: 'prohibited-activities', text: 'Prohibited Activities' },
+                {
+                  id: 'user-contributions',
+                  text: 'User Generated Contributions',
+                },
+                { id: 'contribution-license', text: 'Contribution License' },
+                { id: 'services-management', text: 'Services Management' },
+                { id: 'privacy-policy', text: 'Privacy Policy' },
+                { id: 'term-termination', text: 'Term and Termination' },
+                {
+                  id: 'modifications-interruptions',
+                  text: 'Modifications and Interruptions',
+                },
+                { id: 'governing-law', text: 'Governing Law' },
+                { id: 'dispute-resolution', text: 'Dispute Resolution' },
+                { id: 'corrections', text: 'Corrections' },
+                { id: 'disclaimer', text: 'Disclaimer' },
+                {
+                  id: 'limitations-liability',
+                  text: 'Limitations of Liability',
+                },
+                { id: 'indemnification', text: 'Indemnification' },
+                { id: 'user-data', text: 'User Data' },
+                {
+                  id: 'electronic-communications',
+                  text: 'Electronic Communications, Transactions, and Signatures',
+                },
+                { id: 'miscellaneous', text: 'Miscellaneous' },
+                { id: 'contact-us', text: 'Contact Us' },
+              ].map((item, index) => (
+                <li key={item.id} className="flex gap-2 items-start">
+                  <span className="min-w-[1.5rem] text-gray-700 font-medium">
+                    {index + 1}.
+                  </span>
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-blue-600 text-left hover:underline focus:outline-none"
+                  >
+                    {item.text}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
