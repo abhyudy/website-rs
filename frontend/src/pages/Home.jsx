@@ -218,7 +218,7 @@ const Home = () => {
                   <img
                     src="/img/bag.png"
                     alt="Retail"
-                    className="absolute bottom-2 right-2 h-3/5 sm:h-[65%] object-contain z-0"
+                    className="absolute bottom-0 right-0 h-3/5 sm:h-[65%] object-contain z-0"
                   />
                 </div>
 

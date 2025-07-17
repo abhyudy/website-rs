@@ -3,7 +3,7 @@ import React from 'react'
 const SectionAdd = ({ item, buttonLabel = 'Join Now' }) => {
   const { id, image, title, description } = item
   return (
-    <div id={id} className="py-6 px-4">
+    <div id={id} className="py-4 px-4">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8">
         <img
           src={image}

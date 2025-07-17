@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeaderSection = () => {
   return (
-    <div className="flex flex-col gap-4 sm:gap-6 mb-8 ">
+    <div className="flex flex-col gap-4 sm:gap-6 mb-4 ">
       {/* Responsive Image */}
       <img
         src="/img/blog1.jpg"

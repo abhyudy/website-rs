@@ -62,12 +62,33 @@ const Trending = () => {
 
         {/* Category & Search */}
         <div className="w-full flex flex-col md:flex-row items-end md:items-center justify-between py-8">
-          <FilterBox
-            selectedCategory={selectedCategory}
-            onCategoryChange={setSelectedCategory}
-            search={search}
-            onSearchChange={setSearch}
-          />
+          {/* Mobile Search Bar - Visible only on mobile */}
+          {/* Mobile only: Search bar + FilterBox (hidden on tablet and up) */}
+          <div className="flex flex-row gap-2 md:hidden w-full mb-4">
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search..."
+              className="w-full p-2 border border-gray-300 rounded-md font-inter text-sm"
+            />
+            <FilterBox
+              selectedCategory={selectedCategory}
+              onCategoryChange={setSelectedCategory}
+              search={search}
+              onSearchChange={setSearch}
+            />
+          </div>
+
+          {/* Tablet and up only: FilterBox */}
+          <div className="hidden md:block">
+            <FilterBox
+              selectedCategory={selectedCategory}
+              onCategoryChange={setSelectedCategory}
+              search={search}
+              onSearchChange={setSearch}
+            />
+          </div>
         </div>
 
         {/* No Results Message */}
