@@ -16,7 +16,7 @@ const mockData = Array.from({ length: 30 }, (_, i) => ({
   ][i % 5],
 }))
 
-const ITEMS_PER_PAGE = 3 // Set to 3 for pagination of 3 items per page
+const ITEMS_PER_PAGE = 3 //  3 for pagination of 3 items per page
 
 const Trending = () => {
   const categories = [

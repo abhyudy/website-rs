@@ -20,11 +20,13 @@ const TrendingCard = ({ image, desc, category }) => {
 
         {/* Content */}
         <div className="p-4 flex flex-col justify-between flex-grow">
-          {category && <p className="text-xs font-inter text-black mb-1">{category}</p>}
+          {category && (
+            <p className="text-xs font-inter text-black mb-1">{category}</p>
+          )}
           <p className="text-sm font-semibold text-black mt-2 mb-4 line-clamp-2">
             {desc.split(' ').slice(0, 15).join(' ') + '…'}
           </p>
-          <span className="text-pink-500 text-sm font-medium font-inter underline mt-auto hover:text-pink-600">
+          <span className="text-[#E37561] text-sm font-medium font-inter underline mt-auto hover:text-[#E37561]">
             Read More
           </span>
         </div>

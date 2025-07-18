@@ -1,5 +1,5 @@
 import React from 'react'
-import CategoryButtons from './CategoryButtons' 
+import CategoryButtons from './CategoryButtons'
 
 const MobileBottomSection = () => {
   return (
@@ -7,11 +7,10 @@ const MobileBottomSection = () => {
       <div className="flex flex-row justify-center gap-4">
         {/* Visitor Box */}
         <div
-          className="rounded-xl flex flex-col items-center justify-center p-4 flex-shrink-0"
+          className="rounded-xl w-1/2 aspect-square flex flex-col items-center justify-center p-4 flex-shrink-0"
           style={{
             backgroundColor: 'var(--color-color)',
-            width: '170px',
-            height: '170px',
+         
           }}
         >
           <div className="flex -space-x-2 mb-2">
@@ -36,13 +35,12 @@ const MobileBottomSection = () => {
 
         {/* Image */}
         <div
-          className="flex-shrink-0"
-          style={{ width: '170px', height: '170px' }}
+          className="flex w-1/2 aspect-square"
         >
           <img
             src="/img/home3.png"
             alt="Shopping Bags"
-            className="w-full h-full rounded-xl object-cover"
+            className="w-full  h-full rounded-xl object-cover"
           />
         </div>
       </div>

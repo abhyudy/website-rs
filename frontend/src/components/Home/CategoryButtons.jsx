@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
 const categories = [
-  { label: 'Luxury & Designer', width: '152px', height: '44px' },
-  { label: 'Fashion & Style', width: '130px', height: '44px' },
-  { label: 'Sustainable Shopping', width: '172px', height: '44px' },
-  { label: 'Tech & Gadgets', width: '136px', height: '44px' },
-  { label: 'Beauty & Skincare', width: '147px', height: '44px' },
+  { label: 'Luxury & Designer' },
+  { label: 'Fashion & Style' },
+  { label: 'Sustainable Shopping' },
+  { label: 'Tech & Gadgets' },
+  { label: 'Beauty & Skincare' },
 ]
 
 const CategoryButtons = () => {
@@ -23,13 +23,12 @@ const CategoryButtons = () => {
           <button
             key={cat.label}
             onClick={() => setActive(cat.label)}
-            className={`rounded-full transition text-xs sm:text-base border
+            className={`rounded-full transition text-xs sm:text-base px-4 py-2 border
               ${
                 active === cat.label
                   ? 'bg-white text-[#FFA8A8] border-[#FFA8A8]'
                   : 'bg-white text-[#A0A0A0] border-[#A0A0A0] hover:bg-gray-100'
               }`}
-            style={{ width: cat.width, height: cat.height }}
           >
             {cat.label}
           </button>
