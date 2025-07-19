@@ -69,7 +69,7 @@ const FilterBox = ({
             {category}
             <span className="p-1 rounded-full text-pink-300 bg-gray-100 hover:bg-white">
               <img src="/img/Vector.png" alt="arrow" />
-                {/* <FaChevronDown className="text-xs text-pink-300" /> */}
+              {/* <FaChevronDown className="text-xs text-pink-300" /> */}
             </span>
           </button>
         ))}

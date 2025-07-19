@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import logoSmall from '../assets/img/RS.png'
 import logoLarge from '../assets/img/RS.png'
 
@@ -9,6 +9,7 @@ const Header = () => {
   const [searchText, setSearchText] = useState('')
 
   const navigate = useNavigate()
+  const location = useLocation()
 
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen)
@@ -24,6 +25,20 @@ const Header = () => {
     `font-semibold ${
       isActive ? 'text-pink-500' : 'text-gray-700 hover:text-pink-500'
     }`
+
+  // Handle search input change
+  const handleSearchChange = (value) => {
+    setSearchText(value)
+    // Only navigate or update URL if there's a search term
+    if (value.trim()) {
+      navigate(`/trends?search=${encodeURIComponent(value)}`)
+    } else {
+      // If search is cleared, navigate to /trends without query
+      if (location.pathname === '/trends') {
+        navigate('/trends')
+      }
+    }
+  }
 
   return (
     <>
@@ -71,20 +86,7 @@ const Header = () => {
                 isSearchOpen ? 'block' : 'hidden'
               }`}
               aria-label="Search"
-              onChange={(e) => {
-                const value = e.target.value
-                setSearchText(value)
-                if (value.trim() !== '') {
-                  navigate(`/trends?search=${encodeURIComponent(value)}`)
-                }
-              }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  navigate(`/trends?search=${encodeURIComponent(searchText)}`)
-                  setIsSearchOpen(false)
-                  setIsNavOpen(false)
-                }
-              }}
+              onChange={(e) => handleSearchChange(e.target.value)}
             />
 
             <div
@@ -140,9 +142,10 @@ const Header = () => {
         </div>
       </header>
 
+      {/* Mobile Search Input */}
       {isSearchOpen && (
-        <div className="md:hidden fixed top-14 left-0 right-0 bg-background-color px-4 py-2 z-50 transition-all duration-300 ease-in-out">
-          <div className="flex items-center border rounded-md bg-white border-gray-300 px-3 py-2 relative shadow-sm">
+        <div className="md:hidden bg-background-color px-4 py-2 absolute z-50 w-full">
+          <div className="flex items-center border rounded-md bg-white border-gray-300 px-3 py-2 relative">
             <svg
               className="w-5 h-5 text-gray-700 mr-2"
               fill="none"
@@ -159,28 +162,15 @@ const Header = () => {
             <input
               type="text"
               value={searchText}
-              onChange={(e) => {
-                const value = e.target.value
-                setSearchText(value)
-                if (value.trim() !== '') {
-                  navigate(`/trends?search=${encodeURIComponent(value)}`)
-                }
-              }}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  navigate(`/trends?search=${encodeURIComponent(searchText)}`)
-                  setIsSearchOpen(false)
-                  setIsNavOpen(false)
-                }
-              }}
+              onChange={(e) => handleSearchChange(e.target.value)}
               placeholder="Search for..."
-              className="w-full bg-transparent outline-none text-sm text-gray-700 pr-6"
+              className="w-full bg-transparent outline-none text-gray-700 pr-6"
               aria-label="Search input"
               autoFocus
             />
             {searchText && (
               <button
-                onClick={() => setSearchText('')}
+                onClick={() => handleSearchChange('')}
                 className="absolute right-3 text-gray-500 hover:text-black"
                 aria-label="Clear search"
               >

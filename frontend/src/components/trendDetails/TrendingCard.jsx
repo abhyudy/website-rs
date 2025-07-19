@@ -3,7 +3,7 @@ import React from 'react'
 const TrendingCard = ({ image, desc, category }) => {
   return (
     <a
-      href="/trendsDetail"
+      href="/trendsblog"
       className="block w-full max-w-[370px] min-h-[335px] transition duration-300 hover:brightness-110 ease-in-out hover:scale-105 cursor-pointer"
       aria-label={`Trending post in ${category}`}
     >

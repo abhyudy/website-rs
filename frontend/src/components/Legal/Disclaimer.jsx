@@ -18,10 +18,13 @@ const Disclaimer = () => {
         </p>
 
         <div>
-          <h2 className="text-2xl font-semibold mb-4"> Website Disclaimer</h2>
-          <p>
+          <h2 className="text-2xl font-semibold mb-4">Website Disclaimer</h2>
+          <p className="text-base leading-relaxed mb-4">
             All the information on this website -{' '}
-            <a href="/" className="text-blue-600 hover:underline">
+            <a
+              href="/"
+              className="text-blue-600 hover:underline focus:ring-2 focus:ring-blue-500"
+            >
               retailtypes.com
             </a>
             - is published in good faith and for general information purposes
@@ -31,8 +34,8 @@ const Disclaimer = () => {
             (Retail Types) is strictly at your own risk. Retail Types will not
             be liable for any losses and/or damages in connection with the use
             of our website.
-            <br />
-            <br />
+          </p>
+          <p className="text-base leading-relaxed mb-4">
             From our website, you can visit other websites by following
             hyperlinks to such external sites. While we strive to provide only
             quality links to useful and ethical websites, we have no control
@@ -41,8 +44,8 @@ const Disclaimer = () => {
             these sites. Site owners and content may change without notice and
             may occur before we have the opportunity to remove a link which may
             have gone 'bad'.
-            <br />
-            <br />
+          </p>
+          <p className="text-base leading-relaxed mb-4">
             Please be aware that when you leave our website, other sites may
             have different privacy policies and terms which are beyond our
             control. Please be sure to check the Privacy Policies of these sites
@@ -56,31 +59,31 @@ const Disclaimer = () => {
             <h2 className="text-2xl font-semibold mb-4 mt-8">
               Affiliates Disclaimer
             </h2>
-            <p>
+            <p className="text-base leading-relaxed mb-4">
               The Site may contain links to affiliate websites, and we receive
               an affiliate commission for any purchases made by you on the
               affiliate website using such links. Our affiliates include the
               following:
-              <ul className="list-disc list-inside ml-4">
-                <li>AvantLink</li>
-                <li>Awin (Affiliate Window)</li>
-                <li>CJ Affiliate by Conversant</li>
-                <li>Clickbank</li>
-                <li>eBay Partner Network</li>
-                <li>FlexOffers</li>
-                <li>iDevAffiliate</li>
-                <li>MaxBounty</li>
-                <li>Rakuten Affiliate Network</li>
-                <li>RevenueWire</li>
-                <li>ShareASale</li>
-                <li>Others</li>
-              </ul>
             </p>
+            <ul className="list-disc list-inside ml-4 mb-4">
+              <li>AvantLink</li>
+              <li>Awin (Affiliate Window)</li>
+              <li>CJ Affiliate by Conversant</li>
+              <li>Clickbank</li>
+              <li>eBay Partner Network</li>
+              <li>FlexOffers</li>
+              <li>iDevAffiliate</li>
+              <li>MaxBounty</li>
+              <li>Rakuten Affiliate Network</li>
+              <li>RevenueWire</li>
+              <li>ShareASale</li>
+              <li>Others</li>
+            </ul>
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold mb-4"> Consent</h2>
-            <p>
+            <h2 className="text-2xl font-semibold mb-4">Consent</h2>
+            <p className="text-base leading-relaxed mb-4">
               By using our website, you hereby consent to our disclaimer and
               agree to its terms.
             </p>
@@ -88,7 +91,7 @@ const Disclaimer = () => {
 
           <div>
             <h2 className="text-2xl font-semibold mb-4">Updates</h2>
-            <p>
+            <p className="text-base leading-relaxed mb-4">
               Should we update, amend, or make any changes to this document,
               those changes will be prominently posted here.
             </p>

@@ -25,16 +25,18 @@ const PrivacyPolicy = () => {
               describes how and why we might access, collect, store, use, and/or
               share ("process") your personal information when you use our
               services ("Services"), including when you:
-              <ul className="list-disc list-inside ml-4">
-                <li>
-                  Visit our website at retailtypes.com or any website of ours
-                  that links to this Privacy Notice
-                </li>
-                <li>
-                  Engage with us in other related ways, including any sales,
-                  marketing, or events
-                </li>
-              </ul>
+            </p>
+            <ul className="list-disc list-inside ml-4">
+              <li>
+                Visit our website at retailtypes.com or any website of ours that
+                links to this Privacy Notice
+              </li>
+              <li>
+                Engage with us in other related ways, including any sales,
+                marketing, or events
+              </li>
+            </ul>
+            <p>
               Questions or concerns? Reading this Privacy Notice will help you
               understand your privacy rights and choices. We are responsible for
               making decisions about how your personal information is processed.
@@ -59,30 +61,45 @@ const PrivacyPolicy = () => {
               This summary provides key points from our Privacy Notice, but you
               can find out more details about any of these topics by clicking
               the link following each key point or by using our{' '}
-              <a href="" className="text-blue-600 hover:underline">
+              <button
+                onClick={() => scrollToSection('table-of-contents')}
+                className="text-blue-600 hover:underline focus:outline-none"
+              >
                 table of contents
-              </a>{' '}
-              below to find the section you are looking for. <br /> <br />
+              </button>{' '}
+              below to find the section you are looking for.
+            </p>
+            <p>
               What personal information do we process? When you visit, use, or
               navigate our Services, we may process personal information
               depending on how you interact with us and the Services, the
-              choices you make, and the products and features you use. <br />{' '}
-              <br /> Do we process any sensitive personal information? Some of
-              the information may be considered "special" or "sensitive" in
-              certain jurisdictions, for example your racial or ethnic origins,
-              sexual orientation, and religious beliefs. We do not process
-              sensitive personal information. <br /> <br />
+              choices you make, and the products and features you use.
+            </p>
+            <p>
+              Do we process any sensitive personal information? Some of the
+              information may be considered "special" or "sensitive" in certain
+              jurisdictions, for example your racial or ethnic origins, sexual
+              orientation, and religious beliefs. We do not process sensitive
+              personal information.
+            </p>
+            <p>
               Do we collect any information from third parties? We do not
-              collect any information from third parties. <br />
-              <br /> How do we process your information? We process your
-              information to provide, improve, and administer our Services,
-              communicate with you, for security and fraud prevention, and to
-              comply with law. We may also process your information for other
-              purposes with your consent. We process your information only when
-              we have a valid legal reason to do so. <br /> <br /> In what
-              situations and with which parties do we share personal
+              collect any information from third parties.
+            </p>
+            <p>
+              How do we process your information? We process your information to
+              provide, improve, and administer our Services, communicate with
+              you, for security and fraud prevention, and to comply with law. We
+              may also process your information for other purposes with your
+              consent. We process your information only when we have a valid
+              legal reason to do so.
+            </p>
+            <p>
+              In what situations and with which parties do we share personal
               information? We may share information in specific situations and
-              with specific third parties. <br /> <br />
+              with specific third parties.
+            </p>
+            <p>
               How do we keep your information safe? We have adequate
               organizational and technical processes and procedures in place to
               protect your personal information. However, no electronic
@@ -90,11 +107,14 @@ const PrivacyPolicy = () => {
               can be guaranteed to be 100% secure, so we cannot promise or
               guarantee that hackers, cybercriminals, or other unauthorized
               third parties will not be able to defeat our security and
-              improperly collect, access, steal, or modify your information.{' '}
-              <br /> <br /> What are your rights? Depending on where you are
-              located geographically, the applicable privacy law may mean you
-              have certain rights regarding your personal information. <br />{' '}
-              <br />
+              improperly collect, access, steal, or modify your information.
+            </p>
+            <p>
+              What are your rights? Depending on where you are located
+              geographically, the applicable privacy law may mean you have
+              certain rights regarding your personal information.
+            </p>
+            <p>
               How do you exercise your rights? The easiest way to exercise your
               rights is by submitting a data subject access request, or by
               contacting us. We will consider and act upon any request in
@@ -102,8 +122,8 @@ const PrivacyPolicy = () => {
             </p>
           </div>
 
-          {/* Table of COntent */}
-          <div className="mb-8">
+          {/* Table of Contents */}
+          <div id="table-of-contents" className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Table of Contents</h2>
             <ul className="space-y-2 text-base">
               {[
@@ -173,30 +193,33 @@ const PrivacyPolicy = () => {
             </h2>
             <p>
               <strong>Personal information you disclose to us</strong>
-              <br />
+            </p>
+            <p>
               <em>In Short:</em> We collect personal information that you
               provide to us.
-              <br />
-              <br />
+            </p>
+            <p>
               We collect personal information that you voluntarily provide to us
               when you express an interest in obtaining information about us or
               our products and Services, when you participate in activities on
               the Services, or otherwise when you contact us.
-              <br />
-              <br />
+            </p>
+            <p>
               <strong>Personal Information Provided by You.</strong> The
               personal information that we collect depends on the context of
               your interactions with us and the Services, the choices you make,
               and the products and features you use. The personal information we
               collect may include the following:
-              <ul className="list-disc list-inside ml-4">
-                <li>Names</li>
-                <li>Email addresses</li>
-              </ul>
+            </p>
+            <ul className="list-disc list-inside ml-4">
+              <li>Names</li>
+              <li>Email addresses</li>
+            </ul>
+            <p>
               <strong>Sensitive Information.</strong> We do not process
               sensitive information.
-              <br />
-              <br />
+            </p>
+            <p>
               All personal information that you provide to us must be true,
               complete, and accurate, and you must notify us of any changes to
               such personal information.
@@ -212,25 +235,25 @@ const PrivacyPolicy = () => {
               improve, and administer our Services, communicate with you, for
               security and fraud prevention, and to comply with law. We may also
               process your information for other purposes with your consent.
-              <br />
-              <br />
+            </p>
+            <p>
               We process your personal information for a variety of reasons,
               depending on how you interact with our Services, including:
-              <ul className="list-disc list-inside ml-4">
-                <li>To provide, improve, and administer our Services.</li>
-                <li>
-                  To communicate with you regarding your inquiries or updates
-                  about our Services.
-                </li>
-                <li>
-                  For security and fraud prevention to protect our Services and
-                  users.
-                </li>
-                <li>
-                  To comply with applicable legal and regulatory obligations.
-                </li>
-              </ul>
             </p>
+            <ul className="list-disc list-inside ml-4">
+              <li>To provide, improve, and administer our Services.</li>
+              <li>
+                To communicate with you regarding your inquiries or updates
+                about our Services.
+              </li>
+              <li>
+                For security and fraud prevention to protect our Services and
+                users.
+              </li>
+              <li>
+                To comply with applicable legal and regulatory obligations.
+              </li>
+            </ul>
           </div>
 
           <div id="share-information">
@@ -240,20 +263,19 @@ const PrivacyPolicy = () => {
             <p>
               <em>In Short:</em> We may share information in specific situations
               described in this section and/or with the following third parties.
-              <br />
-              <br />
+            </p>
+            <p>
               We may need to share your personal information in the following
               situations:
-              <ul className="list-disc list-inside ml-4">
-                <li>
-                  <strong>Business Transfers.</strong> We may share or transfer
-                  your information in connection with, or during negotiations
-                  of, any merger, sale of company assets, financing, or
-                  acquisition of all or a portion of our business to another
-                  company.
-                </li>
-              </ul>
             </p>
+            <ul className="list-disc list-inside ml-4">
+              <li>
+                <strong>Business Transfers.</strong> We may share or transfer
+                your information in connection with, or during negotiations of,
+                any merger, sale of company assets, financing, or acquisition of
+                all or a portion of our business to another company.
+              </li>
+            </ul>
           </div>
 
           <div id="retention-period">
@@ -264,14 +286,14 @@ const PrivacyPolicy = () => {
               <em>In Short:</em> We keep your information for as long as
               necessary to fulfill the purposes outlined in this Privacy Notice
               unless otherwise required by law.
-              <br />
-              <br />
+            </p>
+            <p>
               We will only keep your personal information for as long as it is
               necessary for the purposes set out in this Privacy Notice, unless
               a longer retention period is required or permitted by law (such as
               tax, accounting, or other legal requirements).
-              <br />
-              <br />
+            </p>
+            <p>
               When we have no ongoing legitimate business need to process your
               personal information, we will either delete or anonymize such
               information, or, if this is not possible (for example, because
@@ -289,8 +311,8 @@ const PrivacyPolicy = () => {
               <em>In Short:</em> We aim to protect your personal information
               through a system of organizational and technical security
               measures.
-              <br />
-              <br />
+            </p>
+            <p>
               We have implemented appropriate and reasonable technical and
               organizational security measures designed to protect the security
               of any personal information we process. However, despite our
@@ -314,8 +336,8 @@ const PrivacyPolicy = () => {
             <p>
               <em>In Short:</em> We do not knowingly collect data from or market
               to children under 18 years of age.
-              <br />
-              <br />
+            </p>
+            <p>
               We do not knowingly collect, solicit data from, or market to
               children under 18 years of age, nor do we knowingly sell such
               personal information. By using the Services, you represent that
@@ -336,8 +358,8 @@ const PrivacyPolicy = () => {
               <em>In Short:</em> You may review, change, or terminate your
               account at any time, depending on your country, province, or state
               of residence.
-              <br />
-              <br />
+            </p>
+            <p>
               <strong>Withdrawing your consent:</strong> If we are relying on
               your consent to process your personal information, which may be
               express and/or implied consent depending on the applicable law,
@@ -345,15 +367,15 @@ const PrivacyPolicy = () => {
               withdraw your consent at any time by contacting us by using the
               contact details provided in the section "How Can You Contact Us
               About This Notice?" below.
-              <br />
-              <br />
+            </p>
+            <p>
               However, please note that this will not affect the lawfulness of
               the processing before its withdrawal nor, when applicable law
               allows, will it affect the processing of your personal information
               conducted in reliance on lawful processing grounds other than
               consent.
-              <br />
-              <br />
+            </p>
+            <p>
               If you have questions or comments about your privacy rights, you
               may email us at{' '}
               <a
@@ -392,8 +414,8 @@ const PrivacyPolicy = () => {
             <p>
               <em>In Short:</em> Yes, we will update this notice as necessary to
               stay compliant with relevant laws.
-              <br />
-              <br />
+            </p>
+            <p>
               We may update this Privacy Notice from time to time. The updated
               version will be indicated by an updated "Last updated" date at the
               top of this Privacy Notice. If we make material changes to this
@@ -411,8 +433,8 @@ const PrivacyPolicy = () => {
             <p>
               If you have questions or comments about this notice, you may
               contact us by post at:
-              <br />
-              <br />
+            </p>
+            <p>
               Retail Types
               <br />
               B-148, Kankarbagh Main Road
@@ -420,9 +442,9 @@ const PrivacyPolicy = () => {
               Patna, Bihar 800020
               <br />
               India
-              <br />
-              Phone: +91 94306 22181
-              <br />
+            </p>
+            <p>Phone: +91 94306 22181</p>
+            <p>
               <a
                 href="mailto:info@retailtypes.com"
                 className="text-blue-600 hover:underline"
