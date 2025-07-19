@@ -7,7 +7,7 @@ import RelatedPost from '../components/trendDetails/RelatedPost'
 import { useState, useRef, useEffect } from 'react'
 import MobileTOC from '../components/trendDetails/MobileTOC'
 
-const TrendsDetail = () => {
+const TrendsBlog = () => {
   const tableOfContent = [
     {
       type: 'intro',
@@ -175,4 +175,4 @@ const TrendsDetail = () => {
   )
 }
 
-export default TrendsDetail
+export default TrendsBlog
