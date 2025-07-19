@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import logoSmall from '../assets/img/RS.png'
 import logoLarge from '../assets/img/RS.png'
 
@@ -8,18 +8,16 @@ const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
   const [searchText, setSearchText] = useState('')
 
+  const navigate = useNavigate()
+
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen)
-    if (!isSearchOpen && isNavOpen) {
-      setIsNavOpen(false)
-    }
+    if (!isSearchOpen && isNavOpen) setIsNavOpen(false)
   }
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen)
-    if (!isNavOpen && isSearchOpen) {
-      setIsSearchOpen(false)
-    }
+    if (!isNavOpen && isSearchOpen) setIsSearchOpen(false)
   }
 
   const navLinkClasses = ({ isActive }) =>
@@ -63,21 +61,32 @@ const Header = () => {
             </NavLink>
           </nav>
 
-          {/* Icons */}
+          {/* Icons and Search */}
           <div className="flex items-center space-x-3">
-            {/* Desktop Search Input */}
             <input
               type="text"
               value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
               placeholder="Search for..."
               className={`hidden md:block px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-gray-700 w-32 lg:w-48 mr-2 ${
                 isSearchOpen ? 'block' : 'hidden'
               }`}
               aria-label="Search"
+              onChange={(e) => {
+                const value = e.target.value
+                setSearchText(value)
+                if (value.trim() !== '') {
+                  navigate(`/trends?search=${encodeURIComponent(value)}`)
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  navigate(`/trends?search=${encodeURIComponent(searchText)}`)
+                  setIsSearchOpen(false)
+                  setIsNavOpen(false)
+                }
+              }}
             />
 
-            {/* Search Icon */}
             <div
               onClick={toggleSearch}
               className="cursor-pointer"
@@ -98,7 +107,7 @@ const Header = () => {
               </svg>
             </div>
 
-            {/* Hamburger Icon */}
+            {/* Hamburger */}
             <div
               onClick={toggleNav}
               className="md:hidden cursor-pointer"
@@ -131,10 +140,9 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Search Input */}
       {isSearchOpen && (
-        <div className="md:hidden bg-background-color px-4 py-2 absolute z-50 w-full">
-          <div className="flex items-center border rounded-md bg-white border-gray-300 px-3 py-2 relative">
+        <div className="md:hidden fixed top-14 left-0 right-0 bg-background-color px-4 py-2 z-50 transition-all duration-300 ease-in-out">
+          <div className="flex items-center border rounded-md bg-white border-gray-300 px-3 py-2 relative shadow-sm">
             <svg
               className="w-5 h-5 text-gray-700 mr-2"
               fill="none"
@@ -151,9 +159,22 @@ const Header = () => {
             <input
               type="text"
               value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value
+                setSearchText(value)
+                if (value.trim() !== '') {
+                  navigate(`/trends?search=${encodeURIComponent(value)}`)
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  navigate(`/trends?search=${encodeURIComponent(searchText)}`)
+                  setIsSearchOpen(false)
+                  setIsNavOpen(false)
+                }
+              }}
               placeholder="Search for..."
-              className="w-full bg-transparent outline-none text-gray-700 pr-6"
+              className="w-full bg-transparent outline-none text-sm text-gray-700 pr-6"
               aria-label="Search input"
               autoFocus
             />

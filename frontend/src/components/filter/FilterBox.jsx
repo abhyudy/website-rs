@@ -77,7 +77,7 @@ const FilterBox = ({
           <div className="flex items-center border rounded-full px-4 py-2 bg-white text-black font-inter border-gray-300">
             <input
               type="text"
-              placeholder="Search by category..."
+              placeholder="Search by card description..."
               value={search}
               onChange={(e) => onSearchChange(e.target.value)}
               className="bg-transparent outline-none w-full"

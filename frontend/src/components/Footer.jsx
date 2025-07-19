@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../assets/img/footerlogo.png'
 import { Link } from 'react-router-dom'
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -69,26 +70,16 @@ const Footer = () => {
               </h5>
               <ul className="text-sm sm:text-base font-inter space-y-2 text-gray-300 flex flex-col items-center md:items-start">
                 <li className="flex items-start gap-2">
-                  <img
-                    src="/img/location.png"
-                    alt="location"
-                    className="w-4 h-3 mt-1"
-                  />
-                  <span className="text-center md:text-left">
-                    B-148, Kankarbagh Main Road, Patna, Bihar-800020
-                  </span>
+                  <FaMapMarkerAlt className="text-white mt-1 w-4 h-4" />
+                  <span>B-148, Kankarbagh Main Road, Patna, Bihar-800020</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <img src="/img/call.png" alt="call" className="w-3 h-3" />
-                  <span className="text-center md:text-left">
-                    +91 (943) 0622181
-                  </span>
+                  <FaPhoneAlt className="text-white w-4 h-4" />
+                  <span>+91 (943) 0622181</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <img src="/img/mail.png" alt="mail" className="w-3 h-3" />
-                  <span className="text-center md:text-left">
-                    info@retailtypes.com
-                  </span>
+                  <FaEnvelope className="text-white w-4 h-4" />
+                  <span>info@retailtypes.com</span>
                 </li>
               </ul>
             </div>
