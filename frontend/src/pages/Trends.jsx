@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import TrendingCard from '../components/trendDetails/TrendingCard';
-import FilterBox from '../components/filter/FilterBox';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import TrendingCard from '../components/trendDetails/TrendingCard'
+import FilterBox from '../components/filter/FilterBox'
+import Pagination from '@mui/material/Pagination'
+import Stack from '@mui/material/Stack'
 
 // Mock data generation
 const mockData = Array.from({ length: 30 }, (_, i) => ({
@@ -18,51 +18,52 @@ const mockData = Array.from({ length: 30 }, (_, i) => ({
     'Sustainable Shopping',
     'Tech & Gadgets',
   ][i % 5],
-}));
+}))
 
-const ITEMS_PER_PAGE = 3;
+const ITEMS_PER_PAGE = 3
 
-const Trending = () => {
-  const location = useLocation();
+const Trends = () => {
+  const location = useLocation()
   const categories = [
     'Fashion & Apparel',
     'Beauty & Skincare',
     'Luxury & Designer',
     'Sustainable Shopping',
     'Tech & Gadgets',
-  ];
+  ]
 
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [search, setSearch] = useState(''); // FilterBox search state
-  const [currentPage, setCurrentPage] = useState(1);
-  const [headerSearch, setHeaderSearch] = useState(''); // Header search state from URL
+  const [selectedCategory, setSelectedCategory] = useState(null)
+  const [search, setSearch] = useState('') // FilterBox search state
+  const [currentPage, setCurrentPage] = useState(1)
+  const [headerSearch, setHeaderSearch] = useState('') // Header search state from URL
 
   // Extract search query from URL
   useEffect(() => {
-    const query = new URLSearchParams(location.search).get('search')?.toLowerCase() || '';
-    setHeaderSearch(query);
-    setCurrentPage(1); // Reset to page 1 when search query changes
-  }, [location.search]);
+    const query =
+      new URLSearchParams(location.search).get('search')?.toLowerCase() || ''
+    setHeaderSearch(query)
+    setCurrentPage(1) // Reset to page 1 when search query changes
+  }, [location.search])
 
   const filteredData = mockData.filter((item) => {
     const matchesCategory =
       selectedCategory === null ||
-      item.category === categories[selectedCategory];
+      item.category === categories[selectedCategory]
     const matchesHeaderSearch = headerSearch
       ? item.desc.toLowerCase().includes(headerSearch)
-      : true;
+      : true
     const matchesFilterBoxSearch = search
       ? item.desc.toLowerCase().includes(search.toLowerCase())
-      : true;
-    return matchesCategory && matchesHeaderSearch && matchesFilterBoxSearch;
-  });
+      : true
+    return matchesCategory && matchesHeaderSearch && matchesFilterBoxSearch
+  })
 
-  const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE)
 
   const paginatedData = filteredData.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
-  );
+  )
 
   return (
     <div className="bg-background-color">
@@ -88,8 +89,8 @@ const Trending = () => {
               type="text"
               value={search}
               onChange={(e) => {
-                setSearch(e.target.value);
-                setCurrentPage(1);
+                setSearch(e.target.value)
+                setCurrentPage(1)
               }}
               placeholder="Search..."
               className="w-full p-2 border border-gray-300 rounded-md font-inter text-sm"
@@ -97,8 +98,8 @@ const Trending = () => {
             <FilterBox
               selectedCategory={selectedCategory}
               onCategoryChange={(index) => {
-                setSelectedCategory(index);
-                setCurrentPage(1);
+                setSelectedCategory(index)
+                setCurrentPage(1)
               }}
               search={search}
               onSearchChange={setSearch}
@@ -109,8 +110,8 @@ const Trending = () => {
             <FilterBox
               selectedCategory={selectedCategory}
               onCategoryChange={(index) => {
-                setSelectedCategory(index);
-                setCurrentPage(1);
+                setSelectedCategory(index)
+                setCurrentPage(1)
               }}
               search={search}
               onSearchChange={setSearch}
@@ -122,8 +123,7 @@ const Trending = () => {
         {filteredData.length === 0 ? (
           <p className="text-xl font-bold text-center text-black mt-6">
             No results found
-            {(headerSearch || search) &&
-              ` for "${headerSearch || search}"`}
+            {(headerSearch || search) && ` for "${headerSearch || search}"`}
           </p>
         ) : (
           <>
@@ -153,7 +153,7 @@ const Trending = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Trending;
+export default Trends
