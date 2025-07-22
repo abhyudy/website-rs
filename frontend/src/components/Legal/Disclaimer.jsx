@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Disclaimer = () => {
   const scrollToSection = (id) => {
@@ -21,12 +22,12 @@ const Disclaimer = () => {
           <h2 className="text-2xl font-semibold mb-4">Website Disclaimer</h2>
           <p className="text-base leading-relaxed mb-4">
             All the information on this website -{' '}
-            <a
-              href="/"
+            <Link
+              to="/"
               className="text-blue-600 hover:underline focus:ring-2 focus:ring-blue-500"
             >
               retailtypes.com
-            </a>
+            </Link>
             - is published in good faith and for general information purposes
             only. Retail Types does not make any warranties about the
             completeness, reliability, and accuracy of this information. Any

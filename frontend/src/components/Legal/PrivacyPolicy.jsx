@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const PrivacyPolicy = () => {
   const scrollToSection = (id) => {
@@ -43,12 +44,12 @@ const PrivacyPolicy = () => {
               If you do not agree with our policies and practices, please do not
               use our Services. If you still have any questions or concerns,
               please contact us at{' '}
-              <a
-                href="mailto:info@retailtypes.com"
+              <Link
+                to="mailto:info@retailtypes.com"
                 className="text-blue-600 hover:underline"
               >
                 info@retailtypes.com
-              </a>
+              </Link>
               .
             </p>
           </div>
@@ -378,12 +379,12 @@ const PrivacyPolicy = () => {
             <p>
               If you have questions or comments about your privacy rights, you
               may email us at{' '}
-              <a
-                href="mailto:info@retailtypes.com"
+              <Link
+                to="mailto:info@retailtypes.com"
                 className="text-blue-600 hover:underline"
               >
                 info@retailtypes.com
-              </a>
+              </Link>
               .
             </p>
           </div>
@@ -445,12 +446,12 @@ const PrivacyPolicy = () => {
             </p>
             <p>Phone: +91 94306 22181</p>
             <p>
-              <a
-                href="mailto:info@retailtypes.com"
+              <Link
+                to="mailto:info@retailtypes.com"
                 className="text-blue-600 hover:underline"
               >
                 info@retailtypes.com
-              </a>
+              </Link>
             </p>
           </div>
 
@@ -469,12 +470,12 @@ const PrivacyPolicy = () => {
               circumstances by applicable law. The easiest way to exercise your
               rights is by submitting a data subject access request, or by
               contacting us at{' '}
-              <a
-                href="mailto:info@retailtypes.com"
+              <Link
+                to="mailto:info@retailtypes.com"
                 className="text-blue-600 hover:underline"
               >
                 info@retailtypes.com
-              </a>
+              </Link>
               . We will consider and act upon any request in accordance with
               applicable data protection laws.
             </p>

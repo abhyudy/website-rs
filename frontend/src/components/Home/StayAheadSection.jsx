@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 const StayAheadSection = () => {
   const scrollRef = useRef(null)
@@ -53,12 +54,12 @@ const StayAheadSection = () => {
           Get the latest insights on must-have products, <br />
           exclusive deals, and expert shopping tips.
         </p>
-        <a
-          href="/trends"
+        <Link
+          to="/trends"
           className="bg-white font-inter text-background-black px-6 py-2 rounded-full font-medium self-start hover:bg-gray-200"
         >
           See All
-        </a>
+        </Link>
       </div>
 
       {/* Right Block */}

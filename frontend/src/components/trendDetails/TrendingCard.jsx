@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const TrendingCard = ({ image, desc, category }) => {
   return (
-    <a
-      href="/trendsblog"
+    <Link
+      to="/trendsblog"
       className="block w-full max-w-[370px] min-h-[335px] transition duration-300 hover:brightness-110 ease-in-out hover:scale-105 cursor-pointer"
       aria-label={`Trending post in ${category}`}
     >
@@ -31,7 +32,7 @@ const TrendingCard = ({ image, desc, category }) => {
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }
 
