@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const TermsConditions = () => {
   const scrollToSection = (id) => {
@@ -579,12 +580,12 @@ const TermsConditions = () => {
             <p className="text-base leading-relaxed mb-4">
               We care about data privacy and security. Please review our Privacy
               Policy:{' '}
-              <a
-                href="https://retailtypes.com/privacy-policy"
+              <Link
+                to="https://retailtypes.com/privacy-policy"
                 className="text-blue-600 hover:underline focus:ring-2 focus:ring-blue-500"
               >
                 retailtypes.com/privacy-policy
-              </a>
+              </Link>
               . By using the Services, you agree to be bound by our Privacy
               Policy, which is incorporated into these Legal Terms. Please be
               advised the Services are hosted in India. If you access the
@@ -886,12 +887,12 @@ const TermsConditions = () => {
               Phone: +91 94306 22181
             </p>
             <p className="text-base leading-relaxed mb-4">
-              <a
-                href="mailto:info@retailtypes.com"
+              <Link
+                to="mailto:info@retailtypes.com"
                 className="text-blue-600 hover:underline focus:ring-2 focus:ring-blue-500"
               >
                 info@retailtypes.com
-              </a>
+              </Link>
             </p>
           </div>
         </section>

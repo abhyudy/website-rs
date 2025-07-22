@@ -1,5 +1,6 @@
 import React from 'react'
 import { RiTelegram2Line } from 'react-icons/ri'
+import { Link } from 'react-router-dom'
 const Subscribe = () => {
   return (
     <div className="bg-background-color py-6 sm:py-12 px-6">
@@ -17,13 +18,13 @@ const Subscribe = () => {
             className="flex-1 px-3 sm:px-4 py-2 border bg-white border-white rounded-md focus:outline-none focus:ring-2 focus:ring-background-black text-xs sm:text-sm font-inter"
             required
           />
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="bg-background-black flex items-center gap-1 w-fit mx-auto text-white px-4 sm:px-3 py-2 rounded-md  sm:rounded-md hover:bg-gray-800 transition text-xs sm:text-sm text-center font-inter"
           >
-            <img src="./img/air.png" alt="" />
+            <img src="./img/air.png" alt="air" />
             Subscribe
-          </a>
+          </Link>
         </form>
       </section>
     </div>

@@ -3,6 +3,7 @@ import Subscribe from '../components/Subscribe'
 import StayAheadSection from '../components/Home/StayAheadSection'
 import CategoryButtons from '../components/Home/CategoryButtons'
 import MobileBottomSection from '../components/Home/MobileBottomSection'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -20,12 +21,12 @@ const Home = () => {
               insights – all in one place. Elevate your shopping game today!
             </p>
             <div className="w-full max-md:flex">
-              <a
-                href="/trends"
+              <Link
+                to="/trends"
                 className="font-inter bg-black text-white rounded-full hover:bg-gray-800 transition mx-auto py-3 px-6"
               >
                 Read More
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -95,12 +96,12 @@ const Home = () => {
             <h2 className="text-3xl sm:text-5xl custom-times font-bold text-background-black">
               Most Popular At <br className="hidden sm:block" /> The Moment
             </h2>
-            <a
-              href="/trends"
+            <Link
+              to="/trends"
               className="text-sm sm:text-xl font-inter font-medium underline text-background-black ml-auto"
             >
               See All
-            </a>
+            </Link>
           </div>
 
           {/* Grid */}
@@ -155,12 +156,12 @@ const Home = () => {
             <h2 className="text-3xl sm:text-6xl font-bold custom-times">
               Trending Posts
             </h2>
-            <a
-              href="/trends"
+            <Link
+              to="/trends"
               className="text-base sm:text-xl font-inter font-medium underline text-background-black"
             >
               SEE ALL
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -267,12 +268,12 @@ const Home = () => {
                 discount codes, and cashback offers while shopping online.
               </p>
               <div className="flex justify-center md:justify-start">
-                <a
-                  href="/trends"
+                <Link
+                  to="/trends"
                   className="font-inter bg-background-black text-white rounded-full hover:bg-gray-800 transition flex items-center justify-center py-3 px-6"
                 >
                   Read More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
