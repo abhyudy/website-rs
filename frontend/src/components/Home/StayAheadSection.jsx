@@ -75,7 +75,7 @@ const StayAheadSection = () => {
               style={{ backgroundColor: card.bgColor }}
             >
               {/* Left: Title */}
-              <div className="w-2/3 flex flex-col justify-start p-4">
+              <div className="w-1/2 sm:w-2/3 flex flex-col justify-start p-4">
                 <h1 className="text-2xl sm:text-3xl font-bold font-inter leading-snug">
                   {card.title}
                 </h1>
@@ -86,7 +86,7 @@ const StayAheadSection = () => {
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover rounded-xl"
+                  className="w-full h-full  object-cover rounded-xl"
                 />
               </div>
             </div>

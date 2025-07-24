@@ -1,22 +1,16 @@
 import React, { useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
-import { FaChevronDown } from 'react-icons/fa'
 import { HiOutlineAdjustmentsHorizontal } from 'react-icons/hi2'
 
 const FilterBox = ({
   selectedCategory,
-  onCategoryChange,
+  onSelectCategory,
   search,
   onSearchChange,
+  categories,
+  showAll,
 }) => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const categories = [
-    'Fashion & Apparel',
-    'Beauty & Skincare',
-    'Luxury & Designer',
-    'Sustainable Shopping',
-    'Tech & Gadgets',
-  ]
 
   return (
     <div>
@@ -32,22 +26,37 @@ const FilterBox = ({
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
           <div className="absolute right-0 top-full mt-2 w-52 bg-white border border-gray-200 rounded-md shadow-lg z-50 flex flex-col">
-            {categories.map((category, index) => (
+            {showAll && (
               <button
-                key={index}
                 onClick={() => {
-                  onCategoryChange(index)
+                  onSelectCategory(null)
                   setMenuOpen(false)
                 }}
                 className={`flex justify-between items-center px-4 py-2 text-left text-sm font-inter border-b last:border-b-0 ${
-                  selectedCategory === index
+                  selectedCategory === null
+                    ? 'bg-gray-100 text-black'
+                    : 'hover:bg-gray-100 text-black'
+                }`}
+              >
+                All
+                <img src="/img/Vector.png" alt="arrow" />
+              </button>
+            )}
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => {
+                  onSelectCategory(category)
+                  setMenuOpen(false)
+                }}
+                className={`flex justify-between items-center px-4 py-2 text-left text-sm font-inter border-b last:border-b-0 ${
+                  selectedCategory === category
                     ? 'bg-gray-100 text-black'
                     : 'hover:bg-gray-100 text-black'
                 }`}
               >
                 {category}
                 <img src="/img/Vector.png" alt="arrow" />
-                {/* <FaChevronDown className="text-xs text-pink-300" /> */}
               </button>
             ))}
           </div>
@@ -55,13 +64,28 @@ const FilterBox = ({
       </div>
 
       {/* Desktop Categories and Search */}
-      <div className="hidden md:flex items-center  gap-4 mt-4">
-        {categories.map((category, index) => (
+      <div className="hidden md:flex items-center gap-4 mt-4">
+        {showAll && (
           <button
-            key={index}
-            onClick={() => onCategoryChange(index)}
+            onClick={() => onSelectCategory(null)}
             className={`flex items-center gap-1 px-3 py-2 rounded-full border transition-all duration-300 text-sm font-inter ${
-              selectedCategory === index
+              selectedCategory === null
+                ? 'bg-gray-100 text-black border-gray-800'
+                : 'bg-white text-black border-gray-400 hover:bg-gray-100'
+            }`}
+          >
+            All
+            <span className="p-1 rounded-full text-pink-300 bg-gray-100 hover:bg-white">
+              <img src="/img/Vector.png" alt="arrow" />
+            </span>
+          </button>
+        )}
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => onSelectCategory(category)}
+            className={`flex items-center gap-1 px-3 py-2 rounded-full border transition-all duration-300 text-sm font-inter ${
+              selectedCategory === category
                 ? 'bg-gray-100 text-black border-gray-800'
                 : 'bg-white text-black border-gray-400 hover:bg-gray-100'
             }`}
@@ -69,7 +93,6 @@ const FilterBox = ({
             {category}
             <span className="p-1 rounded-full text-pink-300 bg-gray-100 hover:bg-white">
               <img src="/img/Vector.png" alt="arrow" />
-              {/* <FaChevronDown className="text-xs text-pink-300" /> */}
             </span>
           </button>
         ))}

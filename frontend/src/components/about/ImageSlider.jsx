@@ -1,109 +1,174 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { FaArrowLeft, FaArrowRight, FaChevronDown } from 'react-icons/fa'
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import './ImageSlider.css'
 import FilterBox from '../filter/FilterBox'
 
-// You can place any image in any order here (not sequential!)
 const photoData = [
-  '/img/11.jpg',
-  '/img/12.jpg',
-  '/img/13.jpg',
-  '/img/14.jpg',
-  '/img/15.jpg',
-  '/img/16.jpg',
-  '/img/17.jpg',
-  '/img/19.jpg',
-  '/img/20.jpg',
-  '/img/21.jpg',
-  '/img/22.jpg',
-  '/img/23.jpg',
-  '/img/24.jpg',
-  '/img/25.jpg',
-  '/img/26.jpg',
-  '/img/27.jpg',
-  '/img/28.jpg',
-  '/img/29.jpg',
-  '/img/30.jpg',
-  '/img/31.jpg',
-  '/img/32.jpg',
+  { img: '/img/11.jpg', category: 'Fashion & Apparel' },
+  { img: '/img/12.jpg', category: 'Beauty & Skincare' },
+  { img: '/img/13.jpg', category: 'Luxury & Designer' },
+  { img: '/img/14.jpg', category: 'Sustainable Shopping' },
+  { img: '/img/15.jpg', category: 'Tech & Gadgets' },
+  { img: '/img/16.jpg', category: 'Fashion & Apparel' },
+  { img: '/img/17.jpg', category: 'Beauty & Skincare' },
+  { img: '/img/19.jpg', category: 'Luxury & Designer' },
+  { img: '/img/20.jpg', category: 'Sustainable Shopping' },
+  { img: '/img/web1.jpg', category: 'Tech & Gadgets' },
+  { img: '/img/22.jpg', category: 'Fashion & Apparel' },
+  { img: '/img/23.jpg', category: 'Beauty & Skincare' },
+  { img: '/img/24.jpg', category: 'Luxury & Designer' },
+  { img: '/img/25.jpg', category: 'Sustainable Shopping' },
+  { img: '/img/26.jpg', category: 'Tech & Gadgets' },
+  { img: '/img/27.jpg', category: 'Fashion & Apparel' },
+  { img: '/img/28.jpg', category: 'Beauty & Skincare' },
+  { img: '/img/29.jpg', category: 'Luxury & Designer' },
+  { img: '/img/30.jpg', category: 'Sustainable Shopping' },
+  { img: '/img/31.jpg', category: 'Tech & Gadgets' },
+  { img: '/img/32.jpg', category: 'Fashion & Apparel' },
 ]
 
-const categories = [
-  'Fashion & Apparel',
-  'Beauty & Skincare',
-  'Luxury & Designer',
-  'Sustainable Shopping',
-  'Tech & Gadgets',
-]
+const uniqueCategories = [...new Set(photoData.map((photo) => photo.category))]
 
 const lerp = (start, end, t) => start + t * (end - start)
-const getScale = (distance, total) => Math.pow(1 - distance / total, 2)
-const getLeft = (i, current, width, wrapperWidth) => {
+
+const getScale = (distance) => {
+  if (distance === 0) return 1
+  if (Math.abs(distance) === 1) return 0.7
+  if (Math.abs(distance) === 2) return 0.5
+  return 0.3
+}
+
+const getLeft = (i, current, slideWidth, wrapperWidth) => {
   const diff = i - current
-  const slideDistance = diff * width * 0.5
-  const centerOffset = (wrapperWidth - width) / 2
-  return slideDistance + centerOffset
+  const centerPosition = (wrapperWidth - slideWidth) / 2
+
+  if (diff === 0) return centerPosition
+  if (diff === -3) return centerPosition - slideWidth * 1.5
+  if (diff === -2) return centerPosition - slideWidth * 1.0
+  if (diff === -1) return centerPosition - slideWidth * 0.5
+  if (diff === 1) return centerPosition + slideWidth * 0.5
+  if (diff === 2) return centerPosition + slideWidth * 1.0
+  if (diff === 3) return centerPosition + slideWidth * 1.5
+
+  return diff < 0 ? -(wrapperWidth + slideWidth) : wrapperWidth + slideWidth
 }
 
 export default function ImageSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const wrapperRef = useRef(null)
   const slidesRef = useRef([])
-  const [slideWidth, setSlideWidth] = useState(300)
-  const [wrapperWidth, setWrapperWidth] = useState(800)
-  const totalSlides = photoData.length
+  const [slideWidth, setSlideWidth] = useState(520)
+  const [slideHeight, setSlideHeight] = useState(300)
+  const [wrapperWidth, setWrapperWidth] = useState(1200)
   const [isHovered, setIsHovered] = useState(false)
-  const neighbors = 4
+  const [selectedCategory, setSelectedCategory] = useState(null)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
-  const moveSlide = (target) => {
-    slidesRef.current.forEach((slide) => {
-      const virtualIndex = parseInt(slide.dataset.virtualIndex)
-      const dist = virtualIndex - target
+  const filteredPhotos = selectedCategory
+    ? photoData.filter((photo) => photo.category === selectedCategory)
+    : photoData
+
+  const totalSlides = filteredPhotos.length
+  const neighbors = 3
+
+  const extendedPhotos =
+    totalSlides > 0
+      ? [
+          ...filteredPhotos.slice(-neighbors),
+          ...filteredPhotos,
+          ...filteredPhotos.slice(0, neighbors),
+        ]
+      : filteredPhotos
+
+  const moveSlide = (target, skipTransition = false) => {
+    if (totalSlides === 0) return
+
+    target = Math.max(0, Math.min(target, totalSlides - 1))
+    setIsTransitioning(!skipTransition)
+
+    slidesRef.current.forEach((slide, index) => {
+      if (!slide) return
+
+      const dist = index - (target + neighbors)
       const absDist = Math.abs(dist)
 
       if (absDist > neighbors) {
-        slide.style.opacity = '0'
+        slide.style.display = 'none'
+        slide.style.pointerEvents = 'none'
         return
       }
 
+      slide.style.display = 'block'
       slide.style.opacity = '1'
+      slide.style.pointerEvents = 'auto'
 
-      const left = getLeft(virtualIndex, target, slideWidth, wrapperWidth)
-      const scale = getScale(absDist, neighbors + 1)
+      const left = getLeft(index, target + neighbors, slideWidth, wrapperWidth)
+      const scale = getScale(dist)
 
+      slide.style.transition = skipTransition ? 'none' : 'all 0.5s ease'
       slide.style.transform = `scale(${scale})`
       slide.style.left = `${left}px`
       slide.style.zIndex = neighbors + 1 - absDist
     })
 
     setCurrentSlide(target)
+
+    // Reset isTransitioning after the transition duration (500ms)
+    if (!skipTransition) {
+      setTimeout(() => setIsTransitioning(false), 500)
+    }
   }
 
   const next = () => {
-    if (currentSlide > 400) {
+    if (isTransitioning) return
+    if (currentSlide >= totalSlides - 1) {
       setCurrentSlide(0)
-      moveSlide(0)
+      moveSlide(0, true)
+      setTimeout(() => moveSlide(0), 500) 
     } else {
       moveSlide(currentSlide + 1)
     }
   }
 
   const prev = () => {
-    if (currentSlide < -400) {
-      setCurrentSlide(0)
-      moveSlide(0)
+    if (isTransitioning) return
+    if (currentSlide <= 0) {
+      setCurrentSlide(totalSlides - 1)
+      moveSlide(totalSlides - 1, true)
+      setTimeout(() => moveSlide(totalSlides - 1), 500) 
     } else {
       moveSlide(currentSlide - 1)
     }
   }
 
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category === selectedCategory ? null : category)
+    setCurrentSlide(0)
+    setIsTransitioning(false) // Reset transitioning on category change
+  }
+
+  useEffect(() => {
+    moveSlide(0, true) 
+  }, [filteredPhotos])
+
   useEffect(() => {
     const updateSize = () => {
-      const slide = slidesRef.current[0]
-      if (slide && wrapperRef.current) {
-        setSlideWidth(slide.offsetWidth)
-        setWrapperWidth(wrapperRef.current.offsetWidth)
-        moveSlide(currentSlide)
+      if (wrapperRef.current) {
+        const newWrapperWidth = wrapperRef.current.offsetWidth
+        setWrapperWidth(newWrapperWidth)
+
+        if (newWrapperWidth <= 768) {
+          setSlideWidth(320)
+          setSlideHeight(200)
+        } else if (newWrapperWidth <= 1024) {
+          setSlideWidth(400)
+          setSlideHeight(250)
+        } else {
+          setSlideWidth(520)
+          setSlideHeight(300)
+        }
+
+        moveSlide(currentSlide, true)
       }
     }
     updateSize()
@@ -112,27 +177,35 @@ export default function ImageSlider() {
   }, [currentSlide])
 
   useEffect(() => {
-    if (isHovered) return
+    if (isHovered || isTransitioning) return
     const interval = setInterval(() => next(), 3000)
     return () => clearInterval(interval)
-  }, [currentSlide, isHovered])
+  }, [currentSlide, isHovered, isTransitioning])
 
   return (
     <div className="slider-container px-4 sm:px-6 md:px-10 py-10">
-      {/* Intro */}
       <div className="py-5">
         <div className="relative flex items-center justify-between mt-2">
           <h3 className="text-3xl md:text-6xl custom-times font-semibold text-black">
             What We Cover
           </h3>
           <div className="inline-block md:hidden">
-            {/* Hamburger Icon - Only on Mobile */}
-            <FilterBox />
+            <FilterBox
+              categories={uniqueCategories}
+              selectedCategory={selectedCategory}
+              onSelectCategory={handleCategoryChange}
+              showAll={true}
+            />
           </div>
         </div>
 
         <div id="big-filter-box" className="hidden md:inline-block">
-          <FilterBox />
+          <FilterBox
+            categories={uniqueCategories}
+            selectedCategory={selectedCategory}
+            onSelectCategory={handleCategoryChange}
+            showAll={true}
+          />
         </div>
 
         <p className="text-black font-inter mt-4 max-w-3xl">
@@ -143,14 +216,13 @@ export default function ImageSlider() {
         </p>
       </div>
 
-      {/* Top Bar */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-10 gap-4 md:gap-0">
         <h1 className="text-3xl md:text-5xl font-bold font-inter text-black border-l-4 border-[#E37561] pl-4">
           Blog
         </h1>
         <div className="flex items-center space-x-3 sm:space-x-6">
           <span className="text-lg sm:text-2xl text-black font-medium">
-            See All ({photoData.length})
+            <a href="/trends"> See All </a>
           </span>
           <button
             onClick={prev}
@@ -167,34 +239,29 @@ export default function ImageSlider() {
         </div>
       </div>
 
-      {/* Carousel */}
       <div
         className="slide-wrapper mt-10 sm:mt-16"
         ref={wrapperRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="overlay" />
-        {[...Array(1000)].map((_, i) => {
-          const virtualIndex = i - 500
-          const actualIndex =
-            ((virtualIndex % totalSlides) + totalSlides) % totalSlides
-          return (
+        {totalSlides === 0 ? (
+          <p className="text-xl font-bold text-center text-black">
+            No images found
+          </p>
+        ) : (
+          extendedPhotos.map((photo, index) => (
             <div
               className="slide"
-              key={i}
-              ref={(el) => (slidesRef.current[i] = el)}
-              data-virtual-index={virtualIndex}
-              data-caption={`Image ${actualIndex + 1}`}
+              key={`${photo.img}-${index}`}
+              ref={(el) => (slidesRef.current[index] = el)}
+              data-caption={photo.category}
             >
-              <img
-                src={photoData[actualIndex]}
-                alt={`Image ${actualIndex + 1}`}
-                loading="lazy"
-              />
+              <img src={photo.img} alt={`Image ${index + 1}`} loading="lazy" />
+              <div className="slide-category">{photo.category}</div>
             </div>
-          )
-        })}
+          ))
+        )}
       </div>
     </div>
   )
